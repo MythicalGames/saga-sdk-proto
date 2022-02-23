@@ -1,2 +1,2 @@
-# mythos-sdk-proto
-Mythos SDK protobuf/gRPC files
+# saga-sdk-proto
+Project Saga SDK protobuf/gRPC files
