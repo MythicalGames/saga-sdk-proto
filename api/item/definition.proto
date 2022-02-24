@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.item";
+
+import "common/item/definition.proto";
+import "common/common.proto";
+import "common/finalization.proto";
+import "common/sort.proto";
+
+package saga.proto.api.item;
+
+// Item definitions
+message Item {
+  string game_inventory_id = 1;
+  string game_item_type_id = 2;
+  int64 dgoods_id = 3;
+  string item_name = 4;
+  string player_id = 5;
+  string owner_sidechain_account = 6;
+  int32 serial_number = 7;
+  string currency_base = 8 [deprecated = true];
+  string metadata_uri = 9;
+  string tracking_id = 10;
+  saga.proto.common.Metadata metadata = 11;
+  saga.proto.common.item.ItemState item_state = 12;
+  int64 created_timestamp = 13;
+  int64 updated_timestamp = 14;
+}
+
+message Items {
+  repeated Item items = 1;
+}
+
+// Issue item call
+message IssueItemRequest {
+  string environment_id = 1;
+  string game_inventory_id = 2;
+  string player_id = 3;
+  string item_name = 4;
+  string game_item_type_id = 5;
+  string amount_paid = 6;
+  string currency = 7 [deprecated = true];
+  saga.proto.common.Metadata metadata = 8;
+  // optional
+  string store_id = 9;
+  string order_id = 10;
+  string request_ip = 11;
+}
+
+message IssueItemStartedResponse {
+  string tracking_id = 1;
+  saga.proto.common.item.ItemState item_state = 2;
+}
+
+// Get item calls
+message GetItemRequest {
+  string environment_id = 1;
+  string game_inventory_id = 2;
+  bool history = 3;
+}
+
+message GetItemsRequest {
+  string environment_id = 1;
+  uint64 created_timestamp = 2;
+  int32 page_size = 3;
+  saga.proto.common.sort.SortOrder sort_order = 4;
+  saga.proto.common.finalization.Finalized finalized = 5;
+  string token_name = 6;
+}
+
+message GetItemsForPlayerRequest {
+  string environment_id = 1;
+  string player_id = 2;
+}
+
+// Metadata calls
+message UpdateItemMetadata {
+  string game_inventory_id = 1;
+  saga.proto.common.Metadata metadata = 2;
+}
+
+message UpdateItemMetadataRequest {
+  string environment_id = 1;
+  repeated UpdateItemMetadata update_items = 2;
+}
+
+message UpdateItemMetadataResponse { }
+
+// Transfer item call
+message TransferItemRequest {
+  string environment_id = 1;
+  string game_item_inventory_id = 2;
+  string source_player_id = 3;
+  string destination_player_id = 4;
+  string store_id = 5;
+}
+
+message TransferItemStartedResponse {
+  string tracking_id = 1;
+  saga.proto.common.item.ItemState item_state = 2;
+}
+
+// Burn item call
+message BurnItemRequest {
+  string environment_id = 1;
+  string game_item_inventory_id = 2;
+}
+
+message BurnItemStartedResponse {
+  string tracking_id = 1;
+  saga.proto.common.item.ItemState item_state = 2;
+}
