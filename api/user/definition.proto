@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "common/sort.proto";
+import "common/user/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.user";
+
+package saga.proto.api.user;
+
+//// User definitions
+message UserProto {
+  string oauth_id = 1;
+  string chain_address = 2;
+  proto.common.user.UserState user_state = 3;
+  repeated UpholdAccount uphold_accounts = 4;
+  CybersourceAccount cybersource_account = 5;
+  uint64 created_timestamp = 63;
+}
+
+message UsersProto {
+  repeated UserProto saga_users = 1;
+}
+
+message UpholdAccount {
+  string id = 1;
+  // and more?
+}
+
+message CybersourceAccount {
+  string id = 1;
+  // and more?
+}
+
+//// Request and response definitions
+
+// Get user calls
+message GetUserRequest {
+  string title_id = 1;
+  string oauth_id = 2;
+}
+
+message GetUsersRequest {
+  string title_id = 1;
+  uint64 created_timestamp = 2;
+  int32 page_size = 3;
+  saga.proto.common.sort.SortOrder sort_order = 4;
+}
+
+// Update user call
+message UpdateUserRequest {
+  // TODO: what is being updated here
+}
