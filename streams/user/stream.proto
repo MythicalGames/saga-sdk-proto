@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "streams/common.proto";
+import "common/user/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.user";
+
+package saga.rpc.streams.user;
+
+message UserStatusUpdate {
+  string oauth_id = 1;
+  string tracking_id = 2;
+  saga.proto.common.user.UserState user_state = 3;
+}
+
+message UserStatusConfirmRequest {
+  string oauth_id = 1;
+  string tracking_id = 2;
+  saga.proto.common.user.UserState user_state = 3;
+}
+
+service UserStream {
+  rpc UserStatusStream(saga.rpc.streams.Subscribe) returns (stream UserStatusUpdate);
+  rpc UserStatusConfirmation(UserStatusConfirmRequest) returns (google.protobuf.Empty);
+}
