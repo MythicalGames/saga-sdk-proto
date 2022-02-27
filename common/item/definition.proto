@@ -6,21 +6,12 @@ option java_package = "games.mythical.saga.sdk.proto.common.item";
 package saga.proto.common.item;
 
 enum ItemState {
-  PENDING_ISSUED = 0;
-  ISSUED = 1;
-  PENDING_LISTED = 2;
-  LISTED = 3;
-  PENDING_TRANSFERRED = 4;
-  TRANSFERRED = 5;
-  PENDING_SALE = 6; // no need for SOLD as that is just TRANSFERRED to the new owner
-  PENDING_BURNED = 7;
-  BURNED = 8; // item no longer exists on the blockchain so the API will have to keep track through transaction history
-  FAILED = 9;
-  PENDING_CLOSE_LISTING = 10;
-  LISTING_CLOSED = 11;
-  UPDATED_METADATA = 12;
-  PENDING_WITHDRAW = 13;
-  WITHDRAWN = 14;
-  PENDING_DEPOSIT = 15;
-  DEPOSITED = 16;
+  ISSUED = 0;
+  LISTED = 1;
+  TRANSFERRED = 2;
+  BURNED = 3; // item no longer exists on the blockchain so the API will have to keep track through transaction history
+  FAILED = 4;
+  LISTING_CLOSED = 5;
+  WITHDRAWN = 6;
+  DEPOSITED = 7;
 }

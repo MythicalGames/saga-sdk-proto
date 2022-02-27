@@ -11,13 +11,13 @@ package saga.rpc.streams.user;
 
 message UserStatusUpdate {
   string oauth_id = 1;
-  string tracking_id = 2;
+  string trace_id = 2;
   saga.proto.common.user.UserState user_state = 3;
 }
 
 message UserStatusConfirmRequest {
   string oauth_id = 1;
-  string tracking_id = 2;
+  string trace_id = 2;
   saga.proto.common.user.UserState user_state = 3;
 }
 
