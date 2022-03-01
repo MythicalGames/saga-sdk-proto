@@ -10,18 +10,18 @@ option java_package = "games.mythical.saga.sdk.proto.streams.user";
 package saga.rpc.streams.user;
 
 message UserStatusUpdate {
-  string oauth_id = 1;
-  string trace_id = 2;
-  saga.proto.common.user.UserState user_state = 3;
+    string oauth_id = 1;
+    string trace_id = 2;
+    saga.proto.common.user.UserState user_state = 3;
 }
 
 message UserStatusConfirmRequest {
-  string oauth_id = 1;
-  string trace_id = 2;
-  saga.proto.common.user.UserState user_state = 3;
+    string oauth_id = 1;
+    string trace_id = 2;
+    saga.proto.common.user.UserState user_state = 3;
 }
 
 service UserStream {
-  rpc UserStatusStream(saga.rpc.streams.Subscribe) returns (stream UserStatusUpdate);
-  rpc UserStatusConfirmation(UserStatusConfirmRequest) returns (google.protobuf.Empty);
+    rpc UserStatusStream(saga.rpc.streams.Subscribe) returns (stream UserStatusUpdate);
+    rpc UserStatusConfirmation(UserStatusConfirmRequest) returns (google.protobuf.Empty);
 }

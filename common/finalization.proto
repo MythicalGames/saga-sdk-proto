@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.common";
 package saga.proto.common.finalization;
 
 enum Finalized {
-  ALL = 0;
-  YES = 1;
-  NO = 2;
+    ALL = 0;
+    YES = 1;
+    NO = 2;
 }

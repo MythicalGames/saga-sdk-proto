@@ -6,6 +6,6 @@ option java_package = "games.mythical.saga.sdk.proto.common";
 package saga.proto.common.sort;
 
 enum SortOrder {
-  ASC = 0;
-  DESC = 1;
+    ASC = 0;
+    DESC = 1;
 }

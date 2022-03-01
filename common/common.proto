@@ -8,8 +8,8 @@ import "google/protobuf/struct.proto";
 package saga.proto.common;
 
 message Metadata {
-  string name = 1;
-  string description = 2;
-  string image = 3;
-  google.protobuf.Struct properties = 4;
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    google.protobuf.Struct properties = 4;
 }

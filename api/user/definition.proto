@@ -10,47 +10,47 @@ package saga.proto.api.user;
 
 //// User definitions
 message UserProto {
-  string trace_id = 1;
-  string oauth_id = 2;
-  string chain_address = 3;
-  proto.common.user.UserState user_state = 4;
-  repeated UpholdAccount uphold_accounts = 5;
-  CybersourceAccount cybersource_account = 6;
-  uint64 created_timestamp = 63;
+    string trace_id = 1;
+    string oauth_id = 2;
+    string chain_address = 3;
+    proto.common.user.UserState user_state = 4;
+    repeated UpholdAccount uphold_accounts = 5;
+    CybersourceAccount cybersource_account = 6;
+    uint64 created_timestamp = 63;
 }
 
 message UsersProto {
-  repeated UserProto saga_users = 1;
+    repeated UserProto saga_users = 1;
 }
 
 message UpholdAccount {
-  string id = 1;
-  // and more?
+    string id = 1;
+    // and more?
 }
 
 message CybersourceAccount {
-  string id = 1;
-  // and more?
+    string id = 1;
+    // and more?
 }
 
 //// Request and response definitions
 
 // Get user calls
 message GetUserRequest {
-  string title_id = 1;
-  string oauth_id = 2;
+    string title_id = 1;
+    string oauth_id = 2;
 }
 
 message GetUsersRequest {
-  string title_id = 1;
-  uint64 created_timestamp = 2;
-  int32 page_size = 3;
-  saga.proto.common.sort.SortOrder sort_order = 4;
+    string title_id = 1;
+    uint64 created_timestamp = 2;
+    int32 page_size = 3;
+    saga.proto.common.sort.SortOrder sort_order = 4;
 }
 
 // Update user call
 message UpdateUserRequest {
-  string title_id = 1;
-  string oauth_id = 2;
-  // TODO: what is being updated here
+    string title_id = 1;
+    string oauth_id = 2;
+    // TODO: what is being updated here
 }
