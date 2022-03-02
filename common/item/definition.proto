@@ -6,12 +6,12 @@ option java_package = "games.mythical.saga.sdk.proto.common.item";
 package saga.proto.common.item;
 
 enum ItemState {
-  ISSUED = 0;
-  LISTED = 1;
-  TRANSFERRED = 2;
-  BURNED = 3; // item no longer exists on the blockchain so the API will have to keep track through transaction history
-  FAILED = 4;
-  LISTING_CLOSED = 5;
-  WITHDRAWN = 6;
-  DEPOSITED = 7;
+    FAILED = 0;
+    ISSUED = 1;
+    LISTED = 2;
+    TRANSFERRED = 3;
+    BURNED = 4; // item no longer exists on the blockchain so the API will have to keep track through transaction history
+    LISTING_CLOSED = 5;
+    WITHDRAWN = 6;
+    DEPOSITED = 7;
 }

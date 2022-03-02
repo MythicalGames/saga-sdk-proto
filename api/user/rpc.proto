@@ -8,7 +8,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.user";
 package saga.rpc.api.user;
 
 service UserService {
-  rpc GetUser(saga.proto.api.user.GetUserRequest) returns (saga.proto.api.user.UserProto);
-  rpc GetUsers(saga.proto.api.user.GetUsersRequest) returns (saga.proto.api.user.UsersProto);
-  rpc UpdateUser(saga.proto.api.user.UpdateUserRequest) returns (saga.proto.api.user.UserProto);
+    rpc GetUser(saga.proto.api.user.GetUserRequest) returns (saga.proto.api.user.UserProto);
+    rpc GetUsers(saga.proto.api.user.GetUsersRequest) returns (saga.proto.api.user.UsersProto);
+    rpc UpdateUser(saga.proto.api.user.UpdateUserRequest) returns (saga.proto.api.user.UserProto);
 }

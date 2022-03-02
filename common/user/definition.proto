@@ -6,6 +6,6 @@ option java_package = "games.mythical.saga.sdk.proto.common.user";
 package saga.proto.common.user;
 
 enum UserState {
-  LINKED  = 0;
-  FAILED = 1;
+    FAILED = 0;
+    LINKED = 1;
 }
