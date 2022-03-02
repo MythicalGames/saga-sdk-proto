@@ -9,54 +9,54 @@ option java_package = "games.mythical.saga.sdk.proto.api.payments";
 package saga.proto.api.payment;
 
 message PaymentMethodProto {
-  string trace_id = 1;
-  string oauth_id = 2;
-  CardPaymentData card_payment_data = 3;
-  Address address = 4;
+    string trace_id = 1;
+    string oauth_id = 2;
+    CardPaymentData card_payment_data = 3;
+    Address address = 4;
 }
 
 message CardPaymentData {
-  bool make_default = 1;
-  oneof card_payment_data {
-    CybersourcePaymentData cybersource = 2;
-  }
+    bool make_default = 1;
+    oneof card_payment_data {
+        CybersourcePaymentData cybersource = 2;
+    }
 }
 
 message Address {
-  string first_name = 1;
-  string last_name = 2;
-  string address_line_1 = 3;
-  string address_line_2 = 4;
-  string city = 5;
-  string state = 6;
-  string postal_code = 7;
-  string country_name = 8;
-  string country_iso_alpha_2 = 9;
+    string first_name = 1;
+    string last_name = 2;
+    string address_line_1 = 3;
+    string address_line_2 = 4;
+    string city = 5;
+    string state = 6;
+    string postal_code = 7;
+    string country_name = 8;
+    string country_iso_alpha_2 = 9;
 }
 
 message CybersourcePaymentData {
-  string expiration_month = 1;
-  string expiration_year = 2;
-  string card_type = 3;
-  string instrument_id = 4;
+    string expiration_month = 1;
+    string expiration_year = 2;
+    string card_type = 3;
+    string instrument_id = 4;
 }
 
 message CreatePaymentMethodRequest {
-  string oauth_id = 1;
-  CardPaymentData card_payment_data = 2;
-  Address address = 3;
-  // Uphold linking info?
+    string oauth_id = 1;
+    CardPaymentData card_payment_data = 2;
+    Address address = 3;
+    // Uphold linking info?
 }
 
 message GetPaymentMethodRequest {
-  string oauth_id = 1;
+    string oauth_id = 1;
 }
 
 message UpdatePaymentMethodRequest {
-  string oauth_id = 1;
-  CardPaymentData card_payment_data = 2;
-  Address address = 3;
-  // Uphold linking info
+    string oauth_id = 1;
+    CardPaymentData card_payment_data = 2;
+    Address address = 3;
+    // Uphold linking info
 }
 
 message DeletePaymentMethodRequest {

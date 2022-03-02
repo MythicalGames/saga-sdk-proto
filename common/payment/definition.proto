@@ -7,8 +7,8 @@ package saga.proto.common.payment;
 
 // Payment definitions
 enum PaymentProviderId {
-  BRAINTREE = 0;
-  BITPAY = 1;
-  CYBERSOURCE = 2;
-  UPHOLD = 3;
+    BRAINTREE = 0;
+    BITPAY = 1;
+    CYBERSOURCE = 2;
+    UPHOLD = 3;
 }
