@@ -10,20 +10,19 @@ import "common/item/definition.proto";
 package saga.rpc.streams.item;
 
 message ItemStatusUpdate {
-    string game_inventory_id = 1;
-    string game_item_type_id = 2;
-    string player_id = 3;
-    int64 dgoods_id = 4;
+    string trace_id = 1;
+    string game_inventory_id = 2;
+    string game_item_type_id = 3;
+    string oauth_id = 4;
     int32 serial_number = 5;
     string metadata_uri = 6;
-    string tracking_id = 7;
     saga.proto.common.item.ItemState item_state = 8;
 }
 
 message ItemStatusConfirmRequest {
-    string environment_id = 1;
-    string game_inventory_id = 2;
-    string tracking_id = 3;
+    string trace_id = 1;
+    string environment_id = 2;
+    string game_inventory_id = 3;
     saga.proto.common.item.ItemState item_state = 4;
 }
 

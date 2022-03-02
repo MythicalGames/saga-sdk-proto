@@ -13,3 +13,7 @@ message Metadata {
     string image = 3;
     google.protobuf.Struct properties = 4;
 }
+
+message ReceivedResponse {
+    string trace_id = 1;
+}
