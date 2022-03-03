@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
+
+import "common/itemtype/definition.proto";
+import "common/common.proto";
+
+package saga.proto.api.itemtype;
+
+//// Item type definitions
+message ItemTypeProto {
+    string trace_id = 1;
+    string game_item_type_id = 2;
+    string name = 3;
+    string address = 4;
+    string title_id = 5;
+    PriRevShareSettings pri_rev_share_settings = 6;
+    SecRevShareSettings sec_rev_share_settings = 7;
+    bool withdrawable = 8;
+    PriceMap price_map = 9;
+    saga.proto.common.itemtype.ItemTypeState item_type_state = 10;
+    int64 created_timestamp = 11;
+    int64 updated_timestamp = 12;
+    saga.proto.common.Metadata metadata = 13;
+}
+
+message ItemTypesProto {
+    repeated ItemTypeProto item_types = 1;
+}
+
+message PriRevShareSettings {
+}
+
+message SecRevShareSettings {
+}
+
+message PriceMap {
+}
+
+//// Request and response definitions
+
+// Create item type call
+message CreateItemTypeRequest {
+    string title_id = 1;
+    string publisher_address = 2;
+    string game_item_type_id = 3;
+    string name = 4;
+    // optional
+    PriRevShareSettings pri_rev_share_settings = 5;
+    SecRevShareSettings sec_rev_share_settings = 6;
+    saga.proto.common.Metadata metadata = 7;
+    bool withdrawable = 8;
+}
+
+// Get item type calls
+message GetItemTypeRequest {
+    string environment_id = 1;
+    string game_item_type_id = 2;
+}
+
+message GetItemTypesRequest {
+    string environment_id = 1;
+    repeated string game_item_type_ids = 2;
+}
+
+// Update item type metadata
+message UpdateItemTypeMetadataPayload {
+    string environment_id = 1;
+    string game_item_type_id = 2;
+    saga.proto.common.Metadata metadata = 3;
+}
+
+message UpdateItemTypePayload {
+    string environment_id = 1;
+    string game_item_type_id = 2;
+    bool withdrawable = 3;
+}

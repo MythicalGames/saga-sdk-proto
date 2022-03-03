@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common.itemtype";
+
+package saga.proto.common.itemtype;
+
+enum ItemTypeState {
+    FAILED = 0;
+    CREATED = 1;
+    FROZEN = 2;
+    SOLD_OUT = 3;
+    EXPIRED = 4;
+}
