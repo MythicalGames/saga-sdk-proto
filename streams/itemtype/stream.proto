@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.itemtype";
+
+import "google/protobuf/empty.proto";
+import "streams/common.proto";
+import "common/itemtype/definition.proto";
+
+package saga.rpc.streams.itemtype;
+
+message ItemTypeStatusUpdate {
+    string trace_id = 1;
+    string game_item_type_id = 3;
+    saga.proto.common.itemtype.ItemTypeState item_type_state = 8;
+}
+
+message ItemTypeStatusConfirmRequest {
+    string trace_id = 1;
+    string environment_id = 2;
+    string game_item_type_id = 3;
+    saga.proto.common.itemtype.ItemTypeState item_type_state = 4;
+}
+
+service ItemTypeStream {
+    rpc ItemTypeStatusStream(saga.rpc.streams.Subscribe) returns (stream ItemTypeStatusUpdate);
+    rpc ItemTypeStatusConfirmation(ItemTypeStatusConfirmRequest) returns (google.protobuf.Empty);
+}
