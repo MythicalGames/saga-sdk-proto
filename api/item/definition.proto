@@ -9,48 +9,39 @@ import "common/finalization.proto";
 import "common/sort.proto";
 
 package saga.proto.api.item;
+// TODO: all definitions are WIPs so we take what we can
 
-// Item definitions
-message Item {
-    string game_inventory_id = 1;
-    string game_item_type_id = 2;
-    int64 dgoods_id = 3;
-    string item_name = 4;
-    string player_id = 5;
-    string owner_sidechain_account = 6;
-    int32 serial_number = 7;
-    string currency_base = 8 [deprecated = true];
+//// Item definitions
+message ItemProto {
+    string trace_id = 1;
+    string game_inventory_id = 2;
+    string game_item_type_id = 3;
+    string oauth_id = 6;
+    int32 serial_number = 8;
     string metadata_uri = 9;
-    string tracking_id = 10;
     saga.proto.common.Metadata metadata = 11;
     saga.proto.common.item.ItemState item_state = 12;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
 }
 
-message Items {
-    repeated Item items = 1;
+message ItemsProto {
+    repeated ItemProto items = 1;
 }
+
+//// Request and response definitions
 
 // Issue item call
 message IssueItemRequest {
     string environment_id = 1;
     string game_inventory_id = 2;
-    string player_id = 3;
-    string item_name = 4;
+    string oauth_id = 3;
     string game_item_type_id = 5;
-    string amount_paid = 6;
-    string currency = 7 [deprecated = true];
     saga.proto.common.Metadata metadata = 8;
     // optional
     string store_id = 9;
     string order_id = 10;
     string request_ip = 11;
-}
-
-message IssueItemStartedResponse {
-    string tracking_id = 1;
-    saga.proto.common.item.ItemState item_state = 2;
 }
 
 // Get item calls
@@ -71,7 +62,7 @@ message GetItemsRequest {
 
 message GetItemsForPlayerRequest {
     string environment_id = 1;
-    string player_id = 2;
+    string oauth_id = 2;
 }
 
 // Metadata calls
@@ -80,34 +71,27 @@ message UpdateItemMetadata {
     saga.proto.common.Metadata metadata = 2;
 }
 
-message UpdateItemMetadataRequest {
+message UpdateItemsMetadataRequest {
     string environment_id = 1;
     repeated UpdateItemMetadata update_items = 2;
 }
 
-message UpdateItemMetadataResponse {}
+message UpdateItemsMetadataResponse {
+    // TODO: maybe at the minimum return the number successful of updated?
+    // int32 count = 1;
+}
 
 // Transfer item call
 message TransferItemRequest {
     string environment_id = 1;
-    string game_item_inventory_id = 2;
-    string source_player_id = 3;
-    string destination_player_id = 4;
+    string game_inventory_id = 2;
+    string source_oauth_id = 3;
+    string destination_oauth_id = 4;
     string store_id = 5;
-}
-
-message TransferItemStartedResponse {
-    string tracking_id = 1;
-    saga.proto.common.item.ItemState item_state = 2;
 }
 
 // Burn item call
 message BurnItemRequest {
     string environment_id = 1;
-    string game_item_inventory_id = 2;
-}
-
-message BurnItemStartedResponse {
-    string tracking_id = 1;
-    saga.proto.common.item.ItemState item_state = 2;
+    string game_inventory_id = 2;
 }
