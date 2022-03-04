@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "common/myth/definition.proto";
+import "streams/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.myth";
+
+package saga.rpc.streams.myth;
+
+message MythTokenStatusUpdate {
+    string trace_id = 1;
+    saga.proto.common.myth.MythTokenState token_state = 2;
+}
+
+message MythTokenStatusConfirmRequest {
+    string trace_id = 1;
+    saga.proto.common.myth.MythTokenState token_state = 2;
+}
+
+service MythTokenStream {
+    rpc MythTokenStatusStream(saga.rpc.streams.Subscribe) returns (stream MythTokenStatusUpdate);
+    rpc MythTokenStatusConfirmation(MythTokenStatusConfirmRequest) returns (google.protobuf.Empty);
+}
