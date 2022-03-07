@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "api/payment/definition.proto";
+import "common/myth/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.myth";
+
+package saga.proto.api.myth;
+
+message GasFeeProto {
+    string gwei_amount = 1;
+    string eth_amount = 2;
+    string converted_amount = 3;
+    string converted_currency = 4;
+}
+
+message CurrencyExchangeProto {
+    string bid = 1;
+    string ask = 2;
+}
+
+message QuoteBuyingMythTokenRequest {
+    string quantity = 1;
+    saga.proto.api.payment.CardPaymentData credit_card_info = 2;
+    string denomination_currency = 3;
+    string origin_sub_account = 4;
+    string user_id = 5;
+}
+
+message QuoteBuyingMythTokenResponse {
+    string uphold_quote_id = 1;
+    string origin_sub_account = 2;
+}
+
+message ConfirmBuyingMythTokenRequest {
+    string quote_id = 1;
+    string user_id = 2;
+    saga.proto.api.payment.CardPaymentData credit_card_info = 3;
+}
+
+message QuoteMythTokenWithdrawalRequest {
+    string user_id = 1;
+    string quantity = 2;
+}
+
+message QuoteMythTokenWithdrawalResponse {
+    string total_amount = 1;
+    string gas_fee = 2;
+}
+
+message ConfirmMythTokenWithdrawalRequest {
+    string quote_id = 1;
+}
