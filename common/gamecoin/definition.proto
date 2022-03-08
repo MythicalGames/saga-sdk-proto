@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common.gamecoin";
+
+package saga.proto.common.gamecoin;
+
+enum GameCoinState {
+    FAILED = 0;
+    ISSUED = 1;
+    TRANSFERRED = 2;
+    BURNED = 3;
+}

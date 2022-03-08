@@ -33,7 +33,7 @@ message ItemsProto {
 
 // Issue item call
 message IssueItemRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string game_inventory_id = 2;
     string oauth_id = 3;
     string game_item_type_id = 5;
@@ -46,13 +46,13 @@ message IssueItemRequest {
 
 // Get item calls
 message GetItemRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string game_inventory_id = 2;
     bool history = 3;
 }
 
 message GetItemsRequest {
-    string environment_id = 1;
+    string title_id = 1;
     uint64 created_timestamp = 2;
     int32 page_size = 3;
     saga.proto.common.sort.SortOrder sort_order = 4;
@@ -61,7 +61,7 @@ message GetItemsRequest {
 }
 
 message GetItemsForPlayerRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string oauth_id = 2;
 }
 
@@ -72,7 +72,7 @@ message UpdateItemMetadata {
 }
 
 message UpdateItemsMetadataRequest {
-    string environment_id = 1;
+    string title_id = 1;
     repeated UpdateItemMetadata update_items = 2;
 }
 
@@ -83,7 +83,7 @@ message UpdateItemsMetadataResponse {
 
 // Transfer item call
 message TransferItemRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string game_inventory_id = 2;
     string source_oauth_id = 3;
     string destination_oauth_id = 4;
@@ -92,6 +92,6 @@ message TransferItemRequest {
 
 // Burn item call
 message BurnItemRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string game_inventory_id = 2;
 }

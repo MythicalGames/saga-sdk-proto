@@ -55,24 +55,24 @@ message CreateItemTypeRequest {
 
 // Get item type calls
 message GetItemTypeRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string game_item_type_id = 2;
 }
 
 message GetItemTypesRequest {
-    string environment_id = 1;
+    string title_id = 1;
     repeated string game_item_type_ids = 2;
 }
 
 // Update item type metadata
 message UpdateItemTypeMetadataPayload {
-    string environment_id = 1;
+    string title_id = 1;
     string game_item_type_id = 2;
     saga.proto.common.Metadata metadata = 3;
 }
 
 message UpdateItemTypePayload {
-    string environment_id = 1;
+    string title_id = 1;
     string game_item_type_id = 2;
     bool withdrawable = 3;
 }

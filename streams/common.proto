@@ -6,5 +6,5 @@ option java_package = "games.mythical.saga.sdk.proto.streams";
 package saga.rpc.streams;
 
 message Subscribe {
-    string environment_id = 1;
+    string title_id = 1;
 }

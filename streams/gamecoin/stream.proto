@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.gamecoin";
+
+import "google/protobuf/empty.proto";
+import "streams/common.proto";
+import "common/gamecoin/definition.proto";
+
+package saga.rpc.streams.gamecoin;
+
+message GameCoinStatusUpdate {
+    string trace_id = 1;
+    string oauth_id = 2;
+    string currency_id = 3;
+    int32 coin_count = 4;
+    saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
+}
+
+message GameCoinStatusConfirmRequest {
+    string trace_id = 1;
+    string title_id = 2;
+    string currency_id = 3;
+    saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
+}
+
+service GameCoinStream {
+    rpc GameCoinStatusStream(saga.rpc.streams.Subscribe) returns (stream GameCoinStatusUpdate);
+    rpc GameCoinStatusConfirmation(GameCoinStatusConfirmRequest) returns (google.protobuf.Empty);
+}

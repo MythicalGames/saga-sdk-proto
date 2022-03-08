@@ -17,7 +17,7 @@ message ItemTypeStatusUpdate {
 
 message ItemTypeStatusConfirmRequest {
     string trace_id = 1;
-    string environment_id = 2;
+    string title_id = 2;
     string game_item_type_id = 3;
     saga.proto.common.itemtype.ItemTypeState item_type_state = 4;
 }
