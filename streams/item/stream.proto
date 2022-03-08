@@ -21,7 +21,7 @@ message ItemStatusUpdate {
 
 message ItemStatusConfirmRequest {
     string trace_id = 1;
-    string environment_id = 2;
+    string title_id = 2;
     string game_inventory_id = 3;
     saga.proto.common.item.ItemState item_state = 4;
 }

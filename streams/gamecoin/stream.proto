@@ -19,7 +19,7 @@ message GameCoinStatusUpdate {
 
 message GameCoinStatusConfirmRequest {
     string trace_id = 1;
-    string environment_id = 2;
+    string title_id = 2;
     string currency_id = 3;
     saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
 }

@@ -31,7 +31,7 @@ message GameCoinsProto {
 
 // Issue coins call
 message IssueGameCoinRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string currency_id = 2;
     string oauth_id = 3;
     int32 coin_count = 4;
@@ -39,13 +39,13 @@ message IssueGameCoinRequest {
 
 // Get coins call
 message GetGameCoinRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string oauth_id = 2;
     string currency_id = 3;
 }
 
 message GetGameCoinsRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string oauth_id = 2;
     uint64 created_after_timestamp = 4;
     int32 page_size = 5;
@@ -54,7 +54,7 @@ message GetGameCoinsRequest {
 
 // Transfer coins call
 message TransferGameCoinRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string source_oauth_id = 3;
     string destination_oauth_id = 4;
     string currency_id = 5;
@@ -63,7 +63,7 @@ message TransferGameCoinRequest {
 
 // Burn coins call
 message BurnGameCoinRequest {
-    string environment_id = 1;
+    string title_id = 1;
     string oauth_id = 2;
     string currency_id = 3;
     int32 coin_count = 4;
