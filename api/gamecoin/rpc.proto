@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.gamecoin";
+
+import "api/gamecoin/definition.proto";
+import "common/common.proto";
+
+package saga.rpc.api.gamecoin;
+
+service GameCoinService {
+    rpc GetGameCoin(saga.proto.api.gamecoin.GetGameCoinRequest) returns (saga.proto.api.gamecoin.GameCoinProto);
+    rpc GetGameCoins(saga.proto.api.gamecoin.GetGameCoinsRequest) returns (saga.proto.api.gamecoin.GameCoinsProto);
+    rpc IssueGameCoin(saga.proto.api.gamecoin.IssueGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc TransferGameCoin(saga.proto.api.gamecoin.TransferGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc BurnGameCoin(saga.proto.api.gamecoin.BurnGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
+}
