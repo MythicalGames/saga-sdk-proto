@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/struct.proto";
 import "common/sort.proto";
 
 option java_multiple_files = true;
@@ -17,8 +16,15 @@ message QueryOptionsProto {
 
 message FilterValueProto {
     oneof kind {
-        FilterConditional conditional = 1;
+        ExpressionProto expression = 1;
         FilterOperation operation = 2;
+    }
+}
+
+message ExpressionProto {
+    string attribute_name = 1;
+    FilterConditional conditional = 2;
+    oneof kind {
         double double_value = 3;
         string string_value = 4;
         bool bool_value = 5;
