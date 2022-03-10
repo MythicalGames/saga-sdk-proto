@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.transaction";
+
+import "common/query.proto";
+
+package saga.proto.api.transaction;
+
+message TransactionProto {
+    string transaction_id = 1;
+    string title_id = 2;
+    int64 created_timestamp = 3;
+}
+
+message TransactionsProto {
+    repeated TransactionProto transactions = 1;
+}
+
+message GetTransactionsForPlayerRequest {
+    string oauth_id = 1;
+    common.query.QueryOptionsProto query_options = 2;
+}
+
+message GetTransactionsForItemTypeRequest {
+    string item_type_id = 1;
+    string token_id = 2;
+    string title_id = 3;
+    common.query.QueryOptionsProto query_options = 4;
+}

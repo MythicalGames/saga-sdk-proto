@@ -5,6 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
 import "common/itemtype/definition.proto";
 import "common/common.proto";
+import "common/query.proto";
 
 package saga.proto.api.itemtype;
 
@@ -61,7 +62,7 @@ message GetItemTypeRequest {
 
 message GetItemTypesRequest {
     string title_id = 1;
-    repeated string game_item_type_ids = 2;
+    common.query.QueryOptionsProto query_options = 2;
 }
 
 // Update item type metadata

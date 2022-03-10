@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.title";
+
+import "common/query.proto";
+
+package saga.proto.api.title;
+
+message TitleProto {
+    string title_id = 1;
+    string name = 2;
+    int64 created_timestamp = 3;
+}
+
+message TitlesProto {
+    repeated TitleProto titles = 1;
+}
+
+message GetTitlesRequest {
+    common.query.QueryOptionsProto query_options = 1;
+}
