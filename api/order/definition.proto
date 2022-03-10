@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+import "common/sort.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.order";
+
+package saga.proto.api.order;
+
+//// Order definitions
+message QuoteProto {
+    string trace_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+    string tax = 4; // maybe call it fee? fee for fees in crypto and tax in fiat
+    string tax_currency = 5;
+    string total = 6;
+    string currency = 7;
+    PaymentProviderId payment_provider_id = 8;
+    string buyer_address = 9;
+    string seller_address = 10;
+    string conversion_rate = 11;
+    uint64 created_timestamp = 63;
+}
+
+// TODO: there are duplicate PaymentProviderId in the payments definition
+enum PaymentProviderId {
+    CREDIT_CARD = 0;
+    UPHOLD = 1;
+    MYTHICAL = 2;
+}
+
+message PaymentProviderData {
+    oneof payment_provider_data {
+        CreditCardData credit_card_data = 1;
+        string uphold_card_id = 2;
+    }
+}
+
+message CreditCardData {
+    string first_name = 1;
+    string last_name = 2;
+    string address_line_1 = 3;
+    string address_line_2 = 4;
+    string city = 5;
+    string state = 6;
+    string postal_code = 7;
+    string country_name = 8;
+    string country_iso_alpha_2 = 9;
+    string expiration_month = 10;
+    string expiration_year = 11;
+    string card_type = 12;
+    string instrument_id = 13;
+    string payment_method_token_id = 14;
+}
+
+//// Request and response definitions
+
+// create quote call
+message CreateQuoteRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string subtotal = 3; // TODO: amoir, so we still thinking storing price so it isn't passed in?
+    PaymentProviderData payment_provider_data = 4;
+    oneof order_type { // TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
+        string item_type_address = 5;
+        string listing_address = 6;
+        bool buy_myth_token = 7;
+        bool withdraw_myth_token = 9;
+        bool myth_to_usd = 10;
+        string withdraw_item_address = 11;
+    }
+}
+
+// confirm quote call
+message ConfirmQuoteRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+    PaymentProviderData payment_provider_data = 4;
+    string fraud_session_id = 5;
+}
