@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "common/sort.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.sga.sdk.proto.common";
+
+package saga.proto.common.query;
+
+message QueryOptionsProto {
+    repeated FilterValueProto filter_options = 1;
+    int32 page_size = 2;
+    common.sort.SortOrder sort_order = 3;
+    string sort_attribute = 4;
+}
+
+message FilterValueProto {
+    oneof kind {
+        ExpressionProto expression = 1;
+        FilterOperation operation = 2;
+    }
+}
+
+message ExpressionProto {
+    string attribute_name = 1;
+    FilterConditional conditional = 2;
+    oneof kind {
+        double double_value = 3;
+        string string_value = 4;
+        bool bool_value = 5;
+    }
+}
+
+enum FilterConditional {
+    EQUALS = 0;
+    EQUALS_LESS_THAN = 1;
+    LESS_THAN = 2;
+    EQUALS_GREATER_THAN = 3;
+    GREATER_THAN = 4;
+    NOT_EQUALS = 5;
+    CONTAINS = 6;
+    NOT_CONTAINS = 7;
+}
+
+enum FilterOperation {
+    AND = 0;
+    OR = 1;
+}
