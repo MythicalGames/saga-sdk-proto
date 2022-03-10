@@ -23,6 +23,7 @@ message QuoteProto {
     uint64 created_timestamp = 63;
 }
 
+// TODO: there are duplicate PaymentProviderId in the payments definition
 enum PaymentProviderId {
     CREDIT_CARD = 0;
     UPHOLD = 1;
