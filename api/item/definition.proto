@@ -7,6 +7,7 @@ import "common/item/definition.proto";
 import "common/common.proto";
 import "common/finalization.proto";
 import "common/sort.proto";
+import "common/query.proto";
 
 package saga.proto.api.item;
 // TODO: all definitions are WIPs so we take what we can
@@ -52,12 +53,9 @@ message GetItemRequest {
 }
 
 message GetItemsRequest {
-    string title_id = 1;
-    uint64 created_timestamp = 2;
-    int32 page_size = 3;
-    saga.proto.common.sort.SortOrder sort_order = 4;
-    saga.proto.common.finalization.Finalized finalized = 5;
-    string token_name = 6;
+    common.query.QueryOptionsProto query_options = 1;
+    saga.proto.common.finalization.Finalized finalized = 2;
+    string token_name = 3;
 }
 
 message GetItemsForPlayerRequest {
