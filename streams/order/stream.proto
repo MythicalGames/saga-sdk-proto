@@ -21,7 +21,8 @@ message OrderStatusUpdate {
 message OrderStatusConfirmRequest {
     string oauth_id = 1;
     string trace_id = 2;
-    saga.proto.common.order.OrderState order_state = 3;
+    string order_id = 3;
+    saga.proto.common.order.OrderState order_state = 4;
 }
 
 service OrderStream {

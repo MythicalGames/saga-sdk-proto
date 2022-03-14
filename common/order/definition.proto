@@ -6,10 +6,10 @@ option java_package = "games.mythical.saga.sdk.proto.common.order";
 package saga.proto.common.order;
 
 enum OrderState {
-  FAILED = 0;
-  STARTED = 1;
-  COMPLETE = 2;
-  PAID = 3;
-  EXPIRED = 4;
-  REFUNDED = 5;
+    FAILED = 0;
+    STARTED = 1;
+    COMPLETE = 2;
+    PAID = 3;
+    EXPIRED = 4;
+    REFUNDED = 5;
 }
