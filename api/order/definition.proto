@@ -56,13 +56,13 @@ message CreditCardData {
 
 //// Request and response definitions
 
-// create quote call
-message CreateQuoteRequest {
+// create order quote call
+message CreateOrderQuoteRequest {
     string title_id = 1;
     string oauth_id = 2;
     string subtotal = 3; // TODO: amoir, so we still thinking storing price so it isn't passed in?
     PaymentProviderData payment_provider_data = 4;
-    oneof order_type { // TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
+    oneof order_type {// TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
         string item_type_address = 5;
         string listing_address = 6;
         bool buy_myth_token = 7;
@@ -72,8 +72,8 @@ message CreateQuoteRequest {
     }
 }
 
-// confirm quote call
-message ConfirmQuoteRequest {
+// confirm order call
+message ConfirmOrderRequest {
     string title_id = 1;
     string oauth_id = 2;
     string quote_id = 3;

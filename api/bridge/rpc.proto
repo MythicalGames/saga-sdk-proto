@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "api/bridge/definition.proto";
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.bridge";
+
+package saga.rpc.api.bridge;
+
+service BridgeService {
+    rpc WithdrawItem(saga.proto.api.bridge.WithdrawItemRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc GetBridge(saga.proto.api.bridge.GetBridgeRequest) returns (saga.proto.api.bridge.BridgeProto);
+}

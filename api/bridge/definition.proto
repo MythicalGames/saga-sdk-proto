@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "common/sort.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.bridge";
+
+package saga.proto.api.bridge;
+
+//// Bridge definitions
+message BridgeProto {
+    string trace_id = 1;
+    // ???
+    string mythical_address = 2;
+    string mainnet_address = 3;
+    string chain_name = 4;
+}
+
+//// Request and response definitions
+
+// withdraw item call
+message WithdrawItemRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string item_type_address = 3;
+    string item_address = 4;
+    string destination_address = 5;
+    string destination_chain = 6;
+    string origin_address = 7;
+}
+
+// get bridge call
+message GetBridgeRequest {
+}
