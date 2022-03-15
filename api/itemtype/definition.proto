@@ -14,7 +14,6 @@ message ItemTypeProto {
     string trace_id = 1;
     string game_item_type_id = 2;
     string name = 3;
-    string address = 4;
     string title_id = 5;
     PriRevShareSettings pri_rev_share_settings = 6;
     SecRevShareSettings sec_rev_share_settings = 7;

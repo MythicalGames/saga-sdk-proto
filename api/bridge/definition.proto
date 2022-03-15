@@ -20,8 +20,8 @@ message BridgeProto {
 message WithdrawItemRequest {
     string title_id = 1;
     string oauth_id = 2;
-    string item_type_address = 3;
-    string item_address = 4;
+    string game_item_type_id = 3;
+    string game_inventory_id = 4;
     string destination_address = 5;
     string destination_chain = 6;
     string origin_address = 7;

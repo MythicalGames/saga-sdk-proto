@@ -15,8 +15,8 @@ message QuoteProto {
     string total = 6;
     string currency = 7;
     PaymentProviderId payment_provider_id = 8;
-    string buyer_address = 9;
-    string seller_address = 10;
+    string buyer_oauth_id = 9;
+    string seller_oauth_id = 10;
     string conversion_rate = 11;
     uint64 created_timestamp = 63;
 }
@@ -61,12 +61,13 @@ message CreateOrderQuoteRequest {
     string subtotal = 3; // TODO: amoir, so we still thinking storing price so it isn't passed in?
     PaymentProviderData payment_provider_data = 4;
     oneof order_type {// TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
-        string item_type_address = 5;
+        string game_item_type_id = 5;
         string listing_address = 6;
         bool buy_myth_token = 7;
         bool withdraw_myth_token = 9;
         bool myth_to_usd = 10;
         string withdraw_item_address = 11;
+        bool no_op = 12;
     }
 }
 
