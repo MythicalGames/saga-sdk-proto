@@ -12,4 +12,5 @@ service ListingService {
     rpc CreateListingQuote(saga.proto.api.listing.CreateListingQuoteRequest) returns (saga.proto.api.listing.ListingQuoteProto);
     rpc ConfirmListing(saga.proto.api.listing.ConfirmListingRequest) returns (saga.proto.common.ReceivedResponse);
     rpc CancelListing(saga.proto.api.listing.CancelListingRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc GetListings(saga.proto.api.listing.GetListingsRequest) returns (saga.proto.api.listing.ListingsProto);
 }

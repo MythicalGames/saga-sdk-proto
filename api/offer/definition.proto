@@ -3,6 +3,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.offer";
 
+import "common/query.proto";
+
 package saga.proto.api.offer;
 
 //// Offer definitions
@@ -16,6 +18,19 @@ message OfferQuoteProto {
     string total = 7;
     string currency = 8;
     uint64 created_timestamp = 63;
+}
+
+message OfferProto {
+    string oauth_id = 1;
+    string title_id = 2;
+    string game_inventory_id = 3;
+    string currency = 4;
+    string total = 5;
+    uint64 created_timestamp = 6;
+}
+
+message OffersProto {
+    repeated OfferProto offers = 1;
 }
 
 //// Request and response definitions
@@ -40,4 +55,11 @@ message CancelOfferRequest {
     string title_id = 1;
     string oauth_id = 2;
     string offer_id = 3;
+}
+
+message GetOffersRequest {
+    common.query.QueryOptionsProto query_options = 1;
+    string item_type_id = 2;
+    string token = 3;
+    string oauth_id = 4;
 }
