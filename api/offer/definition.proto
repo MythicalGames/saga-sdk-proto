@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.offer";
+
+package saga.proto.api.offer;
+
+//// Offer definitions
+message OfferQuoteProto {
+    string trace_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+    string game_inventory_id = 4;
+    string tax = 5; // and fees?
+    string tax_currency = 6;
+    string total = 7;
+    string currency = 8;
+    uint64 created_timestamp = 63;
+}
+
+//// Request and response definitions
+
+// offer-related
+message CreateOfferQuoteRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string game_inventory_id = 3;
+    string total = 4;
+    string currency = 5;
+}
+
+message ConfirmOfferRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+    // TODO: where's the payment data? Also are offers fronted payment or we somehow storing it (securely) then charging when needed
+}
+
+message CancelOfferRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string offer_id = 3;
+}

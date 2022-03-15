@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "api/listing/definition.proto";
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.listing";
+
+package saga.rpc.api.listing;
+
+service ListingService {
+    rpc CreateListingQuote(saga.proto.api.listing.CreateListingQuoteRequest) returns (saga.proto.api.listing.ListingQuoteProto);
+    rpc ConfirmListing(saga.proto.api.listing.ConfirmListingRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc CancelListing(saga.proto.api.listing.CancelListingRequest) returns (saga.proto.common.ReceivedResponse);
+}

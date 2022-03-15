@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "api/offer/definition.proto";
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.offer";
+
+package saga.rpc.api.offer;
+
+service OfferService {
+    rpc CreateOfferQuote(saga.proto.api.offer.CreateOfferQuoteRequest) returns (saga.proto.api.offer.OfferQuoteProto);
+    rpc ConfirmOffer(saga.proto.api.offer.ConfirmOfferRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc CancelOffer(saga.proto.api.offer.CancelOfferRequest) returns (saga.proto.common.ReceivedResponse);
+}
