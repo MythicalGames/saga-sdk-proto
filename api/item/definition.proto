@@ -6,7 +6,6 @@ option java_package = "games.mythical.saga.sdk.proto.api.item";
 import "common/item/definition.proto";
 import "common/common.proto";
 import "common/finalization.proto";
-import "common/sort.proto";
 import "common/query.proto";
 
 package saga.proto.api.item;

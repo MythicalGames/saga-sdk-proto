@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.listing";
+
+package saga.proto.api.listing;
+
+//// Listing definitions
+message ListingQuoteProto {
+    string trace_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+    string game_inventory_id = 4;
+    string tax = 5; // and fees?
+    string tax_currency = 6;
+    string total = 7;
+    string currency = 8;
+    uint64 created_timestamp = 63;
+}
+
+//// Request and response definitions
+
+message CreateListingQuoteRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string game_inventory_id = 3;
+    string total = 4;
+    string currency = 5;
+}
+
+message ConfirmListingRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string quote_id = 3;
+}
+
+message CancelListingRequest {
+    string title_id = 1;
+    string oauth_id = 2;
+    string listing_id = 3;
+}

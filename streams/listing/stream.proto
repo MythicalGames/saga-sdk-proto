@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "streams/common.proto";
+import "common/listing/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.listing";
+
+package saga.rpc.streams.listing;
+
+message ListingStatusUpdate {
+    string oauth_id = 1;
+    string trace_id = 2;
+    string quote_id = 3;
+    string listing_id = 4;
+    string total = 6;
+    saga.proto.common.listing.ListingState listing_state = 7;
+}
+
+message ListingStatusConfirmRequest {
+    string oauth_id = 1;
+    string trace_id = 2;
+    string listing_id = 3;
+    saga.proto.common.listing.ListingState listing_state = 5;
+}
+
+service ListingStream {
+    rpc ListingStatusStream(saga.rpc.streams.Subscribe) returns (stream ListingStatusUpdate);
+    rpc ListingStatusConfirmation(ListingStatusConfirmRequest) returns (google.protobuf.Empty);
+}
