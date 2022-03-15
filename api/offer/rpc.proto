@@ -12,4 +12,5 @@ service OfferService {
     rpc CreateOfferQuote(saga.proto.api.offer.CreateOfferQuoteRequest) returns (saga.proto.api.offer.OfferQuoteProto);
     rpc ConfirmOffer(saga.proto.api.offer.ConfirmOfferRequest) returns (saga.proto.common.ReceivedResponse);
     rpc CancelOffer(saga.proto.api.offer.CancelOfferRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc GetOffers(saga.proto.api.offer.GetOffersRequest) returns (saga.proto.api.offer.OffersProto);
 }
