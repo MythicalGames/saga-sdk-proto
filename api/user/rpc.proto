@@ -11,4 +11,5 @@ service UserService {
     rpc GetUser(saga.proto.api.user.GetUserRequest) returns (saga.proto.api.user.UserProto);
     rpc GetUsers(saga.proto.api.user.GetUsersRequest) returns (saga.proto.api.user.UsersProto);
     rpc UpdateUser(saga.proto.api.user.UpdateUserRequest) returns (saga.proto.api.user.UserProto);
+    rpc GetWalletAssets(saga.proto.api.user.GetWalletAssetsRequest) returns (saga.proto.api.user.WalletAsset);
 }

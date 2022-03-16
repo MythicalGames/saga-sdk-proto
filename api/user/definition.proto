@@ -33,6 +33,30 @@ message CybersourceAccount {
     // and more?
 }
 
+message WalletAsset {
+    string nmyth_token = 1;
+    string nmyth_token_quantity = 2;
+    string ausd_token = 3;
+    string ausd_token_quantity = 4;
+    repeated NftItem nft_items = 5;
+    repeated FungibleToken fungible_tokens = 6;
+
+}
+
+message NftItem {
+    string item_type_name = 1;
+    string item_type_id = 2;
+    string contract_address = 3;
+    string token_id = 4;
+}
+
+message FungibleToken {
+    string name = 1;
+    string game_id = 2;
+    string quantity = 3;
+    string contract_address = 4;
+}
+
 //// Request and response definitions
 
 // Get user calls
@@ -50,4 +74,12 @@ message UpdateUserRequest {
     string title_id = 1;
     string oauth_id = 2;
     // TODO: what is being updated here
+}
+
+// Get wallet assets call
+message GetWalletAssetsRequest {
+    string oauth_id = 1;
+    string publisher_id = 2;
+    string partner_id = 3;
+    string title_id = 4;
 }
