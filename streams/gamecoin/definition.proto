@@ -23,8 +23,3 @@ message GameCoinStatusConfirmRequest {
     string currency_id = 3;
     saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
 }
-
-service GameCoinStream {
-    rpc GameCoinStatusStream(saga.rpc.streams.Subscribe) returns (stream GameCoinStatusUpdate);
-    rpc GameCoinStatusConfirmation(GameCoinStatusConfirmRequest) returns (google.protobuf.Empty);
-}

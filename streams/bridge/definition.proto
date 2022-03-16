@@ -19,14 +19,3 @@ message BridgeStatusUpdate {
     string mythical_transaction_id = 8;
     string mainnet_transaction_id = 9;
 }
-
-message BridgeStatusConfirmRequest {
-    string oauth_id = 1;
-    string trace_id = 2;
-    string mythical_transaction_id = 3;
-}
-
-service BridgeStream {
-    rpc BridgeStatusStream(saga.rpc.streams.Subscribe) returns (stream BridgeStatusUpdate);
-    rpc BridgeStatusConfirmation(BridgeStatusConfirmRequest) returns (google.protobuf.Empty);
-}
