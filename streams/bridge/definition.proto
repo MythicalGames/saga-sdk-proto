@@ -11,22 +11,11 @@ package saga.rpc.streams.bridge;
 message BridgeStatusUpdate {
     string oauth_id = 1;
     string trace_id = 2;
-    string item_type_address = 3;
-    string item_address = 4;
+    string game_item_type_id = 3;
+    string game_inventory_id = 4;
     string destination_address = 5;
     string destination_chain = 6;
     string origin_address = 7;
     string mythical_transaction_id = 8;
     string mainnet_transaction_id = 9;
-}
-
-message BridgeStatusConfirmRequest {
-    string oauth_id = 1;
-    string trace_id = 2;
-    string mythical_transaction_id = 3;
-}
-
-service BridgeStream {
-    rpc BridgeStatusStream(saga.rpc.streams.Subscribe) returns (stream BridgeStatusUpdate);
-    rpc BridgeStatusConfirmation(BridgeStatusConfirmRequest) returns (google.protobuf.Empty);
 }

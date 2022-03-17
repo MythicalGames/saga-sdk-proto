@@ -18,15 +18,3 @@ message ItemStatusUpdate {
     string metadata_uri = 6;
     saga.proto.common.item.ItemState item_state = 8;
 }
-
-message ItemStatusConfirmRequest {
-    string trace_id = 1;
-    string title_id = 2;
-    string game_inventory_id = 3;
-    saga.proto.common.item.ItemState item_state = 4;
-}
-
-service ItemStream {
-    rpc ItemStatusStream(saga.rpc.streams.Subscribe) returns (stream ItemStatusUpdate);
-    rpc ItemStatusConfirmation(ItemStatusConfirmRequest) returns (google.protobuf.Empty);
-}

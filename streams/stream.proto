@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "streams/common.proto";
+import "streams/bridge/definition.proto";
+import "streams/gamecoin/definition.proto";
+import "streams/item/definition.proto";
+import "streams/itemtype/definition.proto";
+import "streams/listing/definition.proto";
+import "streams/myth/definition.proto";
+import "streams/offer/definition.proto";
+import "streams/order/definition.proto";
+import "streams/user/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams";
+
+package saga.rpc.streams;
+
+message StatusUpdate {
+    string trace_id = 1;
+    oneof status_update {
+        streams.bridge.BridgeStatusUpdate bridge_status = 2;
+        streams.gamecoin.GameCoinStatusUpdate game_coin_status = 3;
+        streams.item.ItemStatusUpdate item_status = 4;
+        streams.itemtype.ItemTypeStatusUpdate item_type_status = 5;
+        streams.listing.ListingStatusUpdate listing_status = 6;
+        streams.myth.MythTokenStatusUpdate myth_token_status = 7;
+        streams.offer.OfferStatusUpdate offer_status = 8;
+        streams.order.OrderStatusUpdate order_status = 9;
+        streams.user.UserStatusUpdate user_status = 10;
+    }
+    int64 created_timestamp = 15;
+}
+
+message StatusConfirmRequest {
+    string trace_id = 1;
+    // TODO: what else to confirm with?
+}
+
+service StatusStream {
+    rpc StatusStream(saga.rpc.streams.Subscribe) returns (stream StatusUpdate);
+    rpc StatusConfirmation(StatusConfirmRequest) returns (google.protobuf.Empty);
+}

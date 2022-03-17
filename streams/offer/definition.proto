@@ -18,16 +18,3 @@ message OfferStatusUpdate {
     string total = 6;
     saga.proto.common.offer.OfferState offer_state = 7;
 }
-
-message OfferStatusConfirmRequest {
-    string oauth_id = 1;
-    string trace_id = 2;
-    string listing_id = 3;
-    string game_inventory_id = 4;
-    saga.proto.common.offer.OfferState offer_state = 5;
-}
-
-service OfferStream {
-    rpc OfferStatusStream(saga.rpc.streams.Subscribe) returns (stream OfferStatusUpdate);
-    rpc OfferStatusConfirmation(OfferStatusConfirmRequest) returns (google.protobuf.Empty);
-}

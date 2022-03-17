@@ -14,8 +14,6 @@ message GameCoinProto {
     string currency_id = 3;
     string name = 4;
     string oauth_id = 6;
-    string contract_address = 7;
-    string title_id = 8;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
 }
