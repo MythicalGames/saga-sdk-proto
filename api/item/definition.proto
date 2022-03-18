@@ -8,7 +8,7 @@ import "common/common.proto";
 import "common/finalization.proto";
 import "common/query.proto";
 
-package saga.proto.api.item;
+package saga.api.item;
 // TODO: all definitions are WIPs so we take what we can
 
 //// Item definitions
@@ -19,7 +19,7 @@ message ItemProto {
     string oauth_id = 6;
     int32 serial_number = 8;
     string metadata_uri = 9;
-    saga.proto.common.Metadata metadata = 11;
+    saga.common.Metadata metadata = 11;
     saga.proto.common.item.ItemState item_state = 12;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
@@ -37,7 +37,7 @@ message IssueItemRequest {
     string game_inventory_id = 2;
     string oauth_id = 3;
     string game_item_type_id = 5;
-    saga.proto.common.Metadata metadata = 8;
+    saga.common.Metadata metadata = 8;
     // optional
     string store_id = 9;
     string order_id = 10;
@@ -52,8 +52,8 @@ message GetItemRequest {
 }
 
 message GetItemsRequest {
-    common.query.QueryOptionsProto query_options = 1;
-    saga.proto.common.finalization.Finalized finalized = 2;
+    saga.common.QueryOptionsProto query_options = 1;
+    saga.common.Finalized finalized = 2;
     string token_name = 3;
 }
 
@@ -65,7 +65,7 @@ message GetItemsForPlayerRequest {
 // Metadata calls
 message UpdateItemMetadata {
     string game_inventory_id = 1;
-    saga.proto.common.Metadata metadata = 2;
+    saga.common.Metadata metadata = 2;
 }
 
 message UpdateItemsMetadataRequest {

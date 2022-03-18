@@ -7,13 +7,13 @@ import "common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
 
-package saga.rpc.api.myth;
+package saga.api.myth;
 
 service MythService {
-    rpc GetGasFee(google.protobuf.Empty) returns (saga.proto.api.myth.GasFeeProto);
-    rpc GetCurrencyExchange(google.protobuf.Empty) returns (saga.proto.api.myth.CurrencyExchangeProto);
-    rpc QuoteBuyingMythToken(saga.proto.api.myth.QuoteBuyingMythTokenRequest) returns (saga.proto.api.myth.QuoteBuyingMythTokenResponse);
-    rpc ConfirmBuyingMythToken(saga.proto.api.myth.ConfirmBuyingMythTokenRequest) returns (saga.proto.common.ReceivedResponse);
-    rpc QuoteMythTokenWithdrawal(saga.proto.api.myth.QuoteMythTokenWithdrawalRequest) returns (saga.proto.api.myth.QuoteMythTokenWithdrawalResponse);
-    rpc ConfirmMythTokenWithdrawal(saga.proto.api.myth.ConfirmMythTokenWithdrawalRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc GetGasFee(google.protobuf.Empty) returns (saga.api.myth.GasFeeProto);
+    rpc GetCurrencyExchange(google.protobuf.Empty) returns (saga.api.myth.CurrencyExchangeProto);
+    rpc QuoteBuyingMythToken(saga.api.myth.QuoteBuyingMythTokenRequest) returns (saga.api.myth.QuoteBuyingMythTokenResponse);
+    rpc ConfirmBuyingMythToken(saga.api.myth.ConfirmBuyingMythTokenRequest) returns (saga.common.ReceivedResponse);
+    rpc QuoteMythTokenWithdrawal(saga.api.myth.QuoteMythTokenWithdrawalRequest) returns (saga.api.myth.QuoteMythTokenWithdrawalResponse);
+    rpc ConfirmMythTokenWithdrawal(saga.api.myth.ConfirmMythTokenWithdrawalRequest) returns (saga.common.ReceivedResponse);
 }

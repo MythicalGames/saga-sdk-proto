@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.transaction";
 
 import "common/query.proto";
 
-package saga.proto.api.transaction;
+package saga.api.transaction;
 
 message TransactionProto {
     string transaction_id = 1;
@@ -19,12 +19,12 @@ message TransactionsProto {
 
 message GetTransactionsForPlayerRequest {
     string oauth_id = 1;
-    common.query.QueryOptionsProto query_options = 2;
+    saga.common.QueryOptionsProto query_options = 2;
 }
 
 message GetTransactionsForItemTypeRequest {
     string item_type_id = 1;
     string token_id = 2;
     string title_id = 3;
-    common.query.QueryOptionsProto query_options = 4;
+    saga.common.QueryOptionsProto query_options = 4;
 }

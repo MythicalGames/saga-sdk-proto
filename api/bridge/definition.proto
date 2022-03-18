@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.bridge";
 
-package saga.proto.api.bridge;
+package saga.api.bridge;
 
 //// Bridge definitions
 message BridgeProto {

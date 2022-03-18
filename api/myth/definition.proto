@@ -5,7 +5,7 @@ import "api/payment/definition.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
 
-package saga.proto.api.myth;
+package saga.api.myth;
 
 message GasFeeProto {
     string gwei_amount = 1;
@@ -21,7 +21,7 @@ message CurrencyExchangeProto {
 
 message QuoteBuyingMythTokenRequest {
     string quantity = 1;
-    saga.proto.api.payment.CardPaymentData credit_card_info = 2;
+    saga.api.payment.CardPaymentData credit_card_info = 2;
     string denomination_currency = 3;
     string origin_sub_account = 4;
     string user_id = 5;
@@ -35,7 +35,7 @@ message QuoteBuyingMythTokenResponse {
 message ConfirmBuyingMythTokenRequest {
     string quote_id = 1;
     string user_id = 2;
-    saga.proto.api.payment.CardPaymentData credit_card_info = 3;
+    saga.api.payment.CardPaymentData credit_card_info = 3;
 }
 
 message QuoteMythTokenWithdrawalRequest {

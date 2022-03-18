@@ -6,11 +6,11 @@ import "common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.offer";
 
-package saga.rpc.api.offer;
+package saga.api.offer;
 
 service OfferService {
-    rpc CreateOfferQuote(saga.proto.api.offer.CreateOfferQuoteRequest) returns (saga.proto.api.offer.OfferQuoteProto);
-    rpc ConfirmOffer(saga.proto.api.offer.ConfirmOfferRequest) returns (saga.proto.common.ReceivedResponse);
-    rpc CancelOffer(saga.proto.api.offer.CancelOfferRequest) returns (saga.proto.common.ReceivedResponse);
-    rpc GetOffers(saga.proto.api.offer.GetOffersRequest) returns (saga.proto.api.offer.OffersProto);
+    rpc CreateOfferQuote(saga.api.offer.CreateOfferQuoteRequest) returns (saga.api.offer.OfferQuoteProto);
+    rpc ConfirmOffer(saga.api.offer.ConfirmOfferRequest) returns (saga.common.ReceivedResponse);
+    rpc CancelOffer(saga.api.offer.CancelOfferRequest) returns (saga.common.ReceivedResponse);
+    rpc GetOffers(saga.api.offer.GetOffersRequest) returns (saga.api.offer.OffersProto);
 }

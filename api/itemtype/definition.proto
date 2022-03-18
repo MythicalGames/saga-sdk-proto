@@ -7,7 +7,7 @@ import "common/itemtype/definition.proto";
 import "common/common.proto";
 import "common/query.proto";
 
-package saga.proto.api.itemtype;
+package saga.api.itemtype;
 
 //// Item type definitions
 message ItemTypeProto {
@@ -22,7 +22,7 @@ message ItemTypeProto {
     saga.proto.common.itemtype.ItemTypeState item_type_state = 10;
     int64 created_timestamp = 11;
     int64 updated_timestamp = 12;
-    saga.proto.common.Metadata metadata = 13;
+    saga.common.Metadata metadata = 13;
 }
 
 message ItemTypesProto {
@@ -49,7 +49,7 @@ message CreateItemTypeRequest {
     // optional
     PriRevShareSettings pri_rev_share_settings = 5;
     SecRevShareSettings sec_rev_share_settings = 6;
-    saga.proto.common.Metadata metadata = 7;
+    saga.common.Metadata metadata = 7;
     bool withdrawable = 8;
 }
 
@@ -61,14 +61,14 @@ message GetItemTypeRequest {
 
 message GetItemTypesRequest {
     string title_id = 1;
-    common.query.QueryOptionsProto query_options = 2;
+    saga.common.QueryOptionsProto query_options = 2;
 }
 
 // Update item type metadata
 message UpdateItemTypeMetadataPayload {
     string title_id = 1;
     string game_item_type_id = 2;
-    saga.proto.common.Metadata metadata = 3;
+    saga.common.Metadata metadata = 3;
 }
 
 message UpdateItemTypePayload {

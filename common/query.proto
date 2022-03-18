@@ -5,12 +5,12 @@ import "common/sort.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common";
 
-package saga.proto.common.query;
+package saga.common;
 
 message QueryOptionsProto {
     repeated FilterValueProto filter_options = 1;
     int32 page_size = 2;
-    common.sort.SortOrder sort_order = 3;
+    common.SortOrder sort_order = 3;
     string sort_attribute = 4;
 }
 

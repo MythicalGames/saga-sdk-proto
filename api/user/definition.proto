@@ -6,14 +6,14 @@ import "common/query.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.user";
 
-package saga.proto.api.user;
+package saga.api.user;
 
 //// User definitions
 message UserProto {
     string trace_id = 1;
     string oauth_id = 2;
     string chain_address = 3;
-    proto.common.user.UserState user_state = 4;
+    saga.proto.common.user.UserState user_state = 4;
     repeated UpholdAccount uphold_accounts = 5;
     CybersourceAccount cybersource_account = 6;
     uint64 created_timestamp = 63;
@@ -66,7 +66,7 @@ message GetUserRequest {
 }
 
 message GetUsersRequest {
-    proto.common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
 }
 
 // Update user call

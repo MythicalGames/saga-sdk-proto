@@ -6,12 +6,12 @@ option java_package = "games.mythical.saga.sdk.proto.api.gamecoin";
 import "api/gamecoin/definition.proto";
 import "common/common.proto";
 
-package saga.rpc.api.gamecoin;
+package saga.api.gamecoin;
 
 service GameCoinService {
-    rpc GetGameCoin(saga.proto.api.gamecoin.GetGameCoinRequest) returns (saga.proto.api.gamecoin.GameCoinProto);
-    rpc GetGameCoins(saga.proto.api.gamecoin.GetGameCoinsRequest) returns (saga.proto.api.gamecoin.GameCoinsProto);
-    rpc IssueGameCoin(saga.proto.api.gamecoin.IssueGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
-    rpc TransferGameCoin(saga.proto.api.gamecoin.TransferGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
-    rpc BurnGameCoin(saga.proto.api.gamecoin.BurnGameCoinRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc GetGameCoin(saga.api.gamecoin.GetGameCoinRequest) returns (saga.api.gamecoin.GameCoinProto);
+    rpc GetGameCoins(saga.api.gamecoin.GetGameCoinsRequest) returns (saga.api.gamecoin.GameCoinsProto);
+    rpc IssueGameCoin(saga.api.gamecoin.IssueGameCoinRequest) returns (saga.common.ReceivedResponse);
+    rpc TransferGameCoin(saga.api.gamecoin.TransferGameCoinRequest) returns (saga.common.ReceivedResponse);
+    rpc BurnGameCoin(saga.api.gamecoin.BurnGameCoinRequest) returns (saga.common.ReceivedResponse);
 }

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "games.mythical.saga.sdk.proto.api.payments";
+option java_package = "games.mythical.saga.sdk.proto.api.payment";
 
-package saga.proto.api.payment;
+package saga.api.payment;
 
 message PaymentMethodProto {
     string trace_id = 1;

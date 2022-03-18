@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.common";
 
 import "google/protobuf/struct.proto";
 
-package saga.proto.common;
+package saga.common;
 
 message Metadata {
     string name = 1;

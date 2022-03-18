@@ -5,8 +5,8 @@ option java_package = "games.mythical.saga.sdk.proto.api.title";
 
 import "api/title/definition.proto";
 
-package saga.rpc.api.title;
+package saga.api.title;
 
 service TitleService {
-    rpc GetTitles(saga.proto.api.title.GetTitlesRequest) returns (saga.proto.api.title.TitlesProto);
+    rpc GetTitles(saga.api.title.GetTitlesRequest) returns (saga.api.title.TitlesProto);
 }
