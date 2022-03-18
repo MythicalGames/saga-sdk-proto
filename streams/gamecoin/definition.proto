@@ -11,9 +11,12 @@ package saga.rpc.streams.gamecoin;
 
 /* Results from a GameCoin status update gRPC stream call */
 message GameCoinStatusUpdate {
+    /* User of GameCoin */
     string oauth_id = 1;
     string currency_id = 2;
+    /* Amount of coins */
     int32 coin_count = 3;
+    /* State of the GameCoin, see GameCoinState */
     saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
 }
 

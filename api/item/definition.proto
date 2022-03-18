@@ -61,12 +61,12 @@ message IssueItemRequest {
     string request_ip = 7;
 }
 
-// @exclude TODO is there singular get item on just title_id and game_inventory_id?
 /* Get Item call */
 message GetItemRequest {
-    string title_id = 1;
-    string game_inventory_id = 2;
-    bool history = 3;
+    /* Game's id for the Item to retrieve */
+    string game_inventory_id = 1;
+    /* Include history of the Item? */
+    bool history = 2;
 }
 
 /* Get Items call */
@@ -103,13 +103,17 @@ message UpdateItemsMetadataResponse {
 
 /* Transfer item call */
 message TransferItemRequest {
+    /* Game's id for the Item to transfer */
     string game_inventory_id = 1;
+    /* User of Item to transfer from */
     string source_oauth_id = 2;
+    /* User of Item to transfer to */
     string destination_oauth_id = 3;
     string store_id = 4;
 }
 
 /* Burn item call */
 message BurnItemRequest {
+    /* Game's id for the Item to burn */
     string game_inventory_id = 1;
 }

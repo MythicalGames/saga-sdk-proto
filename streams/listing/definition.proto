@@ -11,9 +11,14 @@ package saga.rpc.streams.listing;
 
 /* Results from a Listing status update gRPC stream call */
 message ListingStatusUpdate {
+    /* User of this Listing */
     string oauth_id = 1;
+    /* Quote id associated to this Listing */
     string quote_id = 2;
+    /* Unique id for this listing */
     string listing_id = 3;
+    /* total cose on listing */
     string total = 4;
+    /* State of the Listing, see ListingState */
     saga.proto.common.listing.ListingState listing_state = 7;
 }

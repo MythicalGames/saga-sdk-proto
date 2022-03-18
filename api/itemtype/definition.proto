@@ -78,12 +78,16 @@ message GetItemTypesRequest {
 
 /* Update Metadata on ItemType call */
 message UpdateItemTypeMetadataPayload {
+    /* Game's ItemTypeId for the Metadata to update */
     string game_item_type_id = 1;
+    /* Metadata to update the ItemType with */
     saga.proto.common.Metadata metadata = 2;
 }
 
 /* Update ItemType call */
 message UpdateItemTypePayload {
+    /* Game's ItemTypeId for the ItemType to update */
     string game_item_type_id = 1;
+    /* withdrawable state to udpate to */
     bool withdrawable = 2;
 }

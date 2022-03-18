@@ -11,5 +11,6 @@ package saga.rpc.streams.myth;
 
 /* Results from a MYTH Token status update gRPC stream call */
 message MythTokenStatusUpdate {
+    /* State of the MYTH Token, see MythTokenState */
     saga.proto.common.myth.MythTokenState token_state = 1;
 }
