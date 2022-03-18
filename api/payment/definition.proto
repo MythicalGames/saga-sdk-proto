@@ -4,16 +4,24 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.payments";
 
 package saga.proto.api.payment;
-
+/**
+ * @exclude
+ * ----- Payment Definitions -----
+ */
 message PaymentMethodProto {
     string trace_id = 1;
+    /* User of this Payment Method */
     string oauth_id = 2;
+    /* Card data */
     CardPaymentData card_payment_data = 3;
+    /* Address of this Payment Method */
     Address address = 4;
 }
 
 message CardPaymentData {
+    /* Make this the default payment */
     bool make_default = 1;
+    /* Payment data to use */
     oneof card_payment_data {
         CybersourcePaymentData cybersource = 2;
     }
@@ -38,11 +46,15 @@ message CybersourcePaymentData {
     string instrument_id = 4;
 }
 
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 message CreatePaymentMethodRequest {
     string oauth_id = 1;
     CardPaymentData card_payment_data = 2;
     Address address = 3;
-    // Uphold linking info?
+    // @exclude Uphold linking info?
 }
 
 message GetPaymentMethodRequest {
@@ -53,7 +65,7 @@ message UpdatePaymentMethodRequest {
     string oauth_id = 1;
     CardPaymentData card_payment_data = 2;
     Address address = 3;
-    // Uphold linking info
+    // @exclude Uphold linking info
 }
 
 message DeletePaymentMethodRequest {

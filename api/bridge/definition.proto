@@ -4,29 +4,39 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.bridge";
 
 package saga.proto.api.bridge;
-
-//// Bridge definitions
+/**
+ * @exclude
+ * ----- Bridge Definitions -----
+ */
 message BridgeProto {
     string trace_id = 1;
-    // ???
+    // @exclude ???
     string mythical_address = 2;
+    /* Address on Mainnet */
     string mainnet_address = 3;
+    /* Name of the chain */
     string chain_name = 4;
 }
 
-//// Request and response definitions
-
-// withdraw item call
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+/* Withdraw Call */
 message WithdrawItemRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string game_item_type_id = 3;
-    string game_inventory_id = 4;
-    string destination_address = 5;
-    string destination_chain = 6;
-    string origin_address = 7;
+    string oauth_id = 1;
+    /* Id of the ItemType this Item belongs to */
+    string game_item_type_id = 2;
+    /* Id of the GameInventory this Item belongs to */
+    string game_inventory_id = 3;
+    /* Address of where this Item is going to */
+    string destination_address = 4;
+    /* Chain of where this Item is going to */
+    string destination_chain = 5;
+    /* Address that this Item is being withdrawn from */
+    string origin_address = 6;
 }
 
-// get bridge call
+/* Get Bridge Call */
 message GetBridgeRequest {
 }

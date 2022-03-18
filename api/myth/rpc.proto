@@ -10,10 +10,16 @@ option java_package = "games.mythical.saga.sdk.proto.api.myth";
 package saga.rpc.api.myth;
 
 service MythService {
+    /* Get the current MYTH price of 1 gas unit */
     rpc GetGasFee(google.protobuf.Empty) returns (saga.proto.api.myth.GasFeeProto);
+    /* Get the exchange rate of MYTH Token */
     rpc GetCurrencyExchange(google.protobuf.Empty) returns (saga.proto.api.myth.CurrencyExchangeProto);
+    /* Quote buying MYTH Tokens */
     rpc QuoteBuyingMythToken(saga.proto.api.myth.QuoteBuyingMythTokenRequest) returns (saga.proto.api.myth.QuoteBuyingMythTokenResponse);
+    /* Confirm buying of MYTH Tokens */
     rpc ConfirmBuyingMythToken(saga.proto.api.myth.ConfirmBuyingMythTokenRequest) returns (saga.proto.common.ReceivedResponse);
+    /* Quote withdrawing MYTH Tokens */
     rpc QuoteMythTokenWithdrawal(saga.proto.api.myth.QuoteMythTokenWithdrawalRequest) returns (saga.proto.api.myth.QuoteMythTokenWithdrawalResponse);
+    /* Confirm withdrawing MYTH Tokens */
     rpc ConfirmMythTokenWithdrawal(saga.proto.api.myth.ConfirmMythTokenWithdrawalRequest) returns (saga.proto.common.ReceivedResponse);
 }

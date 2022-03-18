@@ -6,8 +6,8 @@ option java_package = "games.mythical.saga.sdk.proto.common.offer";
 package saga.proto.common.offer;
 
 enum OfferState {
-    FAILED = 0;
-    CREATED = 1;
-    CONFIRMED = 2;
-    CANCELLED = 3;
+    FAILED = 0; // Offer failed current action
+    CREATED = 1; // Offer created successfully
+    CONFIRMED = 2; // Offer confirmed successfully
+    CANCELLED = 3; // Offer canceled
 }

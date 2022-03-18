@@ -9,11 +9,11 @@ option java_package = "games.mythical.saga.sdk.proto.streams.listing";
 
 package saga.rpc.streams.listing;
 
+/* Results from a Listing status update gRPC stream call */
 message ListingStatusUpdate {
     string oauth_id = 1;
-    string trace_id = 2;
-    string quote_id = 3;
-    string listing_id = 4;
-    string total = 6;
+    string quote_id = 2;
+    string listing_id = 3;
+    string total = 4;
     saga.proto.common.listing.ListingState listing_state = 7;
 }

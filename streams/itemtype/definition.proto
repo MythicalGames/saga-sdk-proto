@@ -9,8 +9,8 @@ import "common/itemtype/definition.proto";
 
 package saga.rpc.streams.itemtype;
 
+/* Results from a ItemType status update gRPC stream call */
 message ItemTypeStatusUpdate {
-    string trace_id = 1;
-    string game_item_type_id = 3;
+    string game_item_type_id = 1;
     saga.proto.common.itemtype.ItemTypeState item_type_state = 8;
 }

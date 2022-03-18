@@ -9,7 +9,7 @@ option java_package = "games.mythical.saga.sdk.proto.streams.myth";
 
 package saga.rpc.streams.myth;
 
+/* Results from a MYTH Token status update gRPC stream call */
 message MythTokenStatusUpdate {
-    string trace_id = 1;
-    saga.proto.common.myth.MythTokenState token_state = 2;
+    saga.proto.common.myth.MythTokenState token_state = 1;
 }

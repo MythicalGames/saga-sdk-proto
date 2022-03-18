@@ -9,11 +9,18 @@ import "common/common.proto";
 package saga.rpc.api.item;
 
 service ItemService {
+    /* Get an item */
     rpc GetItem(saga.proto.api.item.GetItemRequest) returns (saga.proto.api.item.ItemProto);
+    /* Get items based on filters */
     rpc GetItems(saga.proto.api.item.GetItemsRequest) returns (saga.proto.api.item.ItemsProto);
+    /* Get all Items for a player */
     rpc GetItemsForPlayer(saga.proto.api.item.GetItemsForPlayerRequest) returns (saga.proto.api.item.ItemsProto);
+    /* Issue an Item */
     rpc IssueItem(saga.proto.api.item.IssueItemRequest) returns (saga.proto.common.ReceivedResponse);
+    /* Transfer Item between users */
     rpc TransferItem(saga.proto.api.item.TransferItemRequest) returns (saga.proto.common.ReceivedResponse);
+    /* Burn an Item */
     rpc BurnItem(saga.proto.api.item.BurnItemRequest) returns (saga.proto.common.ReceivedResponse);
+    /* Update the Metadata for an Item */
     rpc UpdateItemsMetadata(saga.proto.api.item.UpdateItemsMetadataRequest) returns (saga.proto.api.item.UpdateItemsMetadataResponse);
 }

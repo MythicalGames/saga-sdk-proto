@@ -9,8 +9,8 @@ option java_package = "games.mythical.saga.sdk.proto.streams.user";
 
 package saga.rpc.streams.user;
 
+/* Results from a User status update gRPC stream call */
 message UserStatusUpdate {
     string oauth_id = 1;
-    string trace_id = 2;
-    saga.proto.common.user.UserState user_state = 3;
+    saga.proto.common.user.UserState user_state = 2;
 }

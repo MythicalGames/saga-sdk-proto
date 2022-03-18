@@ -8,5 +8,6 @@ import "api/title/definition.proto";
 package saga.rpc.api.title;
 
 service TitleService {
+    /* Get all titles from a filter */
     rpc GetTitles(saga.proto.api.title.GetTitlesRequest) returns (saga.proto.api.title.TitlesProto);
 }

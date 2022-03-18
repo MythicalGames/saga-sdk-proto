@@ -9,12 +9,12 @@ option java_package = "games.mythical.saga.sdk.proto.streams.offer";
 
 package saga.rpc.streams.offer;
 
+/* Results from a Offer status update gRPC stream call */
 message OfferStatusUpdate {
     string oauth_id = 1;
-    string trace_id = 2;
-    string quote_id = 3;
-    string offer_id = 4;
-    string game_inventory_id = 5;
-    string total = 6;
-    saga.proto.common.offer.OfferState offer_state = 7;
+    string quote_id = 2;
+    string offer_id = 3;
+    string game_inventory_id = 4;
+    string total = 5;
+    saga.proto.common.offer.OfferState offer_state = 6;
 }

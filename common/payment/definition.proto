@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.common.payment";
 
 package saga.proto.common.payment;
 
-// Payment definitions
+/* Types of Payments */
 enum PaymentProviderId {
     BRAINTREE = 0;
     BITPAY = 1;

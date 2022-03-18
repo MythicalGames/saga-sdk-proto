@@ -7,10 +7,15 @@ import "google/protobuf/struct.proto";
 
 package saga.proto.common;
 
+/* Metadata properties of Item */
 message Metadata {
+    /* Name of item */
     string name = 1;
+    /* Description of the item */
     string description = 2;
+    /* URL to the image of the item */
     string image = 3;
+    /* Additional properties about the Item in a <Key,Value> structure */
     google.protobuf.Struct properties = 4;
 }
 

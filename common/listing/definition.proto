@@ -6,8 +6,8 @@ option java_package = "games.mythical.saga.sdk.proto.common.listing";
 package saga.proto.common.listing;
 
 enum ListingState {
-    FAILED = 0;
-    CREATED = 1;
-    SOLD = 2;
-    CANCELLED = 3;
+    FAILED = 0; // Listing has failed current action
+    CREATED = 1; // Listing created successfully
+    SOLD = 2; // Listing sold successfully
+    CANCELLED = 3; // Listing cancelled successfully
 }

@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.common.myth";
 package saga.proto.common.myth;
 
 enum MythTokenState {
-    FAILED = 0;
-    TRANSFERRED = 1;
-    WITHDRAWN = 2;
+    FAILED = 0; // MYTH Token failed to be transferred/withdrawn
+    TRANSFERRED = 1; // MYTH Token transferred successfully
+    WITHDRAWN = 2; // MYTH Token withdrawn successfully
 }

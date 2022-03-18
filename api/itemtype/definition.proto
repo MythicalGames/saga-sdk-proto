@@ -8,20 +8,29 @@ import "common/common.proto";
 import "common/query.proto";
 
 package saga.proto.api.itemtype;
-
-//// Item type definitions
+/**
+ * @exclude
+ * ----- ItemType Definitions -----
+ */
 message ItemTypeProto {
     string trace_id = 1;
+    /* The game's unique id for this ItemType */
     string game_item_type_id = 2;
+    /* Name of this ItemType */
     string name = 3;
+    /* Title this ItemType is associated with */
     string title_id = 5;
     PriRevShareSettings pri_rev_share_settings = 6;
     SecRevShareSettings sec_rev_share_settings = 7;
+    /* Is this iten withdrawable? */
     bool withdrawable = 8;
     PriceMap price_map = 9;
     saga.proto.common.itemtype.ItemTypeState item_type_state = 10;
+    /* When this ItemType was created */
     int64 created_timestamp = 11;
+    /* When this ItemType was last updated */
     int64 updated_timestamp = 12;
+    /* Metadata associated w ith this ItemType */
     saga.proto.common.Metadata metadata = 13;
 }
 
@@ -38,41 +47,43 @@ message SecRevShareSettings {
 message PriceMap {
 }
 
-//// Request and response definitions
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 
-// Create item type call
+/* Create item type call */
 message CreateItemTypeRequest {
-    string title_id = 1;
-    string publisher_address = 2;
-    string game_item_type_id = 3;
-    string name = 4;
-    // optional
-    PriRevShareSettings pri_rev_share_settings = 5;
-    SecRevShareSettings sec_rev_share_settings = 6;
-    saga.proto.common.Metadata metadata = 7;
-    bool withdrawable = 8;
+    string publisher_address = 1;
+    /* The game's unique id for this ItemType */
+    string game_item_type_id = 2;
+    string name = 3;
+    /* (optional) */
+    PriRevShareSettings pri_rev_share_settings = 4;
+    SecRevShareSettings sec_rev_share_settings = 5;
+    saga.proto.common.Metadata metadata = 6;
+    /* Is this ItemType withdrawable? */
+    bool withdrawable = 7;
 }
 
-// Get item type calls
+/* Get ItemType call */
 message GetItemTypeRequest {
-    string title_id = 1;
-    string game_item_type_id = 2;
+    string game_item_type_id = 1;
 }
 
+/* Get ItemTypes call */
 message GetItemTypesRequest {
-    string title_id = 1;
-    common.query.QueryOptionsProto query_options = 2;
+    common.query.QueryOptionsProto query_options = 1;
 }
 
-// Update item type metadata
+/* Update Metadata on ItemType call */
 message UpdateItemTypeMetadataPayload {
-    string title_id = 1;
-    string game_item_type_id = 2;
-    saga.proto.common.Metadata metadata = 3;
+    string game_item_type_id = 1;
+    saga.proto.common.Metadata metadata = 2;
 }
 
+/* Update ItemType call */
 message UpdateItemTypePayload {
-    string title_id = 1;
-    string game_item_type_id = 2;
-    bool withdrawable = 3;
+    string game_item_type_id = 1;
+    bool withdrawable = 2;
 }

@@ -6,24 +6,42 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
 
 package saga.proto.api.myth;
+/**
+ * @exclude
+ * ----- Myth Token Definitions -----
+ */
 
+/* Proto of converted units from gwei/eth */
 message GasFeeProto {
+    /* GWEI amount to convert */
     string gwei_amount = 1;
+    /* ETH amount to convert */
     string eth_amount = 2;
+    /* Amount after conversion */
     string converted_amount = 3;
+    /* Currency to convert GWEI/ETH to */
     string converted_currency = 4;
 }
 
 message CurrencyExchangeProto {
+    /* bid amount from Uphold */
     string bid = 1;
+    /* ask amount from Uphold */
     string ask = 2;
 }
 
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 message QuoteBuyingMythTokenRequest {
+    /* Amount of MYTH Tokens to buy */
     string quantity = 1;
+    /* Credit card payment */
     saga.proto.api.payment.CardPaymentData credit_card_info = 2;
     string denomination_currency = 3;
     string origin_sub_account = 4;
+    /* User that is buying MYTH Tokens */
     string user_id = 5;
 }
 
@@ -44,10 +62,13 @@ message QuoteMythTokenWithdrawalRequest {
 }
 
 message QuoteMythTokenWithdrawalResponse {
+    /* Amount of MYTH Tokens to withdraw */
     string total_amount = 1;
+    /* Gas cost of withdrawal */
     string gas_fee = 2;
 }
 
 message ConfirmMythTokenWithdrawalRequest {
+    /* Quote Id for this withdrawal */
     string quote_id = 1;
 }

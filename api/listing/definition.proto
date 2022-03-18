@@ -6,58 +6,86 @@ option java_package = "games.mythical.saga.sdk.proto.api.listing";
 import "common/query.proto";
 
 package saga.proto.api.listing;
-
-//// Listing definitions
+/**
+ * @exclude
+ * ----- Listing Definitions -----
+ */
 message ListingQuoteProto {
     string trace_id = 1;
+    /* User of this Listing */
     string oauth_id = 2;
+    /* unique QuoteId for this Listing */
     string quote_id = 3;
+    /* Item associated with this Listing */
     string game_inventory_id = 4;
-    string tax = 5; // and fees?
+    string tax = 5; // @exclude and fees?
+    /* Currency the tax is in */
     string tax_currency = 6;
+    /* Total price of Listing */
     string total = 7;
+    /* Type of currency the total is in */
     string currency = 8;
+    /* When the Listing was created */
     uint64 created_timestamp = 63;
 }
 
 message ListingProto {
+    /* User of this Listing */
     string oauth_id = 1;
-    string title_id = 2;
-    string game_inventory_id = 3;
-    string currency = 4;
-    string total = 5;
-    uint64 created_timestamp = 6;
+    /* Item associated with this Listing */
+    string game_inventory_id = 2;
+    /* Type of currency the total is in */
+    string currency = 3;
+    /* Total price of Listing */
+    string total = 4;
+    /* When the Listing was created */
+    uint64 created_timestamp = 5;
 }
 
 message ListingsProto {
     repeated ListingProto listings = 1;
 }
 
-//// Request and response definitions
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 
+/* Create Quote for a Listing call */
 message CreateListingQuoteRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string game_inventory_id = 3;
-    string total = 4;
-    string currency = 5;
+    /* User of this Listing Quote */
+    string oauth_id = 1;
+    /* Id of GameInventory for this Listing */
+    string game_inventory_id = 2;
+    /* Total cost amount for the Listing */
+    string total = 3;
+    /* Currency that the total is in */
+    string currency = 4;
 }
 
+/* Confirm the Listing call */
 message ConfirmListingRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string quote_id = 3;
+    /* User of this Listing */
+    string oauth_id = 1;
+    /* Quote Id of this Listing */
+    string quote_id = 2;
 }
 
+/* Cancel the Listing call */
 message CancelListingRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string listing_id = 3;
+    /* User of listing to cancel */
+    string oauth_id = 1;
+    /* Id of Listing to cancel */
+    string listing_id = 2;
 }
 
+/* Get Listings call */
 message GetListingsRequest {
+    /* Filter/Sorting options for the call */
     common.query.QueryOptionsProto query_options = 1;
+    /* Id of ItemType to get Listings for */
     string item_type_id = 2;
     string token = 3;
+    /* User to get Listings for */
     string oauth_id = 4;
 }

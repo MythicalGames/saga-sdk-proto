@@ -9,19 +9,30 @@ import "common/finalization.proto";
 import "common/query.proto";
 
 package saga.proto.api.item;
-// TODO: all definitions are WIPs so we take what we can
+// @exclude TODO: all definitions are WIPs so we take what we can
 
-//// Item definitions
+/**
+ * @exclude
+ * ----- Item Definitions -----
+ */
 message ItemProto {
     string trace_id = 1;
+    /* The game's unique id for this Item */
     string game_inventory_id = 2;
+    /* The game's ItemType id associated to this Item */
     string game_item_type_id = 3;
+    /* User for this Item */
     string oauth_id = 6;
     int32 serial_number = 8;
+    /* Metadata accessible address */
     string metadata_uri = 9;
+    /* Metadata for this Item */
     saga.proto.common.Metadata metadata = 11;
+    /* State that the Item is in. See ItemState for more information */
     saga.proto.common.item.ItemState item_state = 12;
+    /* When was this Item created */
     int64 created_timestamp = 13;
+    /* When was this Item last updated */
     int64 updated_timestamp = 14;
 }
 
@@ -29,66 +40,76 @@ message ItemsProto {
     repeated ItemProto items = 1;
 }
 
-//// Request and response definitions
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 
-// Issue item call
+/* Issue item call */
 message IssueItemRequest {
-    string title_id = 1;
-    string game_inventory_id = 2;
-    string oauth_id = 3;
-    string game_item_type_id = 5;
-    saga.proto.common.Metadata metadata = 8;
-    // optional
-    string store_id = 9;
-    string order_id = 10;
-    string request_ip = 11;
+    /* GameInventory Id of Item being issued */
+    string game_inventory_id = 1;
+    /* User that is issuing Item */
+    string oauth_id = 2;
+    /* Unique id set for your game of the Item being issued */
+    string game_item_type_id = 3;
+    /* Metadata associated to Item being issued */
+    saga.proto.common.Metadata metadata = 4;
+    // (optional) Id of store
+    string store_id = 5;
+    string order_id = 6;
+    string request_ip = 7;
 }
 
-// Get item calls
+// @exclude TODO is there singular get item on just title_id and game_inventory_id?
+/* Get Item call */
 message GetItemRequest {
     string title_id = 1;
     string game_inventory_id = 2;
     bool history = 3;
 }
 
+/* Get Items call */
 message GetItemsRequest {
+    /* Sort/filter options */
     common.query.QueryOptionsProto query_options = 1;
     saga.proto.common.finalization.Finalized finalized = 2;
     string token_name = 3;
 }
 
+/* Get Items for Player call */
 message GetItemsForPlayerRequest {
-    string title_id = 1;
-    string oauth_id = 2;
+    /* Player to get Items for */
+    string oauth_id = 1;
 }
 
-// Metadata calls
+/* Update Metadata call */
 message UpdateItemMetadata {
+    /* Update Metadata for the Item with this id */
     string game_inventory_id = 1;
+    /* Metadata to update with */
     saga.proto.common.Metadata metadata = 2;
 }
 
+/* Update Metadata on Item call */
 message UpdateItemsMetadataRequest {
-    string title_id = 1;
-    repeated UpdateItemMetadata update_items = 2;
+    repeated UpdateItemMetadata update_items = 1;
 }
 
 message UpdateItemsMetadataResponse {
-    // TODO: maybe at the minimum return the number successful of updated?
-    // int32 count = 1;
+    // @exclude TODO: maybe at the minimum return the number successful of updated?
+    // @exclude int32 count = 1;
 }
 
-// Transfer item call
+/* Transfer item call */
 message TransferItemRequest {
-    string title_id = 1;
-    string game_inventory_id = 2;
-    string source_oauth_id = 3;
-    string destination_oauth_id = 4;
-    string store_id = 5;
+    string game_inventory_id = 1;
+    string source_oauth_id = 2;
+    string destination_oauth_id = 3;
+    string store_id = 4;
 }
 
-// Burn item call
+/* Burn item call */
 message BurnItemRequest {
-    string title_id = 1;
-    string game_inventory_id = 2;
+    string game_inventory_id = 1;
 }
