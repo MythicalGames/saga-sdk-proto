@@ -7,13 +7,19 @@ option java_package = "games.mythical.saga.sdk.proto.common";
 
 package saga.proto.common.query;
 
+/* Options allowed when querying */
 message QueryOptionsProto {
+    /* Complete filter chain of attributes to filter on */
     repeated FilterValueProto filter_options = 1;
+    /* Size of the page of results */
     int32 page_size = 2;
+    /* Which order to sort */
     common.sort.SortOrder sort_order = 3;
+    /* Which attribute to sort on */
     string sort_attribute = 4;
 }
 
+/* container to allow building out a full filter of Expressions and FilterOperations */
 message FilterValueProto {
     oneof kind {
         ExpressionProto expression = 1;
@@ -21,9 +27,13 @@ message FilterValueProto {
     }
 }
 
+/* Allowed expression in a query. Expression is a combination of [attribute_name | conditional | value] */
 message ExpressionProto {
+    /* name of the attribute to filter on */
     string attribute_name = 1;
+    /* how to filter on the attribute (See FilterConditional) */
     FilterConditional conditional = 2;
+    /* value to filter on */
     oneof kind {
         double double_value = 3;
         string string_value = 4;
@@ -31,18 +41,20 @@ message ExpressionProto {
     }
 }
 
+/* Allowed compare operations when filtering */
 enum FilterConditional {
-    EQUALS = 0;
-    EQUALS_LESS_THAN = 1;
-    LESS_THAN = 2;
-    EQUALS_GREATER_THAN = 3;
-    GREATER_THAN = 4;
-    NOT_EQUALS = 5;
-    CONTAINS = 6;
-    NOT_CONTAINS = 7;
+    EQUALS = 0; // ObjectA = ObjectB
+    EQUALS_LESS_THAN = 1; // ObjectA <= ObjectB
+    LESS_THAN = 2; // ObjectA < ObjectB
+    EQUALS_GREATER_THAN = 3; // ObjectA >= ObjectB
+    GREATER_THAN = 4; // ObjectA > ObjectB
+    NOT_EQUALS = 5; // ObjectA != ObjectB
+    CONTAINS = 6; // ObjectA is in ListB
+    NOT_CONTAINS = 7; // ObjectA is not in ListB
 }
 
+/* Alloed operations when chaining filters */
 enum FilterOperation {
-    AND = 0;
-    OR = 1;
+    AND = 0; // FilterA && FilterB
+    OR = 1; // FilterA || FilterB
 }

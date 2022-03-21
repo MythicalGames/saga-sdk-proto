@@ -7,9 +7,16 @@ import "common/query.proto";
 
 package saga.proto.api.title;
 
+/**
+ * @exclude
+ * ----- Title Definitions -----
+ */
 message TitleProto {
+    /* Unique id */
     string title_id = 1;
+    /* Name for this Title */
     string name = 2;
+    /* When this Title was created */
     int64 created_timestamp = 3;
 }
 
@@ -17,6 +24,12 @@ message TitlesProto {
     repeated TitleProto titles = 1;
 }
 
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+/* Get Titles call */
 message GetTitlesRequest {
+    /* Sort/Filter options */
     common.query.QueryOptionsProto query_options = 1;
 }

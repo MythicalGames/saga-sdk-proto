@@ -8,8 +8,12 @@ option java_package = "games.mythical.saga.sdk.proto.api.payment";
 package saga.rpc.api.payment;
 
 service PaymentService {
+    /* Create a Payment Method */
     rpc CreatePaymentMethod(saga.proto.api.payment.CreatePaymentMethodRequest) returns (saga.proto.api.payment.PaymentMethodProto);
+    /* Get Payment Method for a user */
     rpc GetPaymentMethod(saga.proto.api.payment.GetPaymentMethodRequest) returns (saga.proto.api.payment.PaymentMethodProto);
+    /* Update the Payment Method for a User */
     rpc UpdatePaymentMethod(saga.proto.api.payment.UpdatePaymentMethodRequest) returns (saga.proto.api.payment.PaymentMethodProto);
+    /* Delete a Payment Method for a User */
     rpc DeletePaymentMethod(saga.proto.api.payment.DeletePaymentMethodRequest) returns (saga.proto.api.payment.PaymentMethodProto);
 }

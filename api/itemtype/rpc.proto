@@ -10,9 +10,14 @@ import "google/protobuf/empty.proto";
 package saga.rpc.api.itemtype;
 
 service ItemTypeService {
+    /* Get an ItemType by Id */
     rpc GetItemType(saga.proto.api.itemtype.GetItemTypeRequest) returns (saga.proto.api.itemtype.ItemTypeProto);
+    /* Get ItemTypes based on filters */
     rpc GetItemTypes(saga.proto.api.itemtype.GetItemTypesRequest) returns (saga.proto.api.itemtype.ItemTypesProto);
+    /* Create an ItemType */
     rpc CreateItemType(saga.proto.api.itemtype.CreateItemTypeRequest) returns (saga.proto.common.ReceivedResponse);
+    /* Update the Metadata on the ItemType */
     rpc UpdateItemTypeMetadata(saga.proto.api.itemtype.UpdateItemTypeMetadataPayload) returns (google.protobuf.Empty) {}
+    /* Update the ItemType */
     rpc UpdateItemType(saga.proto.api.itemtype.UpdateItemTypePayload) returns (google.protobuf.Empty) {}
 }

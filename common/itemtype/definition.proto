@@ -6,9 +6,9 @@ option java_package = "games.mythical.saga.sdk.proto.common.itemtype";
 package saga.proto.common.itemtype;
 
 enum ItemTypeState {
-    FAILED = 0;
-    CREATED = 1;
-    FROZEN = 2;
-    SOLD_OUT = 3;
-    EXPIRED = 4;
+    FAILED = 0; // ItemType failed to perform current action
+    CREATED = 1; // ItemType created successfully
+    FROZEN = 2; // ItemType is Frozen
+    SOLD_OUT = 3; // ItemType is Sold Out
+    EXPIRED = 4; // ItemType has been expired
 }

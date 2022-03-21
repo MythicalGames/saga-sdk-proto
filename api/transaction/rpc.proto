@@ -8,6 +8,8 @@ import "api/transaction/definition.proto";
 package saga.rpc.api.transaction;
 
 service TransactionService {
+    /* Get all Transactions for a Player */
     rpc GetTransactionsForPlayer(saga.proto.api.transaction.GetTransactionsForPlayerRequest) returns (saga.proto.api.transaction.TransactionsProto);
+    /* Get all Transactions for an ItemType */
     rpc GetTransactionsForItemType(saga.proto.api.transaction.GetTransactionsForItemTypeRequest) returns (saga.proto.api.transaction.TransactionsProto);
 }

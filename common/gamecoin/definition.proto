@@ -6,8 +6,8 @@ option java_package = "games.mythical.saga.sdk.proto.common.gamecoin";
 package saga.proto.common.gamecoin;
 
 enum GameCoinState {
-    FAILED = 0;
-    ISSUED = 1;
-    TRANSFERRED = 2;
-    BURNED = 3;
+    FAILED = 0; // Failed to issue/transfer/burn Game Coin
+    ISSUED = 1; // Game Coin issued successfully
+    TRANSFERRED = 2; // Game Coin transferred successfully
+    BURNED = 3; // Game Coin burned successfully
 }

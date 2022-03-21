@@ -17,6 +17,7 @@ option java_package = "games.mythical.saga.sdk.proto.streams";
 
 package saga.rpc.streams;
 
+/* Returned results on sending a Status stream call */
 message StatusUpdate {
     string trace_id = 1;
     oneof status_update {
@@ -35,10 +36,12 @@ message StatusUpdate {
 
 message StatusConfirmRequest {
     string trace_id = 1;
-    // TODO: what else to confirm with?
+    // @exclude TODO: what else to confirm with?
 }
 
 service StatusStream {
+    /* Send a call to update the status */
     rpc StatusStream(saga.rpc.streams.Subscribe) returns (stream StatusUpdate);
+    /* Get verification of status */
     rpc StatusConfirmation(StatusConfirmRequest) returns (google.protobuf.Empty);
 }
