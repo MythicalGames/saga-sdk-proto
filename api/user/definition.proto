@@ -6,7 +6,7 @@ import "common/query.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.user";
 
-package saga.proto.api.user;
+package saga.api.user;
 
 /**
  * @exclude
@@ -19,8 +19,9 @@ message UserProto {
     /* Address on the chain */
     string chain_address = 3;
     /* What state the User is in */
-    proto.common.user.UserState user_state = 4;
+    saga.proto.common.user.UserState user_state = 4;
     /* Linked Uphold account */
+
     repeated UpholdAccount uphold_accounts = 5;
     /* Linked Cybersource account */
     CybersourceAccount cybersource_account = 6;
@@ -90,7 +91,7 @@ message GetUserRequest {
 /* Get Users call */
 message GetUsersRequest {
     /* Sort/Filter options */
-    proto.common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
 }
 
 /* Update User call */

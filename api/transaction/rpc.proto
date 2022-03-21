@@ -5,11 +5,11 @@ option java_package = "games.mythical.saga.sdk.proto.api.transaction";
 
 import "api/transaction/definition.proto";
 
-package saga.rpc.api.transaction;
+package saga.api.transaction;
 
 service TransactionService {
     /* Get all Transactions for a Player */
-    rpc GetTransactionsForPlayer(saga.proto.api.transaction.GetTransactionsForPlayerRequest) returns (saga.proto.api.transaction.TransactionsProto);
+    rpc GetTransactionsForPlayer(saga.api.transaction.GetTransactionsForPlayerRequest) returns (saga.api.transaction.TransactionsProto);
     /* Get all Transactions for an ItemType */
-    rpc GetTransactionsForItemType(saga.proto.api.transaction.GetTransactionsForItemTypeRequest) returns (saga.proto.api.transaction.TransactionsProto);
+    rpc GetTransactionsForItemType(saga.api.transaction.GetTransactionsForItemTypeRequest) returns (saga.api.transaction.TransactionsProto);
 }

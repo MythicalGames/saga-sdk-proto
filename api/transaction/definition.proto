@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.transaction";
 
 import "common/query.proto";
 
-package saga.proto.api.transaction;
+package saga.api.transaction;
 
 /**
  * @exclude
@@ -33,7 +33,7 @@ message GetTransactionsForPlayerRequest {
     /* Player to get Transactions for */
     string oauth_id = 1;
     /* Sort/Filter options */
-    common.query.QueryOptionsProto query_options = 2;
+    saga.common.QueryOptionsProto query_options = 2;
 }
 
 /* Get Transactions for an ItemType */
@@ -43,5 +43,5 @@ message GetTransactionsForItemTypeRequest {
     /* Token Id */
     string token_id = 2;
     /* Sort/Filter options */
-    common.query.QueryOptionsProto query_options = 3;
+    saga.common.QueryOptionsProto query_options = 3;
 }

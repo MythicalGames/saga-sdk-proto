@@ -3,7 +3,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.order";
 
-package saga.proto.api.order;
+package saga.api.order;
+
 /**
  * @exclude
  * ----- Order Definitions -----

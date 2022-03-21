@@ -6,11 +6,11 @@ import "common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.bridge";
 
-package saga.rpc.api.bridge;
+package saga.api.bridge;
 
 service BridgeService {
     /* Withdraw an Item */
-    rpc WithdrawItem(saga.proto.api.bridge.WithdrawItemRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc WithdrawItem(saga.api.bridge.WithdrawItemRequest) returns (saga.common.ReceivedResponse);
     /* Get Bridge */
-    rpc GetBridge(saga.proto.api.bridge.GetBridgeRequest) returns (saga.proto.api.bridge.BridgeProto);
+    rpc GetBridge(saga.api.bridge.GetBridgeRequest) returns (saga.api.bridge.BridgeProto);
 }

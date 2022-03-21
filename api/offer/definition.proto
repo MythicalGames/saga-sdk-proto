@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.offer";
 
 import "common/query.proto";
 
-package saga.proto.api.offer;
+package saga.api.offer;
 /**
  * @exclude
  * ----- Offer Definitions -----
@@ -81,7 +81,7 @@ message CancelOfferRequest {
 /* Get Offers call */
 message GetOffersRequest {
     /* Filter/Sort options for the call */
-    common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
     /* Id of ItemType to get Offers for */
     string item_type_id = 2;
     /* Token to get Offers for */

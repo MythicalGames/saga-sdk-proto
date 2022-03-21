@@ -8,7 +8,7 @@ import "common/common.proto";
 import "common/finalization.proto";
 import "common/query.proto";
 
-package saga.proto.api.item;
+package saga.api.item;
 // @exclude TODO: all definitions are WIPs so we take what we can
 
 /**
@@ -27,7 +27,7 @@ message ItemProto {
     /* Metadata accessible address */
     string metadata_uri = 9;
     /* Metadata for this Item */
-    saga.proto.common.Metadata metadata = 11;
+    saga.common.Metadata metadata = 11;
     /* State that the Item is in. See ItemState for more information */
     saga.proto.common.item.ItemState item_state = 12;
     /* When was this Item created */
@@ -54,7 +54,7 @@ message IssueItemRequest {
     /* Unique id set for your game of the Item being issued */
     string game_item_type_id = 3;
     /* Metadata associated to Item being issued */
-    saga.proto.common.Metadata metadata = 4;
+    saga.common.Metadata metadata = 4;
     // (optional) Id of store
     string store_id = 5;
     string order_id = 6;
@@ -72,8 +72,8 @@ message GetItemRequest {
 /* Get Items call */
 message GetItemsRequest {
     /* Sort/filter options */
-    common.query.QueryOptionsProto query_options = 1;
-    saga.proto.common.finalization.Finalized finalized = 2;
+    saga.common.QueryOptionsProto query_options = 1;
+    saga.common.Finalized finalized = 2;
     string token_name = 3;
 }
 
@@ -88,7 +88,7 @@ message UpdateItemMetadata {
     /* Update Metadata for the Item with this id */
     string game_inventory_id = 1;
     /* Metadata to update with */
-    saga.proto.common.Metadata metadata = 2;
+    saga.common.Metadata metadata = 2;
 }
 
 /* Update Metadata on Item call */

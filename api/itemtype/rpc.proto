@@ -7,17 +7,17 @@ import "api/itemtype/definition.proto";
 import "common/common.proto";
 import "google/protobuf/empty.proto";
 
-package saga.rpc.api.itemtype;
+package saga.api.itemtype;
 
 service ItemTypeService {
     /* Get an ItemType by Id */
-    rpc GetItemType(saga.proto.api.itemtype.GetItemTypeRequest) returns (saga.proto.api.itemtype.ItemTypeProto);
+    rpc GetItemType(saga.api.itemtype.GetItemTypeRequest) returns (saga.api.itemtype.ItemTypeProto);
     /* Get ItemTypes based on filters */
-    rpc GetItemTypes(saga.proto.api.itemtype.GetItemTypesRequest) returns (saga.proto.api.itemtype.ItemTypesProto);
+    rpc GetItemTypes(saga.api.itemtype.GetItemTypesRequest) returns (saga.api.itemtype.ItemTypesProto);
     /* Create an ItemType */
-    rpc CreateItemType(saga.proto.api.itemtype.CreateItemTypeRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc CreateItemType(saga.api.itemtype.CreateItemTypeRequest) returns (saga.common.ReceivedResponse);
     /* Update the Metadata on the ItemType */
-    rpc UpdateItemTypeMetadata(saga.proto.api.itemtype.UpdateItemTypeMetadataPayload) returns (google.protobuf.Empty) {}
+    rpc UpdateItemTypeMetadata(saga.api.itemtype.UpdateItemTypeMetadataPayload) returns (google.protobuf.Empty) {}
     /* Update the ItemType */
-    rpc UpdateItemType(saga.proto.api.itemtype.UpdateItemTypePayload) returns (google.protobuf.Empty) {}
+    rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (google.protobuf.Empty) {}
 }

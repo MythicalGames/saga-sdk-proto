@@ -7,7 +7,7 @@ import "common/itemtype/definition.proto";
 import "common/common.proto";
 import "common/query.proto";
 
-package saga.proto.api.itemtype;
+package saga.api.itemtype;
 /**
  * @exclude
  * ----- ItemType Definitions -----
@@ -31,7 +31,7 @@ message ItemTypeProto {
     /* When this ItemType was last updated */
     int64 updated_timestamp = 12;
     /* Metadata associated w ith this ItemType */
-    saga.proto.common.Metadata metadata = 13;
+    saga.common.Metadata metadata = 13;
 }
 
 message ItemTypesProto {
@@ -61,7 +61,7 @@ message CreateItemTypeRequest {
     /* (optional) */
     PriRevShareSettings pri_rev_share_settings = 4;
     SecRevShareSettings sec_rev_share_settings = 5;
-    saga.proto.common.Metadata metadata = 6;
+    saga.common.Metadata metadata = 6;
     /* Is this ItemType withdrawable? */
     bool withdrawable = 7;
 }
@@ -73,7 +73,7 @@ message GetItemTypeRequest {
 
 /* Get ItemTypes call */
 message GetItemTypesRequest {
-    common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
 }
 
 /* Update Metadata on ItemType call */
@@ -81,7 +81,7 @@ message UpdateItemTypeMetadataPayload {
     /* Game's ItemTypeId for the Metadata to update */
     string game_item_type_id = 1;
     /* Metadata to update the ItemType with */
-    saga.proto.common.Metadata metadata = 2;
+    saga.common.Metadata metadata = 2;
 }
 
 /* Update ItemType call */

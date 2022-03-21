@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.listing";
 
 import "common/query.proto";
 
-package saga.proto.api.listing;
+package saga.api.listing;
 /**
  * @exclude
  * ----- Listing Definitions -----
@@ -82,7 +82,7 @@ message CancelListingRequest {
 /* Get Listings call */
 message GetListingsRequest {
     /* Filter/Sorting options for the call */
-    common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
     /* Id of ItemType to get Listings for */
     string item_type_id = 2;
     string token = 3;

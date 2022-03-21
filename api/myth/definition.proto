@@ -5,7 +5,7 @@ import "api/payment/definition.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
 
-package saga.proto.api.myth;
+package saga.api.myth;
 /**
  * @exclude
  * ----- Myth Token Definitions -----
@@ -38,7 +38,7 @@ message QuoteBuyingMythTokenRequest {
     /* Amount of MYTH Tokens to buy */
     string quantity = 1;
     /* Credit card payment */
-    saga.proto.api.payment.CardPaymentData credit_card_info = 2;
+    saga.api.payment.CardPaymentData credit_card_info = 2;
     string denomination_currency = 3;
     string origin_sub_account = 4;
     /* User that is buying MYTH Tokens */
@@ -53,7 +53,7 @@ message QuoteBuyingMythTokenResponse {
 message ConfirmBuyingMythTokenRequest {
     string quote_id = 1;
     string user_id = 2;
-    saga.proto.api.payment.CardPaymentData credit_card_info = 3;
+    saga.api.payment.CardPaymentData credit_card_info = 3;
 }
 
 message QuoteMythTokenWithdrawalRequest {

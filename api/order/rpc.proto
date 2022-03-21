@@ -6,11 +6,11 @@ import "common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.order";
 
-package saga.rpc.api.order;
+package saga.api.order;
 
 service OrderService {
     /* Create an Order */
-    rpc CreateOrderQuote(saga.proto.api.order.CreateOrderQuoteRequest) returns (saga.proto.api.order.QuoteProto);
+    rpc CreateOrderQuote(saga.api.order.CreateOrderQuoteRequest) returns (saga.api.order.QuoteProto);
     /* Confirm the Order */
-    rpc ConfirmOrder(saga.proto.api.order.ConfirmOrderRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc ConfirmOrder(saga.api.order.ConfirmOrderRequest) returns (saga.common.ReceivedResponse);
 }

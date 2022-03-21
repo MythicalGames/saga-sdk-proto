@@ -5,7 +5,7 @@ import "common/sort.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common";
 
-package saga.proto.common.query;
+package saga.common;
 
 /* Options allowed when querying */
 message QueryOptionsProto {
@@ -14,7 +14,7 @@ message QueryOptionsProto {
     /* Size of the page of results */
     int32 page_size = 2;
     /* Which order to sort */
-    common.sort.SortOrder sort_order = 3;
+    common.SortOrder sort_order = 3;
     /* Which attribute to sort on */
     string sort_attribute = 4;
 }

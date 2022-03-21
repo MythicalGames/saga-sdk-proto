@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.gamecoin";
 
 import "common/sort.proto";
 
-package saga.proto.api.gamecoin;
+package saga.api.gamecoin;
 /**
  * @exclude
  * ----- GameCoin Definitions -----
@@ -52,7 +52,7 @@ message GetGameCoinsRequest {
     string oauth_id = 1;
     uint64 created_after_timestamp = 2;
     int32 page_size = 3;
-    saga.proto.common.sort.SortOrder sort_order = 4;
+    saga.common.SortOrder sort_order = 4;
 }
 
 /* Transfer coins call */

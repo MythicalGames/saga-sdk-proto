@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.title";
 
 import "common/query.proto";
 
-package saga.proto.api.title;
+package saga.api.title;
 
 /**
  * @exclude
@@ -31,5 +31,5 @@ message TitlesProto {
 /* Get Titles call */
 message GetTitlesRequest {
     /* Sort/Filter options */
-    common.query.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1;
 }

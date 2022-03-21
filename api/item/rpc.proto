@@ -6,21 +6,21 @@ option java_package = "games.mythical.saga.sdk.proto.api.item";
 import "api/item/definition.proto";
 import "common/common.proto";
 
-package saga.rpc.api.item;
+package saga.api.item;
 
 service ItemService {
     /* Get an item */
-    rpc GetItem(saga.proto.api.item.GetItemRequest) returns (saga.proto.api.item.ItemProto);
+    rpc GetItem(saga.api.item.GetItemRequest) returns (saga.api.item.ItemProto);
     /* Get items based on filters */
-    rpc GetItems(saga.proto.api.item.GetItemsRequest) returns (saga.proto.api.item.ItemsProto);
+    rpc GetItems(saga.api.item.GetItemsRequest) returns (saga.api.item.ItemsProto);
     /* Get all Items for a player */
-    rpc GetItemsForPlayer(saga.proto.api.item.GetItemsForPlayerRequest) returns (saga.proto.api.item.ItemsProto);
+    rpc GetItemsForPlayer(saga.api.item.GetItemsForPlayerRequest) returns (saga.api.item.ItemsProto);
     /* Issue an Item */
-    rpc IssueItem(saga.proto.api.item.IssueItemRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc IssueItem(saga.api.item.IssueItemRequest) returns (saga.common.ReceivedResponse);
     /* Transfer Item between users */
-    rpc TransferItem(saga.proto.api.item.TransferItemRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc TransferItem(saga.api.item.TransferItemRequest) returns (saga.common.ReceivedResponse);
     /* Burn an Item */
-    rpc BurnItem(saga.proto.api.item.BurnItemRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc BurnItem(saga.api.item.BurnItemRequest) returns (saga.common.ReceivedResponse);
     /* Update the Metadata for an Item */
-    rpc UpdateItemsMetadata(saga.proto.api.item.UpdateItemsMetadataRequest) returns (saga.proto.api.item.UpdateItemsMetadataResponse);
+    rpc UpdateItemsMetadata(saga.api.item.UpdateItemsMetadataRequest) returns (saga.api.item.UpdateItemsMetadataResponse);
 }

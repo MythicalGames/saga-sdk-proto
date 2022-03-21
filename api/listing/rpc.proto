@@ -6,15 +6,15 @@ import "common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.listing";
 
-package saga.rpc.api.listing;
+package saga.api.listing;
 
 service ListingService {
     /* Get a quote for a Listing */
-    rpc CreateListingQuote(saga.proto.api.listing.CreateListingQuoteRequest) returns (saga.proto.api.listing.ListingQuoteProto);
+    rpc CreateListingQuote(saga.api.listing.CreateListingQuoteRequest) returns (saga.api.listing.ListingQuoteProto);
     /* Confirm the Listing */
-    rpc ConfirmListing(saga.proto.api.listing.ConfirmListingRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc ConfirmListing(saga.api.listing.ConfirmListingRequest) returns (saga.common.ReceivedResponse);
     /* Cancel the Listing */
-    rpc CancelListing(saga.proto.api.listing.CancelListingRequest) returns (saga.proto.common.ReceivedResponse);
+    rpc CancelListing(saga.api.listing.CancelListingRequest) returns (saga.common.ReceivedResponse);
     /* Get Listings based on filters */
-    rpc GetListings(saga.proto.api.listing.GetListingsRequest) returns (saga.proto.api.listing.ListingsProto);
+    rpc GetListings(saga.api.listing.GetListingsRequest) returns (saga.api.listing.ListingsProto);
 }
