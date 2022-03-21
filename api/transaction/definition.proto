@@ -7,9 +7,16 @@ import "common/query.proto";
 
 package saga.api.transaction;
 
+/**
+ * @exclude
+ * ----- Transaction Definitions -----
+ */
 message TransactionProto {
+    /* Unique Id */
     string transaction_id = 1;
+    /* title that this transaction is from */
     string title_id = 2;
+    /* When this Transaction was created */
     int64 created_timestamp = 3;
 }
 
@@ -17,14 +24,24 @@ message TransactionsProto {
     repeated TransactionProto transactions = 1;
 }
 
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+/* Get Transactions for a Player call */
 message GetTransactionsForPlayerRequest {
+    /* Player to get Transactions for */
     string oauth_id = 1;
+    /* Sort/Filter options */
     saga.common.QueryOptionsProto query_options = 2;
 }
 
+/* Get Transactions for an ItemType */
 message GetTransactionsForItemTypeRequest {
+    /* Id of ItemType to query on */
     string item_type_id = 1;
+    /* Token Id */
     string token_id = 2;
-    string title_id = 3;
-    saga.common.QueryOptionsProto query_options = 4;
+    /* Sort/Filter options */
+    saga.common.QueryOptionsProto query_options = 3;
 }

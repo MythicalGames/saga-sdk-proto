@@ -9,6 +9,8 @@ option java_package = "games.mythical.saga.sdk.proto.api.order";
 package saga.api.order;
 
 service OrderService {
+    /* Create an Order */
     rpc CreateOrderQuote(saga.api.order.CreateOrderQuoteRequest) returns (saga.api.order.QuoteProto);
+    /* Confirm the Order */
     rpc ConfirmOrder(saga.api.order.ConfirmOrderRequest) returns (saga.common.ReceivedResponse);
 }

@@ -9,9 +9,13 @@ import "common/common.proto";
 package saga.api.gamecoin;
 
 service GameCoinService {
+    /* Get a GameCoin for a user */
     rpc GetGameCoin(saga.api.gamecoin.GetGameCoinRequest) returns (saga.api.gamecoin.GameCoinProto);
     rpc GetGameCoins(saga.api.gamecoin.GetGameCoinsRequest) returns (saga.api.gamecoin.GameCoinsProto);
+    /* Issue game coins to a user */
     rpc IssueGameCoin(saga.api.gamecoin.IssueGameCoinRequest) returns (saga.common.ReceivedResponse);
+    /* Transfer can coins between users */
     rpc TransferGameCoin(saga.api.gamecoin.TransferGameCoinRequest) returns (saga.common.ReceivedResponse);
+    /* Burn game coins for a user */
     rpc BurnGameCoin(saga.api.gamecoin.BurnGameCoinRequest) returns (saga.common.ReceivedResponse);
 }

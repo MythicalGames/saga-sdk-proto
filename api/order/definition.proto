@@ -5,12 +5,15 @@ option java_package = "games.mythical.saga.sdk.proto.api.order";
 
 package saga.api.order;
 
-//// Order definitions
+/**
+ * @exclude
+ * ----- Order Definitions -----
+ */
 message QuoteProto {
     string trace_id = 1;
     string oauth_id = 2;
     string quote_id = 3;
-    string tax = 4; // maybe call it fee? fee for fees in crypto and tax in fiat
+    string tax = 4; // @exclude maybe call it fee? fee for fees in crypto and tax in fiat
     string tax_currency = 5;
     string total = 6;
     string currency = 7;
@@ -21,7 +24,7 @@ message QuoteProto {
     uint64 created_timestamp = 63;
 }
 
-// TODO: there are duplicate PaymentProviderId in the payments definition
+// @exclude TODO: there are duplicate PaymentProviderId in the payments definition
 enum PaymentProviderId {
     CREDIT_CARD = 0;
     UPHOLD = 1;
@@ -52,15 +55,18 @@ message CreditCardData {
     string payment_method_token_id = 14;
 }
 
-//// Request and response definitions
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 
-// create order quote call
+/* Create Order Quote call */
 message CreateOrderQuoteRequest {
     string title_id = 1;
     string oauth_id = 2;
-    string subtotal = 3; // TODO: amoir, so we still thinking storing price so it isn't passed in?
+    string subtotal = 3; // @exclude TODO: amoir, so we still thinking storing price so it isn't passed in?
     PaymentProviderData payment_provider_data = 4;
-    oneof order_type {// TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
+    oneof order_type { // @exclude TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
         string game_item_type_id = 5;
         string listing_address = 6;
         bool buy_myth_token = 7;
@@ -71,7 +77,7 @@ message CreateOrderQuoteRequest {
     }
 }
 
-// confirm order call
+/* Confirm Order call */
 message ConfirmOrderRequest {
     string title_id = 1;
     string oauth_id = 2;

@@ -6,60 +6,86 @@ option java_package = "games.mythical.saga.sdk.proto.api.offer";
 import "common/query.proto";
 
 package saga.api.offer;
-
-//// Offer definitions
+/**
+ * @exclude
+ * ----- Offer Definitions -----
+ */
 message OfferQuoteProto {
     string trace_id = 1;
+    /* User of this Offer Quote */
     string oauth_id = 2;
+    /* Id of this Offer Quote */
     string quote_id = 3;
+    /* GameInventory Id for this Offer Quote */
     string game_inventory_id = 4;
-    string tax = 5; // and fees?
+    /* Amount of tax */
+    string tax = 5; // @exclude and fees?
+    /* Currency that Tax is in */
     string tax_currency = 6;
+    /* Total cost of the offer */
     string total = 7;
+    /* Currency the total is in */
     string currency = 8;
+    /* When the Offer was created */
     uint64 created_timestamp = 63;
 }
 
 message OfferProto {
+    /* User of the Offer */
     string oauth_id = 1;
-    string title_id = 2;
-    string game_inventory_id = 3;
-    string currency = 4;
-    string total = 5;
-    uint64 created_timestamp = 6;
+    /* GameInventory Id of the Offer */
+    string game_inventory_id = 2;
+    /* Currency of the total */
+    string currency = 3;
+    /* Total cost of the offer */
+    string total = 4;
+    /* When the offer was created */
+    uint64 created_timestamp = 5;
 }
 
 message OffersProto {
     repeated OfferProto offers = 1;
 }
 
-//// Request and response definitions
-
-// offer-related
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+/* Create Offer Quote call */
 message CreateOfferQuoteRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string game_inventory_id = 3;
-    string total = 4;
-    string currency = 5;
+    string oauth_id = 1;
+    /* GameInventory Id of the Offer */
+    string game_inventory_id = 2;
+    /* Total quoted for the Offer */
+    string total = 3;
+    /* Currency the total is in */
+    string currency = 4;
 }
 
+/* Confirm Offer call */
 message ConfirmOfferRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string quote_id = 3;
-    // TODO: where's the payment data? Also are offers fronted payment or we somehow storing it (securely) then charging when needed
+    string oauth_id = 1;
+    /* Quote Id of the Offer */
+    string quote_id = 2;
+    // @exclude TODO: where's the payment data? Also are offers fronted payment or we somehow storing it (securely) then charging when needed
 }
 
+/* Cancel Offer call */
 message CancelOfferRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string offer_id = 3;
+    /* User that the Offer belongs to */
+    string oauth_id = 1;
+    /* Id of the Offer to Cancel */
+    string offer_id = 2;
 }
 
+/* Get Offers call */
 message GetOffersRequest {
+    /* Filter/Sort options for the call */
     saga.common.QueryOptionsProto query_options = 1;
+    /* Id of ItemType to get Offers for */
     string item_type_id = 2;
+    /* Token to get Offers for */
     string token = 3;
+    /* User to get Offers for */
     string oauth_id = 4;
 }

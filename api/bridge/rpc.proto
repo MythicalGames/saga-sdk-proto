@@ -9,6 +9,8 @@ option java_package = "games.mythical.saga.sdk.proto.api.bridge";
 package saga.api.bridge;
 
 service BridgeService {
+    /* Withdraw an Item */
     rpc WithdrawItem(saga.api.bridge.WithdrawItemRequest) returns (saga.common.ReceivedResponse);
+    /* Get Bridge */
     rpc GetBridge(saga.api.bridge.GetBridgeRequest) returns (saga.api.bridge.BridgeProto);
 }

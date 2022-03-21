@@ -9,8 +9,12 @@ option java_package = "games.mythical.saga.sdk.proto.api.offer";
 package saga.api.offer;
 
 service OfferService {
+    /* Create an Offer quote */
     rpc CreateOfferQuote(saga.api.offer.CreateOfferQuoteRequest) returns (saga.api.offer.OfferQuoteProto);
+    /* Confirm the Offer */
     rpc ConfirmOffer(saga.api.offer.ConfirmOfferRequest) returns (saga.common.ReceivedResponse);
+    /* Cancel the Offer */
     rpc CancelOffer(saga.api.offer.CancelOfferRequest) returns (saga.common.ReceivedResponse);
+    /* Get Offers based on filters */
     rpc GetOffers(saga.api.offer.GetOffersRequest) returns (saga.api.offer.OffersProto);
 }

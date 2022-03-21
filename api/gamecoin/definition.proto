@@ -6,13 +6,17 @@ option java_package = "games.mythical.saga.sdk.proto.api.gamecoin";
 import "common/sort.proto";
 
 package saga.api.gamecoin;
-
-//// GameCoin definitions
+/**
+ * @exclude
+ * ----- GameCoin Definitions -----
+ */
 message GameCoinProto {
     string trace_id = 1;
+    /* Amount of coins */
     int32 coin_count = 2;
     string currency_id = 3;
     string name = 4;
+    /* User the coins belong to */
     string oauth_id = 6;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
@@ -22,44 +26,51 @@ message GameCoinsProto {
     repeated GameCoinProto game_coins = 1;
 }
 
-//// Request and response definitions
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
 
-// Issue coins call
+/* Issue coins call */
 message IssueGameCoinRequest {
-    string title_id = 1;
-    string currency_id = 2;
-    string oauth_id = 3;
-    int32 coin_count = 4;
+    string currency_id = 1;
+    /* User to issue coins to */
+    string oauth_id = 2;
+    /* Amount of coins to issue */
+    int32 coin_count = 3;
 }
-
-// Get coins call
+// @exclude TODO getting one gamecoin vs multiple game coins?
+/* Get coin call */
 message GetGameCoinRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string currency_id = 3;
+    /* User to get coins for */
+    string oauth_id = 1;
+    string currency_id = 2;
 }
-
+ /* Get coins call */
 message GetGameCoinsRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    uint64 created_after_timestamp = 4;
-    int32 page_size = 5;
-    saga.common.SortOrder sort_order = 6;
+    /* User to get coins for */
+    string oauth_id = 1;
+    uint64 created_after_timestamp = 2;
+    int32 page_size = 3;
+    saga.common.SortOrder sort_order = 4;
 }
 
-// Transfer coins call
+/* Transfer coins call */
 message TransferGameCoinRequest {
-    string title_id = 1;
-    string source_oauth_id = 3;
-    string destination_oauth_id = 4;
-    string currency_id = 5;
-    int32 coin_count = 6;
+    /* User to transfer coins from */
+    string source_oauth_id = 1;
+    /* User to transfer coins to */
+    string destination_oauth_id = 2;
+    string currency_id = 3;
+    /* Amount of coins to transfer */
+    int32 coin_count = 4;
 }
 
-// Burn coins call
+/* Burn coins call */
 message BurnGameCoinRequest {
-    string title_id = 1;
-    string oauth_id = 2;
-    string currency_id = 3;
-    int32 coin_count = 4;
+    /* User to burn coins from */
+    string oauth_id = 1;
+    string currency_id = 2;
+    /* Amount of coins to burn */
+    int32 coin_count = 3;
 }

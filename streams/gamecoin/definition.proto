@@ -7,14 +7,18 @@ import "common/gamecoin/definition.proto";
 
 package saga.rpc.streams.gamecoin;
 
+/* Results from a GameCoin status update gRPC stream call */
 message GameCoinStatusUpdate {
-    string trace_id = 1;
-    string oauth_id = 2;
-    string currency_id = 3;
-    int32 coin_count = 4;
+    /* User of GameCoin */
+    string oauth_id = 1;
+    string currency_id = 2;
+    /* Amount of coins */
+    int32 coin_count = 3;
+    /* State of the GameCoin, see GameCoinState */
     saga.proto.common.gamecoin.GameCoinState game_coin_state = 8;
 }
 
+/* GameCoin information sent on a confirm request */
 message GameCoinStatusConfirmRequest {
     string trace_id = 1;
     string title_id = 2;
