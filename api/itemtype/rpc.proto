@@ -5,7 +5,6 @@ option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
 import "api/itemtype/definition.proto";
 import "common/common.proto";
-import "google/protobuf/empty.proto";
 
 package saga.api.itemtype;
 
@@ -17,7 +16,7 @@ service ItemTypeService {
     /* Create an ItemType */
     rpc CreateItemType(saga.api.itemtype.CreateItemTypeRequest) returns (saga.common.ReceivedResponse);
     /* Update the Metadata on the ItemType */
-    rpc UpdateItemTypeMetadata(saga.api.itemtype.UpdateItemTypeMetadataPayload) returns (google.protobuf.Empty) {}
+    rpc UpdateItemTypeMetadata(saga.api.itemtype.UpdateItemTypeMetadataPayload) returns (saga.common.ReceivedResponse);
     /* Update the ItemType */
-    rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (google.protobuf.Empty) {}
+    rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (saga.common.ReceivedResponse);
 }

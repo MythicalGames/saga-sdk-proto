@@ -96,11 +96,6 @@ message UpdateItemsMetadataRequest {
     repeated UpdateItemMetadata update_items = 1;
 }
 
-message UpdateItemsMetadataResponse {
-    // @exclude TODO: maybe at the minimum return the number successful of updated?
-    // @exclude int32 count = 1;
-}
-
 /* Transfer item call */
 message TransferItemRequest {
     /* Game's id for the Item to transfer */

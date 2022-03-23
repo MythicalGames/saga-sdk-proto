@@ -10,7 +10,7 @@ package saga.api.listing;
 
 service ListingService {
     /* Get a quote for a Listing */
-    rpc CreateListingQuote(saga.api.listing.CreateListingQuoteRequest) returns (saga.api.listing.ListingQuoteProto);
+    rpc CreateListingQuote(saga.api.listing.CreateListingQuoteRequest) returns (saga.common.ReceivedResponse);
     /* Confirm the Listing */
     rpc ConfirmListing(saga.api.listing.ConfirmListingRequest) returns (saga.common.ReceivedResponse);
     /* Cancel the Listing */
