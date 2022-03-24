@@ -10,7 +10,7 @@ package saga.api.order;
 
 service OrderService {
     /* Create an Order */
-    rpc CreateOrderQuote(saga.api.order.CreateOrderQuoteRequest) returns (saga.api.order.QuoteProto);
+    rpc CreateOrderQuote(saga.api.order.CreateOrderQuoteRequest) returns (saga.common.ReceivedResponse);
     /* Confirm the Order */
     rpc ConfirmOrder(saga.api.order.ConfirmOrderRequest) returns (saga.common.ReceivedResponse);
 }

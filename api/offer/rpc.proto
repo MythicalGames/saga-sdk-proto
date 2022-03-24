@@ -10,7 +10,7 @@ package saga.api.offer;
 
 service OfferService {
     /* Create an Offer quote */
-    rpc CreateOfferQuote(saga.api.offer.CreateOfferQuoteRequest) returns (saga.api.offer.OfferQuoteProto);
+    rpc CreateOfferQuote(saga.api.offer.CreateOfferQuoteRequest) returns (saga.common.ReceivedResponse);
     /* Confirm the Offer */
     rpc ConfirmOffer(saga.api.offer.ConfirmOfferRequest) returns (saga.common.ReceivedResponse);
     /* Cancel the Offer */

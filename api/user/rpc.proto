@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "api/user/definition.proto";
+import "common/common.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.user";
@@ -13,7 +14,7 @@ service UserService {
     /* Get a list of Users based on query parameters */
     rpc GetUsers(saga.api.user.GetUsersRequest) returns (saga.api.user.UsersProto);
     /* Update a User */
-    rpc UpdateUser(saga.api.user.UpdateUserRequest) returns (saga.api.user.UserProto);
+    rpc UpdateUser(saga.api.user.UpdateUserRequest) returns (saga.common.ReceivedResponse);
     /* Get assets for a User/publisher/partner */
     rpc GetWalletAssets(saga.api.user.GetWalletAssetsRequest) returns (saga.api.user.WalletAsset);
 }

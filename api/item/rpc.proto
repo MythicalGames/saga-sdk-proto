@@ -22,5 +22,5 @@ service ItemService {
     /* Burn an Item */
     rpc BurnItem(saga.api.item.BurnItemRequest) returns (saga.common.ReceivedResponse);
     /* Update the Metadata for an Item */
-    rpc UpdateItemsMetadata(saga.api.item.UpdateItemsMetadataRequest) returns (saga.api.item.UpdateItemsMetadataResponse);
+    rpc UpdateItemsMetadata(saga.api.item.UpdateItemsMetadataRequest) returns (saga.common.ReceivedResponse);
 }

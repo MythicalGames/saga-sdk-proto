@@ -12,3 +12,10 @@ enum PaymentProviderId {
     CYBERSOURCE = 2;
     UPHOLD = 3;
 }
+
+/* Payment Update Status */
+enum PaymentMethodUpdateStatus {
+    UPDATED = 0;
+    CREATED = 1;
+    DELETED = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "common/payment/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.payment";
+
+package saga.rpc.streams.payment;
+
+/* Result of payment method creation, update, or deletion */
+message PaymentMethodUpdate {
+  string trace_id = 1;
+  string oauth_id = 2;
+  bool default = 3;
+  saga.proto.common.payment.PaymentMethodUpdateStatus payment_method_status = 4;
+}
