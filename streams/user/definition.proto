@@ -9,8 +9,9 @@ package saga.rpc.streams.user;
 
 /* Results from a User status update gRPC stream call */
 message UserStatusUpdate {
+    string trace_id = 1;
     /* Unique id for the user */
-    string oauth_id = 1;
+    string oauth_id = 2;
     /* State of the User, see UserState */
-    saga.proto.common.user.UserState user_state = 2;
+    saga.proto.common.user.UserState user_state = 3;
 }

@@ -22,3 +22,29 @@ message Metadata {
 message ReceivedResponse {
     string trace_id = 1;
 }
+
+message ErrorResponse {
+    /* The trace id of the operation that has errored */
+    string trace_id = 1;
+    /* The type of error that has occurred */
+    ErrorCode error_code = 2;
+    /* Description of error */
+    string msg = 3;
+}
+
+enum ErrorCode {
+    /* Unknown Error */
+    UNKNOWN = 0;
+    /* Internal System Error */
+    INTERNAL = 1;
+    /* Generic Error Code */
+    GENERAL = 2;
+    /* Operation Timed Out */
+    TIMEOUT = 3;
+    /* The specified item could not be found */
+    ITEM_NOT_FOUND = 4;
+    /* The specified itme type could not be found */
+    ITEM_TYPE_NOT_FOUND = 5;
+    /* The specified user could not be found */
+    USER_NOT_FOUND = 6;
+}

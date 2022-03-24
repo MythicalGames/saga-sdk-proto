@@ -15,8 +15,6 @@ service ItemTypeService {
     rpc GetItemTypes(saga.api.itemtype.GetItemTypesRequest) returns (saga.api.itemtype.ItemTypesProto);
     /* Create an ItemType */
     rpc CreateItemType(saga.api.itemtype.CreateItemTypeRequest) returns (saga.common.ReceivedResponse);
-    /* Update the Metadata on the ItemType */
-    rpc UpdateItemTypeMetadata(saga.api.itemtype.UpdateItemTypeMetadataPayload) returns (saga.common.ReceivedResponse);
     /* Update the ItemType */
     rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (saga.common.ReceivedResponse);
 }

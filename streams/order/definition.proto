@@ -9,12 +9,13 @@ package saga.rpc.streams.order;
 
 /* Results from an Order status update gRPC stream call */
 message OrderStatusUpdate {
+    string trace_id = 1;
     /* User of the Order */
-    string oauth_id = 1;
-    string quote_id = 2; // @exclude TODO: quote == order?
-    string order_id = 3;
+    string oauth_id = 2;
+    string quote_id = 3; // @exclude TODO: quote == order?
+    string order_id = 4;
     /* Total price of the Order */
-    string total = 4;
+    string total = 5;
     /* State of the Order, see OrderState */
-    saga.proto.common.order.OrderState order_state = 5;
+    saga.proto.common.order.OrderState order_state = 6;
 }

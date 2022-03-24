@@ -9,6 +9,7 @@ package saga.rpc.streams.myth;
 
 /* Results from a MYTH Token status update gRPC stream call */
 message MythTokenStatusUpdate {
+    string trace_id = 1;
     /* State of the MYTH Token, see MythTokenState */
-    saga.proto.common.myth.MythTokenState token_state = 1;
+    saga.proto.common.myth.MythTokenState token_state = 2;
 }
