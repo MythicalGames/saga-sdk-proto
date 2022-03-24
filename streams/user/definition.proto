@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "common/common.proto";
 import "common/user/definition.proto";
 
 option java_multiple_files = true;
@@ -9,9 +10,15 @@ package saga.rpc.streams.user;
 
 /* Results from a User status update gRPC stream call */
 message UserStatusUpdate {
-    string trace_id = 1;
     /* Unique id for the user */
-    string oauth_id = 2;
+    string oauth_id = 1;
     /* State of the User, see UserState */
-    saga.proto.common.user.UserState user_state = 3;
+    saga.proto.common.user.UserState user_state = 2;
+}
+
+message UserUpdate {
+    oneof update {
+        saga.common.ErrorResponse error = 1;
+        UserStatusUpdate status_update = 2;
+    }
 }

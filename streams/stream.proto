@@ -10,6 +10,7 @@ import "streams/listing/definition.proto";
 import "streams/myth/definition.proto";
 import "streams/offer/definition.proto";
 import "streams/order/definition.proto";
+import "streams/payment/definition.proto";
 import "streams/user/definition.proto";
 
 option java_multiple_files = true;
@@ -21,15 +22,16 @@ package saga.rpc.streams;
 message StatusUpdate {
     string trace_id = 1;
     oneof status_update {
-        streams.bridge.BridgeStatusUpdate bridge_status = 2;
-        streams.gamecoin.GameCoinStatusUpdate game_coin_status = 3;
-        streams.item.ItemStatusUpdate item_status = 4;
-        streams.itemtype.ItemTypeStatusUpdate item_type_status = 5;
-        streams.listing.ListingStatusUpdate listing_status = 6;
-        streams.myth.MythTokenStatusUpdate myth_token_status = 7;
-        streams.offer.OfferStatusUpdate offer_status = 8;
-        streams.order.OrderStatusUpdate order_status = 9;
-        streams.user.UserStatusUpdate user_status = 10;
+        streams.bridge.BridgeUpdate bridge_update = 2;
+        streams.gamecoin.GameCoinUpdate game_coin_update = 3;
+        streams.item.ItemUpdate item_update = 4;
+        streams.itemtype.ItemTypeUpdate item_type_update = 5;
+        streams.listing.ListingUpdate listing_update = 6;
+        streams.myth.MythTokenUpdate myth_token_update = 7;
+        streams.offer.OfferUpdate offer_update = 8;
+        streams.order.OrderUpdate order_update = 9;
+        streams.payment.PaymentUpdate payment_update = 10;
+        streams.user.UserUpdate user_update = 11;
     }
     int64 created_timestamp = 15;
 }

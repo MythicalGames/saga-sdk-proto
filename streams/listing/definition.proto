@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "common/common.proto";
 import "common/listing/definition.proto";
 
 option java_multiple_files = true;
@@ -9,15 +10,21 @@ package saga.rpc.streams.listing;
 
 /* Results from a Listing status update gRPC stream call */
 message ListingStatusUpdate {
-    string trace_id = 1;
     /* User of this Listing */
-    string oauth_id = 2;
+    string oauth_id = 1;
     /* Quote id associated to this Listing */
-    string quote_id = 3;
+    string quote_id = 2;
     /* Unique id for this listing */
-    string listing_id = 4;
+    string listing_id = 3;
     /* total cose on listing */
-    string total = 5;
+    string total = 4;
     /* State of the Listing, see ListingState */
     saga.proto.common.listing.ListingState listing_state = 7;
+}
+
+message ListingUpdate {
+    oneof update {
+        saga.common.ErrorResponse error = 1;
+        ListingStatusUpdate status_update = 2;
+    }
 }
