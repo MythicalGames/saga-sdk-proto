@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "common/common.proto";
+
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams.bridge";
 
@@ -7,13 +9,19 @@ package saga.rpc.streams.bridge;
 
 /* Results from a Bridge status update gRPC stream call */
 message BridgeStatusUpdate {
-    string trace_id = 1;
-    string oauth_id = 2;
-    string game_item_type_id = 3;
-    string game_inventory_id = 4;
-    string destination_address = 5;
-    string destination_chain = 6;
-    string origin_address = 7;
-    string mythical_transaction_id = 8;
-    string mainnet_transaction_id = 9;
+    string oauth_id = 1;
+    string game_item_type_id = 2;
+    string game_inventory_id = 3;
+    string destination_address = 4;
+    string destination_chain = 5;
+    string origin_address = 6;
+    string mythical_transaction_id = 7;
+    string mainnet_transaction_id = 8;
+}
+
+message BridgeUpdate {
+    oneof update {
+        saga.common.ErrorResponse error = 1;
+        BridgeStatusUpdate status_update = 2;
+    }
 }

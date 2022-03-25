@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "common/common.proto";
 import "common/order/definition.proto";
 
 option java_multiple_files = true;
@@ -9,13 +10,19 @@ package saga.rpc.streams.order;
 
 /* Results from an Order status update gRPC stream call */
 message OrderStatusUpdate {
-    string trace_id = 1;
     /* User of the Order */
-    string oauth_id = 2;
-    string quote_id = 3; // @exclude TODO: quote == order?
-    string order_id = 4;
+    string oauth_id = 1;
+    string quote_id = 2; // @exclude TODO: quote == order?
+    string order_id = 3;
     /* Total price of the Order */
-    string total = 5;
+    string total = 4;
     /* State of the Order, see OrderState */
-    saga.proto.common.order.OrderState order_state = 6;
+    saga.proto.common.order.OrderState order_state = 5;
+}
+
+message OrderUpdate {
+    oneof update {
+        saga.common.ErrorResponse error = 1;
+        OrderStatusUpdate status_update = 2;
+    }
 }
