@@ -20,27 +20,12 @@ message UserProto {
     string chain_address = 3;
     /* What state the User is in */
     saga.proto.common.user.UserState user_state = 4;
-    /* Linked Uphold account */
-
-    repeated UpholdAccount uphold_accounts = 5;
-    /* Linked Cybersource account */
-    CybersourceAccount cybersource_account = 6;
     /* When this User was created */
     uint64 created_timestamp = 63;
 }
 
 message UsersProto {
     repeated UserProto saga_users = 1;
-}
-
-message UpholdAccount {
-    string id = 1;
-    // @exclude and more?
-}
-
-message CybersourceAccount {
-    string id = 1;
-    // @exclude and more?
 }
 
 message WalletAsset {
@@ -54,7 +39,6 @@ message WalletAsset {
     repeated NftItem nft_items = 5;
     /* List of Fungible Tokens */
     repeated FungibleToken fungible_tokens = 6;
-
 }
 
 message NftItem {
@@ -92,6 +76,12 @@ message GetUserRequest {
 message GetUsersRequest {
     /* Sort/Filter options */
     saga.common.QueryOptionsProto query_options = 1;
+}
+
+/* Create User call */
+message CreateUserRequest {
+    string title_id = 1;
+    string oauth_id = 2;
 }
 
 /* Update User call */
