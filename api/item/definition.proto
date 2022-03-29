@@ -9,7 +9,6 @@ import "common/finalization.proto";
 import "common/query.proto";
 
 package saga.api.item;
-// @exclude TODO: all definitions are WIPs so we take what we can
 
 /**
  * @exclude
