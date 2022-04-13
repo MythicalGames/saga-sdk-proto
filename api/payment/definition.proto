@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "google/protobuf/struct.proto";
+import "common/payment/definition.proto";
+
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.payment";
 
@@ -12,18 +15,19 @@ message PaymentMethodProto {
     string trace_id = 1;
     /* User of this Payment Method */
     string oauth_id = 2;
-    /* Card data */
-    CardPaymentData card_payment_data = 3;
+    /* Payment method data */
+    PaymentMethodData payment_method_data = 3;
     /* Address of this Payment Method */
     Address address = 4;
 }
 
-message CardPaymentData {
+message PaymentMethodData {
     /* Make this the default payment */
     bool make_default = 1;
     /* Payment data to use */
-    oneof card_payment_data {
+    oneof payment_method_data {
         CybersourcePaymentData cybersource = 2;
+        UpholdPaymentData uphold = 3;
     }
 }
 
@@ -46,30 +50,49 @@ message CybersourcePaymentData {
     string instrument_id = 4;
 }
 
+message UpholdPaymentData {
+    string temp_state_code = 1;
+    string email = 2;
+    string status = 3;
+    google.protobuf.Struct verifications = 4;
+    string birth_date = 5;
+    repeated UpholdCardProto cards = 6;
+}
+
+message UpholdCardProto {
+    string uphold_id = 1;
+    string currency = 2;
+    string balance = 3;
+    string normalized_currency = 4;
+    string normalized_balance = 5;
+    string label = 6;
+}
+
 /**
  * @exclude
  * ----- Request and Response Definitions -----
  */
 message CreatePaymentMethodRequest {
     string oauth_id = 1;
-    CardPaymentData card_payment_data = 2;
+    PaymentMethodData payment_method_data = 2;
     Address address = 3;
     // @exclude Uphold linking info?
 }
 
 message GetPaymentMethodRequest {
     string oauth_id = 1;
+    saga.proto.common.payment.PaymentProviderId payment_provider_id = 2;
 }
 
 message UpdatePaymentMethodRequest {
     string oauth_id = 1;
-    CardPaymentData card_payment_data = 2;
+    PaymentMethodData payment_method_data = 2;
     Address address = 3;
     // @exclude Uphold linking info
 }
 
 message DeletePaymentMethodRequest {
     string oauth_id = 1;
-    CardPaymentData card_payment_data = 2;
+    PaymentMethodData payment_method_data = 2;
 }
 

@@ -7,10 +7,9 @@ package saga.proto.common.payment;
 
 /* Types of Payments */
 enum PaymentProviderId {
-    BRAINTREE = 0;
-    BITPAY = 1;
-    CYBERSOURCE = 2;
-    UPHOLD = 3;
+    CREDIT_CARD = 0;
+    UPHOLD = 1;
+    MYTHICAL = 2;
 }
 
 /* Payment Update Status */
