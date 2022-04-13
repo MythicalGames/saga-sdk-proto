@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "common/payment/definition.proto";
+
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.order";
 
@@ -17,18 +19,11 @@ message QuoteProto {
     string tax_currency = 5;
     string total = 6;
     string currency = 7;
-    PaymentProviderId payment_provider_id = 8;
+    saga.proto.common.payment.PaymentProviderId payment_provider_id = 8;
     string buyer_oauth_id = 9;
     string seller_oauth_id = 10;
     string conversion_rate = 11;
     uint64 created_timestamp = 63;
-}
-
-// @exclude TODO: there are duplicate PaymentProviderId in the payments definition
-enum PaymentProviderId {
-    CREDIT_CARD = 0;
-    UPHOLD = 1;
-    MYTHICAL = 2;
 }
 
 message PaymentProviderData {

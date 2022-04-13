@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "api/payment/definition.proto";
+import "api/order/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
@@ -37,8 +37,8 @@ message CurrencyExchangeProto {
 message QuoteBuyingMythTokenRequest {
     /* Amount of MYTH Tokens to buy */
     string quantity = 1;
-    /* Credit card payment */
-    saga.api.payment.CardPaymentData credit_card_info = 2;
+    /* Payment provider data */
+    saga.api.order.PaymentProviderData payment_provider_data = 2;
     string denomination_currency = 3;
     string origin_sub_account = 4;
     /* User that is buying MYTH Tokens */
@@ -53,7 +53,7 @@ message QuoteBuyingMythTokenResponse {
 message ConfirmBuyingMythTokenRequest {
     string quote_id = 1;
     string user_id = 2;
-    saga.api.payment.CardPaymentData credit_card_info = 3;
+    saga.api.order.PaymentProviderData payment_provider_data = 3;
 }
 
 message QuoteMythTokenWithdrawalRequest {
