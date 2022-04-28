@@ -74,9 +74,22 @@ message UpholdCardProto {
  */
 message CreatePaymentMethodRequest {
     string oauth_id = 1;
-    PaymentMethodData payment_method_data = 2;
-    Address address = 3;
-    // @exclude Uphold linking info?
+    oneof provider {
+        CreateCybersourceCardProto cybersource = 4;
+        UpholdStartLinkProto uphold = 5;
+    }
+}
+
+message UpholdStartLinkProto {
+}
+
+message CreateCybersourceCardProto {
+    string exp_month = 1;
+    string exp_year = 2;
+    string card_type = 3;
+    string instrument_id = 4;
+    Address billing_address = 5;
+    bool make_default = 6;
 }
 
 message GetPaymentMethodRequest {
@@ -86,13 +99,30 @@ message GetPaymentMethodRequest {
 
 message UpdatePaymentMethodRequest {
     string oauth_id = 1;
-    PaymentMethodData payment_method_data = 2;
-    Address address = 3;
-    // @exclude Uphold linking info
+    oneof provider {
+        UpdateCybersourceCardProto cybersource = 4;
+        UpholdFinishLinkProto uphold = 5;
+    }
+}
+
+message UpdateCybersourceCardProto {
+    string payment_method_token = 1;
+    string exp_month = 2;
+    string exp_year = 3;
+    string card_type = 4;
+    string instrument_id = 5;
+    Address billing_address = 6;
+    bool make_default = 7;
+}
+
+message UpholdFinishLinkProto {
+    string state_code = 1;
+    string generated_temporary_code = 2;
 }
 
 message DeletePaymentMethodRequest {
     string oauth_id = 1;
-    PaymentMethodData payment_method_data = 2;
+    saga.proto.common.payment.PaymentProviderId payment_provider_id = 2;
+    string payment_method_token = 3; // @excluded prob create a payload per provider?
 }
 
