@@ -11,8 +11,8 @@ package saga.api.payment;
 service PaymentService {
     /* Create a Payment Method */
     rpc CreatePaymentMethod(saga.api.payment.CreatePaymentMethodRequest) returns (saga.common.ReceivedResponse);
-    /* Get Payment Method for a user */
-    rpc GetPaymentMethod(saga.api.payment.GetPaymentMethodRequest) returns (saga.api.payment.PaymentMethodProto);
+    /* Get Payment Methods for a user */
+    rpc GetPaymentMethods(saga.api.payment.GetPaymentMethodsRequest) returns (saga.api.payment.PaymentMethodProtos);
     /* Update the Payment Method for a User */
     rpc UpdatePaymentMethod(saga.api.payment.UpdatePaymentMethodRequest) returns (saga.common.ReceivedResponse);
     /* Delete a Payment Method for a User */
