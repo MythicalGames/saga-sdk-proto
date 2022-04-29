@@ -22,7 +22,7 @@ message PaymentMethodProto {
 }
 
 message PaymentMethodProtos {
-    repeated PaymentMethodProto payment_method_protos = 1;
+    repeated PaymentMethodProto payment_methods = 1;
 }
 
 message PaymentMethodData {
