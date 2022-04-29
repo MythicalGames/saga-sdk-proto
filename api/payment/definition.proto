@@ -21,6 +21,10 @@ message PaymentMethodProto {
     Address address = 4;
 }
 
+message PaymentMethodProtos {
+    repeated PaymentMethodProto payment_methods = 1;
+}
+
 message PaymentMethodData {
     /* Make this the default payment */
     bool make_default = 1;
@@ -48,6 +52,7 @@ message CybersourcePaymentData {
     string expiration_year = 2;
     string card_type = 3;
     string instrument_id = 4;
+    string payment_method_token_id = 5;
 }
 
 message UpholdPaymentData {
@@ -92,7 +97,7 @@ message CreateCybersourceCardProto {
     bool make_default = 6;
 }
 
-message GetPaymentMethodRequest {
+message GetPaymentMethodsRequest {
     string oauth_id = 1;
     saga.proto.common.payment.PaymentProviderId payment_provider_id = 2;
 }
