@@ -59,7 +59,7 @@ message UpholdPaymentData {
     string temp_state_code = 1;
     string email = 2;
     string status = 3;
-    google.protobuf.Struct verifications = 4;
+    string verifications = 4;
     string birth_date = 5;
     repeated UpholdCardProto cards = 6;
 }
