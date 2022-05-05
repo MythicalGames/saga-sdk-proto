@@ -22,7 +22,7 @@ message ItemTypeProto {
     string title_id = 5;
     PriRevShareSettings pri_rev_share_settings = 6;
     SecRevShareSettings sec_rev_share_settings = 7;
-    /* Is this iten withdrawable? */
+    /* Is this item withdrawable? */
     bool withdrawable = 8;
     PriceMap price_map = 9;
     saga.proto.common.itemtype.ItemTypeState item_type_state = 10;

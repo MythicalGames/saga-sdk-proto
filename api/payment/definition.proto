@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/struct.proto";
 import "common/payment/definition.proto";
 
 option java_multiple_files = true;
@@ -59,7 +58,7 @@ message UpholdPaymentData {
     string temp_state_code = 1;
     string email = 2;
     string status = 3;
-    google.protobuf.Struct verifications = 4;
+    string verifications = 4;
     string birth_date = 5;
     repeated UpholdCardProto cards = 6;
 }
