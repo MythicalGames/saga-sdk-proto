@@ -27,7 +27,7 @@ message CurrencyTypeProto {
 }
 
 message CurrencyTypesProto {
-    repeated CurrencyTypeProto currencyTypes = 1;
+    repeated CurrencyTypeProto currency_types = 1;
 }
 
 /**
