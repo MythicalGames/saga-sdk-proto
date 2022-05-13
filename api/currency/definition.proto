@@ -1,16 +1,16 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "games.mythical.saga.sdk.proto.api.gamecoin";
+option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
 import "common/sort.proto";
 
-package saga.api.gamecoin;
+package saga.api.currency;
 /**
  * @exclude
- * ----- GameCoin Definitions -----
+ * ----- Currency Definitions -----
  */
-message GameCoinProto {
+message CurrencyProto {
     string trace_id = 1;
     /* Amount of coins */
     int32 coin_count = 2;
@@ -22,8 +22,8 @@ message GameCoinProto {
     int64 updated_timestamp = 14;
 }
 
-message GameCoinsProto {
-    repeated GameCoinProto game_coins = 1;
+message CurrenciesProto {
+    repeated CurrencyProto currency = 1;
 }
 
 /**
@@ -31,23 +31,23 @@ message GameCoinsProto {
  * ----- Request and Response Definitions -----
  */
 
-/* Issue coins call */
-message IssueGameCoinRequest {
+/* Issue currency call */
+message IssueCurrencyRequest {
     string currency_id = 1;
     /* User to issue coins to */
     string oauth_id = 2;
     /* Amount of coins to issue */
     int32 coin_count = 3;
 }
-// @exclude TODO getting one gamecoin vs multiple game coins?
-/* Get coin call */
-message GetGameCoinRequest {
-    /* User to get coins for */
-    string oauth_id = 1;
-    string currency_id = 2;
+// @exclude TODO getting one currency vs multiple currencies?
+/* Currency call */
+message GetCurrencyByPlayerRequest {
+    /* User to get currency for */
+    string player_wallet_id = 1;
+    string game_currency_type_id = 2;
 }
  /* Get coins call */
-message GetGameCoinsRequest {
+message GetCurrenciesRequest {
     /* User to get coins for */
     string oauth_id = 1;
     uint64 created_after_timestamp = 2;
@@ -56,7 +56,7 @@ message GetGameCoinsRequest {
 }
 
 /* Transfer coins call */
-message TransferGameCoinRequest {
+message TransferCurrencyRequest {
     /* User to transfer coins from */
     string source_oauth_id = 1;
     /* User to transfer coins to */
@@ -67,7 +67,7 @@ message TransferGameCoinRequest {
 }
 
 /* Burn coins call */
-message BurnGameCoinRequest {
+message BurnCurrencyRequest {
     /* User to burn coins from */
     string oauth_id = 1;
     string currency_id = 2;

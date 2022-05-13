@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "streams/common.proto";
 import "streams/bridge/definition.proto";
-import "streams/gamecoin/definition.proto";
+import "streams/currency/definition.proto";
 import "streams/item/definition.proto";
 import "streams/itemtype/definition.proto";
 import "streams/listing/definition.proto";
@@ -23,7 +23,7 @@ message StatusUpdate {
     string trace_id = 1;
     oneof status_update {
         streams.bridge.BridgeUpdate bridge_update = 2;
-        streams.gamecoin.GameCoinUpdate game_coin_update = 3;
+        streams.currency.CurrencyUpdate currency_update = 3;
         streams.item.ItemUpdate item_update = 4;
         streams.itemtype.ItemTypeUpdate item_type_update = 5;
         streams.listing.ListingUpdate listing_update = 6;
