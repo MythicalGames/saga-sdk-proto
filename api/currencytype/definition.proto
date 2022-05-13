@@ -3,6 +3,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currencytype";
 
+import "common/sort.proto";
+
 package saga.api.currencytype;
 /**
  * @exclude
@@ -24,6 +26,10 @@ message CurrencyTypeProto {
     int64 updated_at = 14;
 }
 
+message CurrencyTypesProto {
+    repeated CurrencyTypeProto currencyTypes = 1;
+}
+
 /**
  * @exclude
  * ----- Request and Response Definitions -----
@@ -32,4 +38,9 @@ message CurrencyTypeProto {
 /* Currency Type call */
 message GetCurrencyTypeRequest {
     string game_currency_type_id = 1;
+}
+
+message GetCurrencyTypesRequest {
+    int32 page_size = 1;
+    saga.common.SortOrder sort_order = 2;
 }

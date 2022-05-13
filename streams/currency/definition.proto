@@ -14,7 +14,7 @@ message CurrencyStatusUpdate {
     string oauth_id = 1;
     string currency_id = 2;
     /* Amount of coins */
-    int32 coin_count = 3;
+    string quantity = 3;
     /* State of the Currency, see CurrencyState */
     saga.proto.common.currency.CurrencyState currency_state = 8;
 }

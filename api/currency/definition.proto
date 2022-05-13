@@ -3,8 +3,6 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
-import "common/sort.proto";
-
 package saga.api.currency;
 /**
  * @exclude
@@ -13,17 +11,12 @@ package saga.api.currency;
 message CurrencyProto {
     string trace_id = 1;
     /* Amount of currency */
-    int32 coin_count = 2;
-    string currency_id = 3;
-    string name = 4;
+    string quantity = 2;
+    string game_currency_type_id = 3;
     /* User the currency belong to */
     string oauth_id = 6;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
-}
-
-message CurrenciesProto {
-    repeated CurrencyProto currencies = 1;
 }
 
 /**
@@ -37,22 +30,14 @@ message IssueCurrencyRequest {
     /* User to issue currency to */
     string oauth_id = 2;
     /* Amount of currency to issue */
-    int32 coin_count = 3;
+    string quantity = 3;
 }
-// @exclude TODO getting one currency vs multiple currencys?
+
 /* Get Currency call */
 message GetCurrencyByPlayerRequest {
     /* User to get currency for */
     string player_wallet_id = 1;
     string game_currency_type_id = 2;
-}
- /* Get currencies call */
-message GetCurrenciesRequest {
-    /* User to get currency for */
-    string oauth_id = 1;
-    uint64 created_after_timestamp = 2;
-    int32 page_size = 3;
-    saga.common.SortOrder sort_order = 4;
 }
 
 /* Transfer currency call */
@@ -63,7 +48,7 @@ message TransferCurrencyRequest {
     string destination_oauth_id = 2;
     string currency_id = 3;
     /* Amount of currency to transfer */
-    int32 coin_count = 4;
+    string quantity = 4;
 }
 
 /* Burn currency call */
@@ -72,5 +57,5 @@ message BurnCurrencyRequest {
     string oauth_id = 1;
     string currency_id = 2;
     /* Amount of currency to burn */
-    int32 coin_count = 3;
+    string quantity = 3;
 }
