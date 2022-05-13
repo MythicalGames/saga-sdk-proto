@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.currency";
+
+import "api/currency/definition.proto";
+import "common/common.proto";
+
+package saga.api.currency;
+
+service CurrencyService {
+    /* Get a Currency for a user */
+    rpc GetCurrencyByPlayer(saga.api.currency.GetCurrencyByPlayerRequest) returns (saga.api.currency.CurrencyProto);
+    rpc GetCurrencies(saga.api.currency.GetCurrenciesRequest) returns (saga.api.currency.CurrenciesProto);
+    /* Issue currency to a user */
+    rpc IssueCurrency(saga.api.currency.IssueCurrencyRequest) returns (saga.common.ReceivedResponse);
+    /* Transfer currency between users */
+    rpc TransferCurrency(saga.api.currency.TransferCurrencyRequest) returns (saga.common.ReceivedResponse);
+    /* Burn currency for a user */
+    rpc BurnCurrency(saga.api.currency.BurnCurrencyRequest) returns (saga.common.ReceivedResponse);
+}
