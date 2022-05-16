@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "common/common.proto";
+import "common/currency/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.currency";
+
+package saga.rpc.streams.currency;
+
+/* Results from a Currency status update gRPC stream call */
+message CurrencyStatusUpdate {
+    /* User of Currency */
+    string oauth_id = 1;
+    string currency_id = 2;
+    /* Amount of coins */
+    string quantity = 3;
+    /* State of the Currency, see CurrencyState */
+    saga.proto.common.currency.CurrencyState currency_state = 8;
+}
+
+message CurrencyUpdate {
+    oneof update {
+        saga.common.ErrorResponse error = 1;
+        CurrencyStatusUpdate status_update = 2;
+    }
+}
+
+/* Currency information sent on a confirm request */
+message CurrencyStatusConfirmRequest {
+    string trace_id = 1;
+    string title_id = 2;
+    string currency_id = 3;
+    saga.proto.common.currency.CurrencyState currency_state = 8;
+}
