@@ -54,10 +54,8 @@ message IssueItemRequest {
     string game_item_type_id = 3;
     /* Metadata associated to Item being issued */
     saga.common.Metadata metadata = 4;
-    // (optional) Id of store
-    string store_id = 5;
-    string order_id = 6;
-    string request_ip = 7;
+    string order_id = 5;
+    string request_ip = 6;
 }
 
 /* Get Item call */
