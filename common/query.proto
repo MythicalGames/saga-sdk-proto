@@ -17,6 +17,8 @@ message QueryOptionsProto {
     common.SortOrder sort_order = 3;
     /* Which attribute to sort on */
     string sort_attribute = 4;
+    /* Cursor-based pagination based on the sort_attribute */
+    string cursor = 5;
 }
 
 /* container to allow building out a full filter of Expressions and FilterOperations */
@@ -53,7 +55,7 @@ enum FilterConditional {
     NOT_CONTAINS = 7; // ObjectA is not in ListB
 }
 
-/* Alloed operations when chaining filters */
+/* Allowed operations when chaining filters */
 enum FilterOperation {
     AND = 0; // FilterA && FilterB
     OR = 1; // FilterA || FilterB
