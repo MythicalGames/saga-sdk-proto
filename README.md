@@ -21,7 +21,7 @@ and Kotlin.
 9. When the changes are merged, the CI build will update the mythical central repo with the updated artifact
 
 ### Releasing the saga-sdk-proto maven artifact
-This should eventually be performed by Github Actions, but is currently a manual process. This process will also be a bit different when
+This should eventually be performed by GitHub Actions, but is currently a manual process. This process will also be a bit different when
 the Java SDK client is ready for public release and release versions are uploaded to maven central rather than mythical central.
 
 1. Clone or pull the saga-sdk-java repository.
