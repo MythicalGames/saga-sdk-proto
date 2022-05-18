@@ -56,6 +56,7 @@ message IssueItemRequest {
     saga.common.Metadata metadata = 4;
     string order_id = 5;
     string request_ip = 6;
+    string buyer_wallet = 7;
 }
 
 /* Get Item call */
