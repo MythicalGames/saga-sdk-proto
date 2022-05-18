@@ -24,14 +24,12 @@ message ItemTypeProto {
     SecRevShareSettings sec_rev_share_settings = 7;
     /* Is this item withdrawable? */
     bool withdrawable = 8;
-    PriceMap price_map = 9;
-    saga.proto.common.itemtype.ItemTypeState item_type_state = 10;
+    saga.proto.common.itemtype.ItemTypeState item_type_state = 9;
     /* When this ItemType was created */
-    int64 created_timestamp = 11;
+    int64 created_timestamp = 10;
     /* When this ItemType was last updated */
-    int64 updated_timestamp = 12;
-    /* Metadata associated w ith this ItemType */
-    saga.common.Metadata metadata = 13;
+    int64 updated_timestamp = 11;
+    string symbol = 12;
 }
 
 message ItemTypesProto {
@@ -44,9 +42,6 @@ message PriRevShareSettings {
 message SecRevShareSettings {
 }
 
-message PriceMap {
-}
-
 /**
  * @exclude
  * ----- Request and Response Definitions -----
@@ -54,16 +49,12 @@ message PriceMap {
 
 /* Create item type call */
 message CreateItemTypeRequest {
-    string publisher_address = 1;
     /* The game's unique id for this ItemType */
-    string game_item_type_id = 2;
+    string game_item_type_id = 1;
+    string base_price = 2;
     string name = 3;
-    /* (optional) */
-    PriRevShareSettings pri_rev_share_settings = 4;
-    SecRevShareSettings sec_rev_share_settings = 5;
-    saga.common.Metadata metadata = 6;
-    /* Is this ItemType withdrawable? */
-    bool withdrawable = 7;
+    string symbol = 4;
+    int64 max_supply = 5;
 }
 
 /* Get ItemType call */
@@ -88,6 +79,6 @@ message UpdateItemTypeMetadataPayload {
 message UpdateItemTypePayload {
     /* Game's ItemTypeId for the ItemType to update */
     string game_item_type_id = 1;
-    /* withdrawable state to udpate to */
+    /* withdrawable state to update to */
     bool withdrawable = 2;
 }
