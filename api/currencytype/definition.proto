@@ -45,3 +45,12 @@ message GetCurrencyTypesRequest {
     saga.common.SortOrder sort_order = 2;
     string game_currency_type_id = 3;
 }
+
+message CreateCurrencyTypeRequest {
+    string game_currency_type_id = 1;
+    string base_price = 3;
+    string name = 4;
+    string symbol = 5;
+    int64 decimal_places = 6;
+    int64 max_supply = 7;
+}

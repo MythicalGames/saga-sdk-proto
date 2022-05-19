@@ -14,9 +14,7 @@ message CurrencyProto {
     string quantity = 2;
     string game_currency_type_id = 3;
     /* Wallet address the currency belongs to */
-    string owner_address = 6;
-    int64 created_timestamp = 13;
-    int64 updated_timestamp = 14;
+    string owner_address = 4;
 }
 
 /**
@@ -26,11 +24,15 @@ message CurrencyProto {
 
 /* Issue currency call */
 message IssueCurrencyRequest {
-    string currency_id = 1;
-    /* User to issue currency to */
-    string oauth_id = 2;
-    /* Amount of currency to issue */
-    string quantity = 3;
+    /* amount to issue */
+    string amount = 1;
+    /* Currency Type the currency to issue belongs to */
+    string game_currency_type_id = 3;
+    /* Wallet address to issue currency to */
+    string owner_address = 4;
+    uint64 cost = 5;
+    string payment_token = 6;
+    bytes signed_message = 7;
 }
 
 /* Get Currency call */
