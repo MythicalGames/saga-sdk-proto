@@ -43,4 +43,5 @@ message GetCurrencyTypeRequest {
 message GetCurrencyTypesRequest {
     int32 page_size = 1;
     saga.common.SortOrder sort_order = 2;
+    string game_currency_type_id = 3;
 }

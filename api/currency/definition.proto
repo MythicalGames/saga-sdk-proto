@@ -13,8 +13,8 @@ message CurrencyProto {
     /* Amount of currency */
     string quantity = 2;
     string game_currency_type_id = 3;
-    /* User the currency belong to */
-    string oauth_id = 6;
+    /* Wallet address the currency belongs to */
+    string owner_address = 6;
     int64 created_timestamp = 13;
     int64 updated_timestamp = 14;
 }
