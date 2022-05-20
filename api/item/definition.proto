@@ -30,9 +30,9 @@ message ItemProto {
     /* State that the Item is in. See ItemState for more information */
     saga.proto.common.item.ItemState item_state = 12;
     /* When was this Item created */
-    int64 created_timestamp = 13;
+    int64 created_at = 13;
     /* When was this Item last updated */
-    int64 updated_timestamp = 14;
+    int64 updated_at = 14;
 }
 
 message ItemsProto {

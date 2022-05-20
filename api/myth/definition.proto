@@ -42,7 +42,7 @@ message QuoteBuyingMythTokenRequest {
     string denomination_currency = 3;
     string origin_sub_account = 4;
     /* User that is buying MYTH Tokens */
-    string user_id = 5;
+    string oauth_id = 5;
 }
 
 message QuoteBuyingMythTokenResponse {
@@ -52,12 +52,12 @@ message QuoteBuyingMythTokenResponse {
 
 message ConfirmBuyingMythTokenRequest {
     string quote_id = 1;
-    string user_id = 2;
+    string oauth_id = 2;
     saga.api.order.PaymentProviderData payment_provider_data = 3;
 }
 
 message QuoteMythTokenWithdrawalRequest {
-    string user_id = 1;
+    string oauth_id = 1;
     string quantity = 2;
 }
 

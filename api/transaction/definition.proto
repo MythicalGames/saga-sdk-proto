@@ -17,7 +17,7 @@ message TransactionProto {
     /* title that this transaction is from */
     string title_id = 2;
     /* When this Transaction was created */
-    int64 created_timestamp = 3;
+    int64 created_at = 3;
 }
 
 message TransactionsProto {

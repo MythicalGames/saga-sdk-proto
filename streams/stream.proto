@@ -33,7 +33,7 @@ message StatusUpdate {
         streams.payment.PaymentUpdate payment_update = 10;
         streams.user.UserUpdate user_update = 11;
     }
-    int64 created_timestamp = 15;
+    int64 created_at = 15;
 }
 
 message StatusConfirmRequest {
