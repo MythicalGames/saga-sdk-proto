@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "common/common.proto";
+import "common/playerwallet/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.playerwallet";
+
+package saga.rpc.streams.playerwallet;
+
+message PlayerWalletStatusUpdate {
+  /* Wallet owner OAuth ID */
+  string oauth_id = 1;
+  /* Wallet address */
+  string address = 2;
+  /* Wallet state */
+  saga.proto.common.playerwallet.PlayerWalletState state = 3;
+}
+
+message PlayerWalletUpdate {
+  oneof update {
+    saga.common.ErrorResponse error = 1;
+    PlayerWalletStatusUpdate status_update = 2;
+  }
+}

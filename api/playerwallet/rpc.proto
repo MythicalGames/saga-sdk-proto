@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.playerwallet";
+
+import "api/playerwallet/definition.proto";
+import "common/common.proto";
+
+package saga.api.playerwallet;
+
+service PlayerWalletService {
+  /* Create a Player Wallet */
+  rpc CreatePlayerWallet(CreatePlayerWalletRequest) returns (common.ReceivedResponse);
+}
