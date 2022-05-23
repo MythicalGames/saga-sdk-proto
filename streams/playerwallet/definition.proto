@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "common/common.proto";
 import "common/playerwallet/definition.proto";
-import "api/payment/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams.playerwallet";
