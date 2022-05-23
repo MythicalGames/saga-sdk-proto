@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common.playerwallet";
+
+package saga.proto.common.playerwallet;
+
+enum PlayerWalletState {
+  FAILED = 0;
+  CREATED = 1;
+}
