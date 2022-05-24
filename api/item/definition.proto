@@ -112,3 +112,13 @@ message BurnItemRequest {
     /* Game's id for the Item to burn */
     string game_inventory_id = 1;
 }
+
+/* Deposit item call */
+message DepositItemRequest {
+    string game_item_inventory_id = 1;
+    string created_by = 2;
+    string from_address = 3;
+    string to_address = 4;
+    saga.proto.common.item.BlockChains from_chain = 5;
+    string transaction_id = 6;
+}

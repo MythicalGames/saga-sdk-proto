@@ -15,3 +15,7 @@ enum ItemState {
     WITHDRAWN = 6; // Item withdrawn successfully
     DEPOSITED = 7; // Item deposited successfully
 }
+
+enum BlockChains {
+    ETH = 0;
+}
