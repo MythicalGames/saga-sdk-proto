@@ -21,7 +21,7 @@ message BridgeStatusUpdate {
 
 message BridgeUpdate {
     oneof update {
-        saga.common.ErrorResponse error = 1;
+        saga.common.ErrorData error = 1;
         BridgeStatusUpdate status_update = 2;
     }
 }

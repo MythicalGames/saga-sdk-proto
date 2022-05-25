@@ -22,7 +22,7 @@ message OrderStatusUpdate {
 
 message OrderUpdate {
     oneof update {
-        saga.common.ErrorResponse error = 1;
+        saga.common.ErrorData error = 1;
         OrderStatusUpdate status_update = 2;
     }
 }

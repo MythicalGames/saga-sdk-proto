@@ -23,26 +23,28 @@ message ReceivedResponse {
     string trace_id = 1;
 }
 
-message ErrorResponse {
-    /* The type of error that has occurred */
-    ErrorCode error_code = 1;
-    /* Description of error */
-    string msg = 2;
+message ErrorData {
+    /* The error code for this type of error */
+    string error_code = 1;
+    /* Description of the error */
+    string message = 2;
+    /* Indicator of which service the error occurred in */
+    string source = 3;
+    /* Trace id for this operation, if any */
+    string trace = 4;
+    /* Error metadata */
+    google.protobuf.Struct metadata = 5;
+    /* Sub-errors assocated with this incident */
+    repeated SubError suberrors = 6;
 }
 
-enum ErrorCode {
-    /* Unknown Error */
-    UNKNOWN = 0;
-    /* Internal System Error */
-    INTERNAL = 1;
-    /* Generic Error Code */
-    GENERAL = 2;
-    /* Operation Timed Out */
-    TIMEOUT = 3;
-    /* The specified item could not be found */
-    ITEM_NOT_FOUND = 4;
-    /* The specified itme type could not be found */
-    ITEM_TYPE_NOT_FOUND = 5;
-    /* The specified user could not be found */
-    USER_NOT_FOUND = 6;
+message SubError {
+    /* The error code for this type of error */
+    string error_code = 1;
+    /* Description of the error */
+    string message = 2;
+    /* Indicator of which service the error occurred in */
+    string source = 3;
+    /* Error metadata */
+    google.protobuf.Struct metadata = 4;
 }
