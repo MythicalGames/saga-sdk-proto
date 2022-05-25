@@ -23,7 +23,7 @@ message QuoteProto {
     string buyer_oauth_id = 9;
     string seller_oauth_id = 10;
     string conversion_rate = 11;
-    uint64 created_timestamp = 63;
+    uint64 created_at = 63;
 }
 
 message PaymentProviderData {

@@ -26,7 +26,7 @@ message ListingQuoteProto {
     /* Type of currency the total is in */
     string currency = 8;
     /* When the Listing was created */
-    uint64 created_timestamp = 63;
+    uint64 created_at = 63;
 }
 
 message ListingProto {
@@ -39,7 +39,7 @@ message ListingProto {
     /* Total price of Listing */
     string total = 4;
     /* When the Listing was created */
-    uint64 created_timestamp = 5;
+    uint64 created_at = 5;
 }
 
 message ListingsProto {

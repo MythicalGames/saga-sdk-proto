@@ -35,7 +35,7 @@ message StatusUpdate {
         streams.user.UserUpdate user_update = 11;
         streams.playerwallet.PlayerWalletUpdate player_wallet_update = 12;
     }
-    int64 created_timestamp = 15;
+    int64 created_at = 15;
 }
 
 message StatusConfirmRequest {

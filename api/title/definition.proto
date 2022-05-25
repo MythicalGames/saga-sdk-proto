@@ -17,7 +17,7 @@ message TitleProto {
     /* Name for this Title */
     string name = 2;
     /* When this Title was created */
-    int64 created_timestamp = 3;
+    int64 created_at = 3;
 }
 
 message TitlesProto {
