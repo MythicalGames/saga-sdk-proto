@@ -24,7 +24,7 @@ message ListingStatusUpdate {
 
 message ListingUpdate {
     oneof update {
-        saga.common.ErrorResponse error = 1;
+        saga.common.ErrorData error = 1;
         ListingStatusUpdate status_update = 2;
     }
 }

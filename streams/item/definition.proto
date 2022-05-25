@@ -25,7 +25,7 @@ message ItemStatusUpdate {
 
 message ItemUpdate {
     oneof update {
-        saga.common.ErrorResponse error = 1;
+        saga.common.ErrorData error = 1;
         ItemStatusUpdate status_update = 2;
     }
 }

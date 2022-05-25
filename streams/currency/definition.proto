@@ -21,7 +21,7 @@ message CurrencyStatusUpdate {
 
 message CurrencyUpdate {
     oneof update {
-        saga.common.ErrorResponse error = 1;
+        saga.common.ErrorData error = 1;
         CurrencyStatusUpdate status_update = 2;
     }
 }

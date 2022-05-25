@@ -17,7 +17,7 @@ message PaymentMethodStatusUpdate {
 
 message PaymentUpdate {
   oneof update {
-      saga.common.ErrorResponse error = 1;
+      saga.common.ErrorData error = 1;
       PaymentMethodStatusUpdate status_update = 2;
   }
 }
