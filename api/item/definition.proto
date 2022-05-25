@@ -21,7 +21,7 @@ message ItemProto {
     string game_inventory_id = 3;
     string game_title_id = 4;
     string order_id = 5;
-    string serial_number = 6;
+    int32 serial_number = 6;
     bool finalized = 7;
     /* When was this Item created */
     int64 created_at = 8;
