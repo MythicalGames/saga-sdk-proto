@@ -15,24 +15,19 @@ package saga.api.item;
  * ----- Item Definitions -----
  */
 message ItemProto {
-    string trace_id = 1;
+    string id = 1;
+    string trace_id = 2;
     /* The game's unique id for this Item */
-    string game_inventory_id = 2;
-    /* The game's ItemType id associated to this Item */
-    string game_item_type_id = 3;
-    /* User for this Item */
-    string oauth_id = 6;
-    int32 serial_number = 8;
-    /* Metadata accessible address */
-    string metadata_uri = 9;
-    /* Metadata for this Item */
-    saga.common.Metadata metadata = 11;
-    /* State that the Item is in. See ItemState for more information */
-    saga.proto.common.item.ItemState item_state = 12;
+    string game_inventory_id = 3;
+    string game_title_id = 4;
+    string order_id = 5;
+    int32 serial_number = 6;
+    bool finalized = 7;
     /* When was this Item created */
-    int64 created_at = 13;
+    int64 created_at = 8;
     /* When was this Item last updated */
-    int64 updated_at = 14;
+    int64 updated_at = 9;
+    string owner_address = 10;
 }
 
 message ItemsProto {
