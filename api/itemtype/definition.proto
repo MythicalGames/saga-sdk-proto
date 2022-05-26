@@ -25,6 +25,7 @@ message ItemTypeProto {
     bool finalized = 11;
     int64 created_at = 13;
     int64 updated_at = 14;
+    bool withdrawable = 15;
 }
 
 message ItemTypesProto {
