@@ -115,7 +115,7 @@ message BurnItemRequest {
 
 /* Deposit item call */
 message DepositItemRequest {
-    string game_item_inventory_id = 1;
+    string game_inventory_id = 1;
     string created_by = 2;
     string from_address = 3;
     string to_address = 4;
