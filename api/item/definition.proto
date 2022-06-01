@@ -41,8 +41,8 @@ message ItemsProto {
 
 /* Issue item call */
 message IssueItemRequest {
-    /* GameInventory Id of Item being issued */
-    string game_inventory_id = 1;
+    /* GameInventory Ids of Items being issued */
+    repeated string game_inventory_ids = 1;
     /* User that is issuing Item */
     oneof data {
         string oauth_id = 2;
