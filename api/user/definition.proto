@@ -83,12 +83,6 @@ message CreateUserRequest {
     string oauth_id = 1;
 }
 
-/* Update User call */
-message UpdateUserRequest {
-    string oauth_id = 1;
-    // @exclude TODO: what is being updated here
-}
-
 /* Get wallet assets call */
 message GetWalletAssetsRequest {
     /* (optional) User to get Wallet for */

@@ -15,8 +15,6 @@ service UserService {
     rpc GetUsers(saga.api.user.GetUsersRequest) returns (saga.api.user.UsersProto);
     /* Create a User */
     rpc CreateUser(saga.api.user.CreateUserRequest) returns (saga.common.ReceivedResponse);
-    /* Update a User */
-    rpc UpdateUser(saga.api.user.UpdateUserRequest) returns (saga.common.ReceivedResponse);
     /* Get assets for a User/publisher/partner */
     rpc GetWalletAssets(saga.api.user.GetWalletAssetsRequest) returns (saga.api.user.WalletAsset);
 }
