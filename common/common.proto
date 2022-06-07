@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common";
 
 import "google/protobuf/struct.proto";
+import "google/protobuf/wrappers.proto";
 
 package saga.common;
 
@@ -17,6 +18,23 @@ message Metadata {
     string image = 3;
     /* Additional properties about the Item in a <Key,Value> structure */
     google.protobuf.Struct properties = 4;
+
+    string external_url = 5;
+    string background_color = 6;
+    string animation_url = 7;
+    string youtube_url = 8;
+    repeated MetadataAttribute attributes = 9;
+}
+
+message MetadataAttribute {
+    string trait_type = 1;
+    string display_type = 2;
+    google.protobuf.DoubleValue max_value = 3;
+    oneof value {
+        string str_value = 4;
+        int64 int_value = 5;
+        double double_value = 6;
+    }
 }
 
 message ReceivedResponse {
