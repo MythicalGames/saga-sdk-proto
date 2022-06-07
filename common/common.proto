@@ -18,18 +18,26 @@ message Metadata {
     string image = 3;
     /* Additional properties about the Item in a <Key,Value> structure */
     google.protobuf.Struct properties = 4;
-
+    /* URL to the item */
     string external_url = 5;
+    /* OpenSea background color */
     string background_color = 6;
+    /* URL to a media/animation file */
     string animation_url = 7;
+    /* URL to a YouTube video */
     string youtube_url = 8;
+    /* Metadata attributes */
     repeated MetadataAttribute attributes = 9;
 }
 
 message MetadataAttribute {
+    /* Name of the trait/attribute */
     string trait_type = 1;
+    /* Display type (number, date, etc.). Not needed for string traits  */
     string display_type = 2;
+    /* For numeric traits, a maximum allowed value */
     google.protobuf.DoubleValue max_value = 3;
+    /* Trait value */
     oneof value {
         string str_value = 4;
         int64 int_value = 5;
