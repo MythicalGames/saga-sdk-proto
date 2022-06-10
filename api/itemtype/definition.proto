@@ -80,7 +80,5 @@ message UpdateItemTypePayload {
 }
 
 message FreezeItemTypePayload {
-    string environment_id = 1;
-    string game_item_type_id = 2;
-    string created_by = 3;
+    string game_item_type_id = 1;
 }
