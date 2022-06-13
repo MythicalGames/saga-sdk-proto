@@ -80,3 +80,7 @@ message UpdateItemTypePayload {
     /* withdrawable state to update to */
     bool withdrawable = 2;
 }
+
+message FreezeItemTypePayload {
+    string game_item_type_id = 1;
+}
