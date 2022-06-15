@@ -14,5 +14,5 @@ message QueryOptionsProto {
     /* Which order to sort */
     common.SortOrder sort_order = 2;
     /* Cursor-based pagination based on created_at */
-    uint64 created_at_cursor = 3;
+    int64 created_at_cursor = 3;
 }
