@@ -99,7 +99,6 @@ message TransferItemRequest {
     string source_oauth_id = 2;
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
-    string store_id = 4;
 }
 
 /* Burn item call */
