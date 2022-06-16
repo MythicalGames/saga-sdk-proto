@@ -43,17 +43,13 @@ message ItemsProto {
 message IssueItemRequest {
     /* GameInventory Ids of Items being issued */
     repeated string game_inventory_ids = 1;
-    /* User that is issuing Item */
-    oneof data {
-        string oauth_id = 2;
-        string buyer_wallet = 3;
-    }
+    string recipient_oauth_id = 2;
     /* Unique id set for your game of the Item being issued */
-    string game_item_type_id = 4;
+    string game_item_type_id = 3;
     /* Metadata associated to Item being issued */
-    saga.common.Metadata metadata = 5;
-    string order_id = 6;
-    string request_ip = 7;
+    saga.common.Metadata metadata = 4;
+    string order_id = 5;
+    string request_ip = 6;
 }
 
 /* Get Item call */
@@ -94,7 +90,6 @@ message TransferItemRequest {
     string source_oauth_id = 2;
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
-    string store_id = 4;
 }
 
 /* Burn item call */

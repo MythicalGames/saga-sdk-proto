@@ -60,7 +60,9 @@ message GetItemTypeRequest {
 
 /* Get ItemTypes call */
 message GetItemTypesRequest {
-    saga.common.QueryOptionsProto query_options = 1;
+    string game_title_id = 1;
+    string publisher_address = 2;
+    saga.common.QueryOptionsProto query_options = 3;
 }
 
 /* Update Metadata on ItemType call */
@@ -77,4 +79,8 @@ message UpdateItemTypePayload {
     string game_item_type_id = 1;
     /* withdrawable state to update to */
     bool withdrawable = 2;
+}
+
+message FreezeItemTypePayload {
+    string game_item_type_id = 1;
 }

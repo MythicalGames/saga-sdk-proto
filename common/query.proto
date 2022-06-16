@@ -9,54 +9,10 @@ package saga.common;
 
 /* Options allowed when querying */
 message QueryOptionsProto {
-    /* Complete filter chain of attributes to filter on */
-    repeated FilterValueProto filter_options = 1;
     /* Size of the page of results */
-    int32 page_size = 2;
+    int32 page_size = 1;
     /* Which order to sort */
-    common.SortOrder sort_order = 3;
-    /* Which attribute to sort on */
-    string sort_attribute = 4;
-    /* Cursor-based pagination based on the sort_attribute */
-    string cursor = 5;
-}
-
-/* container to allow building out a full filter of Expressions and FilterOperations */
-message FilterValueProto {
-    oneof kind {
-        ExpressionProto expression = 1;
-        FilterOperation operation = 2;
-    }
-}
-
-/* Allowed expression in a query. Expression is a combination of [attribute_name | conditional | value] */
-message ExpressionProto {
-    /* name of the attribute to filter on */
-    string attribute_name = 1;
-    /* how to filter on the attribute (See FilterConditional) */
-    FilterConditional conditional = 2;
-    /* value to filter on */
-    oneof kind {
-        double double_value = 3;
-        string string_value = 4;
-        bool bool_value = 5;
-    }
-}
-
-/* Allowed compare operations when filtering */
-enum FilterConditional {
-    EQUALS = 0; // ObjectA = ObjectB
-    EQUALS_LESS_THAN = 1; // ObjectA <= ObjectB
-    LESS_THAN = 2; // ObjectA < ObjectB
-    EQUALS_GREATER_THAN = 3; // ObjectA >= ObjectB
-    GREATER_THAN = 4; // ObjectA > ObjectB
-    NOT_EQUALS = 5; // ObjectA != ObjectB
-    CONTAINS = 6; // ObjectA is in ListB
-    NOT_CONTAINS = 7; // ObjectA is not in ListB
-}
-
-/* Allowed operations when chaining filters */
-enum FilterOperation {
-    AND = 0; // FilterA && FilterB
-    OR = 1; // FilterA || FilterB
+    common.SortOrder sort_order = 2;
+    /* Cursor-based pagination based on created_at */
+    int64 created_at_cursor = 3;
 }
