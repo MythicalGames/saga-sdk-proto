@@ -75,7 +75,7 @@ message GetItemsForPlayerRequest {
 }
 
 /* Update Metadata call */
-message UpdateItemMetadata {
+message UpdateItemMetadataRequest {
     /* Update Metadata for the Item with this id */
     string game_inventory_id = 1;
     /* Metadata to update with */
