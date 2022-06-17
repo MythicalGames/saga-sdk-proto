@@ -21,8 +21,8 @@ service ItemService {
     rpc TransferItem(saga.api.item.TransferItemRequest) returns (saga.common.ReceivedResponse);
     /* Burn an Item */
     rpc BurnItem(saga.api.item.BurnItemRequest) returns (saga.common.ReceivedResponse);
-    /* Update the Metadata for an Item */
-    rpc UpdateItemsMetadata(saga.api.item.UpdateItemsMetadataRequest) returns (saga.common.ReceivedResponse);
+    /* Update an Item's metadata */
+    rpc UpdateItemMetadata(saga.api.item.UpdateItemMetadata) returns (saga.common.ReceivedResponse);
     /* Deposit an Item */
     rpc DepositItem(saga.api.item.DepositItemRequest) returns (saga.common.ReceivedResponse);
 }

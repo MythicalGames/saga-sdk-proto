@@ -82,11 +82,6 @@ message UpdateItemMetadata {
     saga.common.Metadata metadata = 2;
 }
 
-/* Update Metadata on Item call */
-message UpdateItemsMetadataRequest {
-    repeated UpdateItemMetadata update_items = 1;
-}
-
 /* Transfer item call */
 message TransferItemRequest {
     /* Game's id for the Item to transfer */
