@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "common/user/definition.proto";
 import "common/query.proto";
 
 option java_multiple_files = true;
@@ -18,8 +17,6 @@ message UserProto {
     string oauth_id = 2;
     /* Address on the chain */
     string chain_address = 3;
-    /* What state the User is in */
-    saga.proto.common.user.UserState user_state = 4;
     /* When this User was created */
     uint64 created_at = 63;
 }

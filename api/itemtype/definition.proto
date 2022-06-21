@@ -3,7 +3,6 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
-import "common/common.proto";
 import "common/query.proto";
 
 package saga.api.itemtype;
@@ -63,14 +62,6 @@ message GetItemTypesRequest {
     string game_title_id = 1;
     string publisher_address = 2;
     saga.common.QueryOptionsProto query_options = 3;
-}
-
-/* Update Metadata on ItemType call */
-message UpdateItemTypeMetadataPayload {
-    /* Game's ItemTypeId for the Metadata to update */
-    string game_item_type_id = 1;
-    /* Metadata to update the ItemType with */
-    saga.common.Metadata metadata = 2;
 }
 
 /* Update ItemType call */
