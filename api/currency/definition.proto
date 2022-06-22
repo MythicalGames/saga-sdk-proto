@@ -32,7 +32,6 @@ message IssueCurrencyRequest {
     string owner_address = 4;
     uint64 cost = 5;
     string payment_token = 6;
-    bytes signed_message = 7;
 }
 
 /* Get Currency call */
