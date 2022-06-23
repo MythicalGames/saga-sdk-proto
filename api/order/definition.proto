@@ -41,13 +41,12 @@ message CreditCardData {
     string city = 5;
     string state = 6;
     string postal_code = 7;
-    string country_name = 8;
-    string country_iso_alpha_2 = 9;
-    string expiration_month = 10;
-    string expiration_year = 11;
-    string card_type = 12;
-    string instrument_id = 13;
-    string payment_method_token_id = 14;
+    string country_iso_alpha_2 = 8;
+    string expiration_month = 9;
+    string expiration_year = 10;
+    string card_type = 11;
+    string instrument_id = 12;
+    string payment_method_token_id = 13;
 }
 
 /**
