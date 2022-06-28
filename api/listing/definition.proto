@@ -31,16 +31,17 @@ message ListingQuoteProto {
 }
 
 message ListingProto {
+    string trace_id = 1;
     /* User of this Listing */
-    string oauth_id = 1;
+    string oauth_id = 2;
     /* Item associated with this Listing */
-    string game_inventory_id = 2;
+    string game_inventory_id = 3;
     /* Type of currency the total is in */
-    string currency = 3;
+    string currency = 4;
     /* Total price of Listing */
-    string total = 4;
+    string total = 5;
     /* When the Listing was created */
-    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp created_at = 63;
 }
 
 message ListingsProto {
