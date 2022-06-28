@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common/payment/definition.proto";
+import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.order";
@@ -23,7 +24,7 @@ message QuoteProto {
     string buyer_oauth_id = 9;
     string seller_oauth_id = 10;
     string conversion_rate = 11;
-    uint64 created_at = 63;
+    google.protobuf.Timestamp created_at = 63;
 }
 
 message PaymentProviderData {

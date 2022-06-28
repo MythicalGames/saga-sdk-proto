@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.itemtype;
 /**
@@ -22,8 +23,8 @@ message ItemTypeProto {
     int64 max_supply = 9;
     string contract_address = 10;
     bool finalized = 11;
-    int64 created_at = 13;
-    int64 updated_at = 14;
+    google.protobuf.Timestamp created_at = 13;
+    google.protobuf.Timestamp updated_at = 14;
     bool withdrawable = 15;
 }
 

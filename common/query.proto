@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common/sort.proto";
+import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common";
@@ -14,5 +15,5 @@ message QueryOptionsProto {
     /* Which order to sort */
     common.SortOrder sort_order = 2;
     /* Cursor-based pagination based on created_at */
-    int64 created_at_cursor = 3;
+    google.protobuf.Timestamp created_at_cursor = 3;
 }

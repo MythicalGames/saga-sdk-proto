@@ -7,6 +7,7 @@ import "common/item/definition.proto";
 import "common/common.proto";
 import "common/finalization.proto";
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.item;
 
@@ -24,9 +25,9 @@ message ItemProto {
     int32 serial_number = 6;
     bool finalized = 7;
     /* When was this Item created */
-    int64 created_at = 8;
+    google.protobuf.Timestamp created_at = 8;
     /* When was this Item last updated */
-    int64 updated_at = 9;
+    google.protobuf.Timestamp updated_at = 9;
     string owner_address = 10;
 }
 

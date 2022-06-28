@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.title";
 
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.title;
 
@@ -17,7 +18,7 @@ message TitleProto {
     /* Name for this Title */
     string name = 2;
     /* When this Title was created */
-    int64 created_at = 3;
+    google.protobuf.Timestamp created_at = 3;
 }
 
 message TitlesProto {

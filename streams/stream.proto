@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 import "streams/common.proto";
 import "streams/bridge/definition.proto";
 import "streams/currency/definition.proto";
@@ -35,7 +36,7 @@ message StatusUpdate {
         streams.user.UserUpdate user_update = 11;
         streams.playerwallet.PlayerWalletUpdate player_wallet_update = 12;
     }
-    int64 created_at = 15;
+    google.protobuf.Timestamp created_at = 15;
 }
 
 message StatusConfirmRequest {
