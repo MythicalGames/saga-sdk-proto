@@ -13,7 +13,6 @@ import "streams/offer/definition.proto";
 import "streams/order/definition.proto";
 import "streams/payment/definition.proto";
 import "streams/playerwallet/definition.proto";
-import "streams/user/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams";
@@ -33,15 +32,13 @@ message StatusUpdate {
         streams.offer.OfferUpdate offer_update = 8;
         streams.order.OrderUpdate order_update = 9;
         streams.payment.PaymentUpdate payment_update = 10;
-        streams.user.UserUpdate user_update = 11;
-        streams.playerwallet.PlayerWalletUpdate player_wallet_update = 12;
+        streams.playerwallet.PlayerWalletUpdate player_wallet_update = 11;
     }
     google.protobuf.Timestamp created_at = 15;
 }
 
 message StatusConfirmRequest {
     string trace_id = 1;
-    // @exclude TODO: what else to confirm with?
 }
 
 service StatusStream {
