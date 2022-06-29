@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.transaction";
 
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.transaction;
 
@@ -17,7 +18,7 @@ message TransactionProto {
     /* title that this transaction is from */
     string title_id = 2;
     /* When this Transaction was created */
-    int64 created_at = 3;
+    google.protobuf.Timestamp created_at = 3;
 }
 
 message TransactionsProto {

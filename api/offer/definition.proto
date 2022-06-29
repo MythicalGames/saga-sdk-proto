@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.offer";
 
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.offer;
 /**
@@ -27,7 +28,7 @@ message OfferQuoteProto {
     /* Currency the total is in */
     string currency = 8;
     /* When the Offer was created */
-    uint64 created_at = 63;
+    google.protobuf.Timestamp created_at = 63;
 }
 
 message OfferProto {
@@ -40,7 +41,7 @@ message OfferProto {
     /* Total cost of the offer */
     string total = 4;
     /* When the offer was created */
-    uint64 created_at = 5;
+    google.protobuf.Timestamp created_at = 5;
 }
 
 message OffersProto {

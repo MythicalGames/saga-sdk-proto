@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.listing";
 
 import "common/query.proto";
+import "google/protobuf/timestamp.proto";
 
 package saga.api.listing;
 /**
@@ -26,7 +27,7 @@ message ListingQuoteProto {
     /* Type of currency the total is in */
     string currency = 8;
     /* When the Listing was created */
-    uint64 created_at = 63;
+    google.protobuf.Timestamp created_at = 63;
 }
 
 message ListingProto {
@@ -39,7 +40,7 @@ message ListingProto {
     /* Total price of Listing */
     string total = 4;
     /* When the Listing was created */
-    uint64 created_at = 5;
+    google.protobuf.Timestamp created_at = 5;
 }
 
 message ListingsProto {
