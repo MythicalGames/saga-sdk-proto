@@ -16,8 +16,6 @@ message Metadata {
     string description = 2;
     /* URL to the image of the item */
     string image = 3;
-    /* Additional properties about the Item in a <Key,Value> structure */
-    google.protobuf.Struct properties = 4;
     /* URL to the item */
     string external_url = 5;
     /* OpenSea background color */

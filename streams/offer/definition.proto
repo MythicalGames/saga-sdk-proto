@@ -17,7 +17,7 @@ message OfferStatusUpdate {
     /* Unique id for this Offer */
     string offer_id = 3;
     /* Game's id for the Item associated with this Offer */
-    string game_inventory_id = 4;
+    string inventory_id = 4;
     /* Total price for the offer */
     string total = 5;
     /* State of the Offer, see OfferState */

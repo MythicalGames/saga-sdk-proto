@@ -11,14 +11,14 @@ package saga.rpc.streams.item;
 /* Results from an Item status update gRPC stream call */
 message ItemStatusUpdate {
     /* Game's unique Id for the Item */
-    string game_inventory_id = 1;
+    string inventory_id = 1;
     /* Game's ItemTypeId for the ItemType for this Item */
     string item_type_id = 2;
     /* User for this Item */
     string oauth_id = 3;
     int32 serial_number = 4;
     /* Metadata address */
-    string metadata_uri = 5;
+    string metadata_url = 5;
     /* State of the Item, see ItemState */
     saga.proto.common.item.ItemState item_state = 8;
 }

@@ -28,7 +28,7 @@ message WithdrawItemRequest {
     /* Id of the ItemType this Item belongs to */
     string item_type_id = 2;
     /* Id of the GameInventory this Item belongs to */
-    string game_inventory_id = 3;
+    string inventory_id = 3;
     /* Address of where this Item is going to */
     string destination_address = 4;
     /* Chain of where this Item is going to */
