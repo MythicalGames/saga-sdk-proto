@@ -46,7 +46,7 @@ message IssueItemRequest {
     repeated string game_inventory_ids = 1;
     string recipient_oauth_id = 2;
     /* Unique id set for your game of the Item being issued */
-    string game_item_type_id = 3;
+    string item_type_id = 3;
     /* Metadata associated to Item being issued */
     saga.common.Metadata metadata = 4;
     string order_id = 5;

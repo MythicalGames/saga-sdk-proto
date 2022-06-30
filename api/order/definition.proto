@@ -62,7 +62,7 @@ message CreateOrderQuoteRequest {
     string subtotal = 3; // @exclude TODO: amoir, so we still thinking storing price so it isn't passed in?
     PaymentProviderData payment_provider_data = 4;
     oneof order_type { // @exclude TODO: I have no idea what I'm writing here, also maybe OrderType and Cart?
-        string game_item_type_id = 5;
+        string item_type_id = 5;
         string listing_address = 6;
         bool buy_myth_token = 7;
         bool withdraw_myth_token = 9;

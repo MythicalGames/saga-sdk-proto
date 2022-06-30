@@ -3,7 +3,6 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
-import "common/query.proto";
 import "google/protobuf/timestamp.proto";
 
 package saga.api.itemtype;
@@ -12,30 +11,21 @@ package saga.api.itemtype;
  * ----- ItemType Definitions -----
  */
 message ItemTypeProto {
-    string id = 1;
-    string trace_id = 2;
-    string game_item_type_id = 3;
-    string game_title_id = 4;
-    string publisher_address = 5;
-    string base_price = 6;
-    string name = 7;
-    string symbol = 8;
-    int64 max_supply = 9;
-    string contract_address = 10;
-    bool finalized = 11;
-    google.protobuf.Timestamp created_at = 13;
-    google.protobuf.Timestamp updated_at = 14;
-    bool withdrawable = 15;
+    string trace_id = 1;
+    string item_type_id = 2;
+    string name = 3;
+    string symbol = 4;
+    int64 max_supply = 5;
+    string contract_address = 6;
+    string block_explorer_url = 7;
+    bool finalized = 8;
+    bool withdrawable = 9;
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
 }
 
 message ItemTypesProto {
     repeated ItemTypeProto item_types = 1;
-}
-
-message PriRevShareSettings {
-}
-
-message SecRevShareSettings {
 }
 
 /**
@@ -46,33 +36,34 @@ message SecRevShareSettings {
 /* Create item type call */
 message CreateItemTypeRequest {
     /* The game's unique id for this ItemType */
-    string game_item_type_id = 1;
-    string base_price = 2;
-    string name = 3;
-    string symbol = 4;
-    int64 max_supply = 5;
+    string item_type_id = 1;
+    string name = 2;
+    string symbol = 3;
+    int64 max_supply = 4;
+    bool randomize = 5;
+    google.protobuf.Timestamp date_finished = 6;
+    bool withdrawable = 7;
 }
 
 /* Get ItemType call */
 message GetItemTypeRequest {
-    string game_item_type_id = 1;
+    string item_type_id = 1;
 }
 
 /* Get ItemTypes call */
 message GetItemTypesRequest {
     string game_title_id = 1;
     string publisher_address = 2;
-    saga.common.QueryOptionsProto query_options = 3;
 }
 
 /* Update ItemType call */
 message UpdateItemTypePayload {
     /* Game's ItemTypeId for the ItemType to update */
-    string game_item_type_id = 1;
+    string item_type_id = 1;
     /* withdrawable state to update to */
     bool withdrawable = 2;
 }
 
 message FreezeItemTypePayload {
-    string game_item_type_id = 1;
+    string item_type_id = 1;
 }

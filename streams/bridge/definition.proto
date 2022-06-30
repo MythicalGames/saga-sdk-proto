@@ -10,7 +10,7 @@ package saga.rpc.streams.bridge;
 /* Results from a Bridge status update gRPC stream call */
 message BridgeStatusUpdate {
     string oauth_id = 1;
-    string game_item_type_id = 2;
+    string item_type_id = 2;
     string game_inventory_id = 3;
     string destination_address = 4;
     string destination_chain = 5;
