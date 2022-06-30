@@ -26,7 +26,7 @@ message BridgeProto {
 message WithdrawItemRequest {
     string oauth_id = 1;
     /* Id of the ItemType this Item belongs to */
-    string game_item_type_id = 2;
+    string item_type_id = 2;
     /* Id of the GameInventory this Item belongs to */
     string game_inventory_id = 3;
     /* Address of where this Item is going to */
