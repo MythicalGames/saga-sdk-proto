@@ -11,7 +11,7 @@ package saga.rpc.streams.bridge;
 message BridgeStatusUpdate {
     string oauth_id = 1;
     string item_type_id = 2;
-    string game_inventory_id = 3;
+    string inventory_id = 3;
     string destination_address = 4;
     string destination_chain = 5;
     string origin_address = 6;

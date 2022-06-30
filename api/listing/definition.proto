@@ -18,7 +18,7 @@ message ListingQuoteProto {
     /* unique QuoteId for this Listing */
     string quote_id = 3;
     /* Item associated with this Listing */
-    string game_inventory_id = 4;
+    string inventory_id = 4;
     string tax = 5; // @exclude and fees?
     /* Currency the tax is in */
     string tax_currency = 6;
@@ -35,7 +35,7 @@ message ListingProto {
     /* User of this Listing */
     string oauth_id = 2;
     /* Item associated with this Listing */
-    string game_inventory_id = 3;
+    string inventory_id = 3;
     /* Type of currency the total is in */
     string currency = 4;
     /* Total price of Listing */
@@ -58,7 +58,7 @@ message CreateListingQuoteRequest {
     /* User of this Listing Quote */
     string oauth_id = 1;
     /* Id of GameInventory for this Listing */
-    string game_inventory_id = 2;
+    string inventory_id = 2;
     /* Total cost amount for the Listing */
     string total = 3;
     /* Currency that the total is in */
