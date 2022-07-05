@@ -72,3 +72,11 @@ message SubError {
     /* Error metadata */
     google.protobuf.Struct metadata = 4;
 }
+
+/* Decimal object for potential 18 decimal value support. Naming was done to not conflict with Java BigDecimal */
+message LargeDecimal {
+    /* The whole units part of the amount */
+    int64 units = 1;
+    /* Number of exa (10^-18) units of the amount */
+    int64 exa = 2;
+}

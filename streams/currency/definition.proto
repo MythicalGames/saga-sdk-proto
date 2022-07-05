@@ -11,10 +11,10 @@ package saga.rpc.streams.currency;
 /* Results from a Currency status update gRPC stream call */
 message CurrencyStatusUpdate {
     /* Wallet address of Currency */
-    string owner_address = 1;
-    string game_currency_type_id = 2;
+    string oauth_id = 1;
+    string currency_type_id = 2;
     /* Amount of coins */
-    string quantity = 3;
+    common.LargeDecimal amount = 3;
     /* State of the Currency, see CurrencyState */
     saga.proto.common.currency.CurrencyState currency_state = 8;
 }
@@ -30,6 +30,6 @@ message CurrencyUpdate {
 message CurrencyStatusConfirmRequest {
     string trace_id = 1;
     string title_id = 2;
-    string game_currency_type_id = 3;
+    string currency_type_id = 3;
     saga.proto.common.currency.CurrencyState currency_state = 8;
 }

@@ -3,6 +3,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
+import "common/common.proto";
+
 package saga.api.currency;
 /**
  * @exclude
@@ -11,10 +13,10 @@ package saga.api.currency;
 message CurrencyProto {
     string trace_id = 1;
     /* Amount of currency */
-    string quantity = 2;
-    string game_currency_type_id = 3;
+    common.LargeDecimal amount = 2;
+    string currency_type_id = 3;
     /* Wallet address the currency belongs to */
-    string owner_address = 4;
+    string oauth_id = 4;
 }
 
 /**
@@ -25,20 +27,18 @@ message CurrencyProto {
 /* Issue currency call */
 message IssueCurrencyRequest {
     /* amount to issue */
-    string amount = 1;
+    common.LargeDecimal amount = 1;
     /* Currency Type the currency to issue belongs to */
-    string game_currency_type_id = 3;
+    string currency_type_id = 3;
     /* Wallet address to issue currency to */
-    string owner_address = 4;
-    uint64 cost = 5;
-    string payment_token = 6;
+    string oauth_id = 4;
 }
 
 /* Get Currency call */
-message GetCurrencyByPlayerRequest {
+message GetCurrencyForPlayerRequest {
     /* User to get currency for */
-    string player_wallet_id = 1;
-    string game_currency_type_id = 2;
+    string oauth_id = 1;
+    string currency_type_id = 2;
 }
 
 /* Transfer currency call */
@@ -49,7 +49,7 @@ message TransferCurrencyRequest {
     string destination_oauth_id = 2;
     string currency_id = 3;
     /* Amount of currency to transfer */
-    string quantity = 4;
+    common.LargeDecimal amount = 4;
 }
 
 /* Burn currency call */
@@ -58,5 +58,5 @@ message BurnCurrencyRequest {
     string oauth_id = 1;
     string currency_id = 2;
     /* Amount of currency to burn */
-    string quantity = 3;
+    common.LargeDecimal amount = 3;
 }
