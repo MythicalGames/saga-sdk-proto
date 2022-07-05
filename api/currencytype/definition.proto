@@ -13,8 +13,7 @@ package saga.api.currencytype;
  */
 message CurrencyTypeProto {
     string trace_id = 1;
-    string id = 2;
-    string game_currency_type_id = 3;
+    string currency_type_id = 3;
     string game_title_id = 4;
     string publisher_address = 5;
     string name = 6;
@@ -38,18 +37,16 @@ message CurrencyTypesProto {
 
 /* Currency Type call */
 message GetCurrencyTypeRequest {
-    string game_currency_type_id = 1;
+    string currency_type_id = 1;
 }
 
 message GetCurrencyTypesRequest {
     int32 page_size = 1;
     saga.common.SortOrder sort_order = 2;
-    string game_currency_type_id = 3;
 }
 
 message CreateCurrencyTypeRequest {
-    string game_currency_type_id = 1;
-    string base_price = 3;
+    string currency_type_id = 1;
     string name = 4;
     string symbol = 5;
     int64 decimal_places = 6;
