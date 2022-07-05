@@ -10,7 +10,7 @@ package saga.api.currency;
 
 service CurrencyService {
     /* Get a Currency for a user */
-    rpc GetCurrencyByPlayer(saga.api.currency.GetCurrencyForPlayerRequest) returns (saga.api.currency.CurrencyProto);
+    rpc GetCurrencyForPlayer(saga.api.currency.GetCurrencyForPlayerRequest) returns (saga.api.currency.CurrencyProto);
     /* Issue currency to a user */
     rpc IssueCurrency(saga.api.currency.IssueCurrencyRequest) returns (saga.common.ReceivedResponse);
     /* Transfer currency between users */
