@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.reservation";
+
+package saga.api.reservation;
+
+message ItemReservationProto {
+  string item_type_id = 1;
+  int64 count = 2;
+}
+
+message CreateReservationRequest {
+  string reservation_id = 1;
+  string oauth_id = 2;
+  repeated ItemReservationProto item_reservations = 3;
+}

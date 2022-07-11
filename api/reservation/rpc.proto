@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.reservation";
+
+import "api/reservation/definition.proto";
+import "common/common.proto";
+
+package saga.api.reservation;
+
+service ReservationService {
+  rpc CreateReservation(saga.api.reservation.CreateReservationRequest) returns (saga.common.ReceivedResponse);
+}
