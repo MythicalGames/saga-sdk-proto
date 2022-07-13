@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.common";
 
 package saga.api.common;
 
-message Error {
+message ErrorProto {
   int32 code = 1;
   string message = 2;
   string source = 3;
