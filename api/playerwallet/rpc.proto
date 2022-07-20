@@ -11,4 +11,6 @@ package saga.api.playerwallet;
 service PlayerWalletService {
   /* Create a Player Wallet */
   rpc CreatePlayerWallet(CreatePlayerWalletRequest) returns (common.ReceivedResponse);
+  /* Get a Player Wallet */
+  rpc GetPlayerWallet(GetPlayerWalletRequest) returns (PlayerWalletProto);
 }
