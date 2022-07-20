@@ -10,4 +10,5 @@ package saga.api.reservation;
 
 service ReservationService {
   rpc CreateReservation(saga.api.reservation.CreateReservationRequest) returns (saga.common.ReceivedResponse);
+  rpc ReleaseReservation(saga.api.reservation.ReleaseReservationRequest) returns (saga.common.ReceivedResponse);
 }

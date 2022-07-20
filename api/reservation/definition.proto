@@ -15,3 +15,8 @@ message CreateReservationRequest {
   string oauth_id = 2;
   repeated ItemReservationProto item_reservations = 3;
 }
+
+message ReleaseReservationRequest {
+  string reservation_id = 1;
+  string item_type_id = 2;
+}
