@@ -55,7 +55,7 @@ message WithdrawItemRequest {
 message GetBridgeRequest {
 }
 
-/* Get Quote Call */
+/* Get Bridge Quote Call */
 message GetBridgeQuoteRequest {
     int32 origin_chain_id = 1;
     int32 target_chain_id = 2;

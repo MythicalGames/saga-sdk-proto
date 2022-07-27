@@ -13,6 +13,6 @@ service BridgeService {
     rpc WithdrawItem(saga.api.bridge.WithdrawItemRequest) returns (saga.common.ReceivedResponse);
     /* Get Bridge */
     rpc GetBridge(saga.api.bridge.GetBridgeRequest) returns (saga.api.bridge.BridgeProto);
-    /* Get NFT Quote */
+    /* Get Bridge Quote */
     rpc GetBridgeQuote(saga.api.bridge.GetBridgeQuoteRequest) returns (saga.api.bridge.BridgeQuoteProto);
 }
