@@ -14,5 +14,5 @@ service BridgeService {
     /* Get Bridge */
     rpc GetBridge(saga.api.bridge.GetBridgeRequest) returns (saga.api.bridge.BridgeProto);
     /* Get Bridge Quote */
-    rpc GetBridgeQuote(saga.api.bridge.GetBridgeQuoteRequest) returns (saga.api.bridge.BridgeQuoteProto);
+    rpc GetBridgeQuote(saga.api.bridge.QuoteBridgeNFTRequest) returns (saga.api.bridge.QuoteBridgeNFTResponse);
 }
