@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 package saga.api.itemtype;
 /**
@@ -23,7 +24,7 @@ message ItemTypeProto {
     google.protobuf.Timestamp created_at = 14;
     google.protobuf.Timestamp updated_at = 15;
     int64 issued_supply = 16;
-    int64 available_supply = 17;
+    google.protobuf.Int64Value available_supply = 17;
 }
 
 message ItemTypesProto {
