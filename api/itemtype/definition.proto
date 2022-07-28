@@ -22,6 +22,8 @@ message ItemTypeProto {
     bool withdrawable = 9;
     google.protobuf.Timestamp created_at = 14;
     google.protobuf.Timestamp updated_at = 15;
+    int64 issued_supply = 16;
+    int64 available_supply = 17;
 }
 
 message ItemTypesProto {
