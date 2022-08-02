@@ -11,6 +11,10 @@ message ReservationCreatedProto {
   string reservation_id = 1;
 }
 
+message ReservationRedeemedProto {
+  string reservation_id = 1;
+}
+
 message ReservationReleasedProto {
   string reservation_id = 1;
 }
@@ -20,5 +24,6 @@ message ReservationUpdate {
     saga.common.ErrorData error = 1;
     ReservationCreatedProto reservation_created = 2;
     ReservationReleasedProto reservation_released = 3;
+    ReservationRedeemedProto reservation_redeemed = 4;
   }
 }
