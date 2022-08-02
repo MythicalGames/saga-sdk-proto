@@ -29,7 +29,7 @@ message QuoteBridgeNFTResponse {
     string gas_price_originchain_unit = 6;
     string gas_price_targetchain = 7;
     string gas_price_targetchain_unit = 8;
-    bytes signature = 9;
+    string signature = 9;
 }
 
 /**
