@@ -18,6 +18,18 @@ message BridgeProto {
     string chain_name = 4;
 }
 
+message QuoteBridgeNFTResponse {
+    string fee_in_originchain_native_token = 1;
+    string fee_in_originchain_native_token_unit = 2;
+    string fee_in_usd = 3;
+    string expires_at = 4;
+    string gas_price_originchain = 5;
+    string gas_price_originchain_unit = 6;
+    string gas_price_targetchain = 7;
+    string gas_price_targetchain_unit = 8;
+    string signature = 9;
+}
+
 /**
  * @exclude
  * ----- Request and Response Definitions -----
@@ -39,4 +51,12 @@ message WithdrawItemRequest {
 
 /* Get Bridge Call */
 message GetBridgeRequest {
+}
+
+/* Get Bridge Quote Call */
+message QuoteBridgeNFTRequest {
+    int32 origin_chain_id = 1;
+    int32 target_chain_id = 2;
+    string item_type_id = 3;
+    string origin_chain_wallet_address = 4;
 }

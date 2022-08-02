@@ -19,9 +19,22 @@ message BridgeStatusUpdate {
     string mainnet_transaction_id = 8;
 }
 
+message BridgeQuoteStatusUpdate {
+    string fee_in_originchain_native_token = 1;
+    string fee_in_originchain_native_token_unit = 2;
+    string fee_in_usd = 3;
+    string expires_at = 4;
+    string gas_price_originchain = 5;
+    string gas_price_originchain_unit = 6;
+    string gas_price_targetchain = 7;
+    string gas_price_targetchain_unit = 8;
+    string signature = 9;
+}
+
 message BridgeUpdate {
     oneof update {
         saga.common.ErrorData error = 1;
         BridgeStatusUpdate status_update = 2;
+        BridgeQuoteStatusUpdate bridge_quote_status_update = 3;
     }
 }
