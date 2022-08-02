@@ -18,5 +18,5 @@ message CreateReservationRequest {
 
 message ReleaseReservationRequest {
   string reservation_id = 1;
-  string item_type_id = 2;
+  string oauth_id = 2;
 }
