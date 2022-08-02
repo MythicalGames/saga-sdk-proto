@@ -25,7 +25,7 @@ message BridgeQuoteStatusUpdate {
     string fee_in_originchain_native_token = 1;
     string fee_in_originchain_native_token_unit = 2;
     string fee_in_usd = 3;
-    google.protobuf.Timestamp expires_at = 4;
+    string expires_at = 4;
     string gas_price_originchain = 5;
     string gas_price_originchain_unit = 6;
     string gas_price_targetchain = 7;
