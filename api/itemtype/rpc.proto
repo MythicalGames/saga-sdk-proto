@@ -19,4 +19,5 @@ service ItemTypeService {
     rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (saga.common.ReceivedResponse);
     /* Freeze the ItemType */
     rpc FreezeItemType (saga.api.itemtype.FreezeItemTypePayload) returns (saga.common.ReceivedResponse) {}
+    rpc StartMint(saga.api.itemtype.StartMintRequest) returns (saga.common.ReceivedResponse);
 }

@@ -25,6 +25,7 @@ message ItemTypeProto {
     google.protobuf.Timestamp updated_at = 15;
     int64 issued_supply = 16;
     google.protobuf.Int64Value available_supply = 17;
+    bool mintable = 18;
 }
 
 message ItemTypesProto {
@@ -68,5 +69,9 @@ message UpdateItemTypePayload {
 }
 
 message FreezeItemTypePayload {
+    string item_type_id = 1;
+}
+
+message StartMintRequest {
     string item_type_id = 1;
 }
