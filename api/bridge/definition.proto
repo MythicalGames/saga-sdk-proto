@@ -19,15 +19,16 @@ message BridgeProto {
 }
 
 message QuoteBridgeNFTResponse {
-    string fee_in_originchain_native_token = 1;
-    string fee_in_originchain_native_token_unit = 2;
-    string fee_in_usd = 3;
-    string expires_at = 4;
-    string gas_price_originchain = 5;
-    string gas_price_originchain_unit = 6;
-    string gas_price_targetchain = 7;
-    string gas_price_targetchain_unit = 8;
-    string signature = 9;
+    string trace_id = 1;
+    string fee_in_originchain_native_token = 2;
+    string fee_in_originchain_native_token_unit = 3;
+    string fee_in_usd = 4;
+    string expires_at = 5;
+    string gas_price_originchain = 6;
+    string gas_price_originchain_unit = 7;
+    string gas_price_targetchain = 8;
+    string gas_price_targetchain_unit = 9;
+    string signature = 10;
 }
 
 /**
