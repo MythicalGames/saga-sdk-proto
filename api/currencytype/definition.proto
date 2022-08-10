@@ -18,7 +18,6 @@ message CurrencyTypeProto {
     string publisher_address = 5;
     string name = 6;
     string symbol = 7;
-    int64 decimal_places = 8;
     string contract_address = 9;
     bool finalized = 10;
     int64 max_supply = 11;
@@ -49,6 +48,5 @@ message CreateCurrencyTypeRequest {
     string currency_type_id = 1;
     string name = 4;
     string symbol = 5;
-    int64 decimal_places = 6;
     int64 max_supply = 7;
 }
