@@ -3,8 +3,6 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
-import "common/common.proto";
-
 package saga.api.currency;
 /**
  * @exclude
@@ -13,7 +11,7 @@ package saga.api.currency;
 message CurrencyProto {
     string trace_id = 1;
     /* Amount of currency */
-    common.LargeDecimal amount = 2;
+    int64 amount = 2;
     string currency_type_id = 3;
     /* Wallet address the currency belongs to */
     string oauth_id = 4;
@@ -27,7 +25,7 @@ message CurrencyProto {
 /* Issue currency call */
 message IssueCurrencyRequest {
     /* amount to issue */
-    common.LargeDecimal amount = 1;
+    int64 amount = 1;
     /* Currency Type the currency to issue belongs to */
     string currency_type_id = 3;
     /* Wallet address to issue currency to */
@@ -49,7 +47,7 @@ message TransferCurrencyRequest {
     string destination_oauth_id = 2;
     string currency_id = 3;
     /* Amount of currency to transfer */
-    common.LargeDecimal amount = 4;
+    int64 amount = 4;
 }
 
 /* Burn currency call */
@@ -58,5 +56,5 @@ message BurnCurrencyRequest {
     string oauth_id = 1;
     string currency_id = 2;
     /* Amount of currency to burn */
-    common.LargeDecimal amount = 3;
+    int64 amount = 3;
 }
