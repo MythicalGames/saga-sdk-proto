@@ -23,5 +23,5 @@ service MythService {
     /* Confirm withdrawing MYTH Tokens */
     rpc ConfirmMythTokenWithdrawal(saga.api.myth.ConfirmMythTokenWithdrawalRequest) returns (saga.common.ReceivedResponse);
     /* Deposit nmyth */
-    rpc DepositMyth(saga.api.myth.DepositMythRequest) returns (saga.api.myth.DepositMythResponse);
+    rpc DepositNmyth(saga.api.myth.DepositNmythRequest) returns (saga.common.ReceivedResponse);
 }
