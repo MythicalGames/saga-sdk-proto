@@ -9,7 +9,7 @@ message PlayerWalletProto {
   string trace_id = 1;
   string oauth_id = 2;
   string address = 3;
-  string balance = 4;
+  string balance_in_wei = 4;
 }
 
 message CreatePlayerWalletRequest {
