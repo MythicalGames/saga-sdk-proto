@@ -76,5 +76,5 @@ message ConfirmMythTokenWithdrawalRequest {
 message DepositNmythRequest {
     string oauth_id = 1;
     string quantity = 2;
-    string myth_card_id = 3;
+    string source_wallet = 3;
 }
