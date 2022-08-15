@@ -74,8 +74,7 @@ message ConfirmMythTokenWithdrawalRequest {
 }
 
 message DepositNmythRequest {
-    string source = 1; // Source (User’s uphold subaccount in $MYTH)
-    string destination = 2; // Destination (User’s OAUTHID to which nMYTH balance would go to)
-    string quantity = 3; // Quantity of $MYTH to deposit
-    string card_id = 4;  // We want to take a card id so we can use a particular MYTH card
+    string oauth_id = 1;
+    string quantity = 2;
+    string myth_card_id = 3;
 }
