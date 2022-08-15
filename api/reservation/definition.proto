@@ -4,6 +4,7 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.reservation";
 
 import "common/common.proto";
+import "google/protobuf/wrappers.proto";
 
 package saga.api.reservation;
 
@@ -16,6 +17,7 @@ message CreateReservationRequest {
   string reservation_id = 1;
   string oauth_id = 2;
   repeated ItemReservationProto item_reservations = 3;
+  google.protobuf.Int64Value ttl = 4;
 }
 
 message RedeemItemProto {
