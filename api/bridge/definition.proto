@@ -48,6 +48,6 @@ message WithdrawItemRequest {
     string fee_in_originchain_native_token = 2;
     string expires_at = 3;
     string signature = 4;
-    string game_title_id = 5;
-    string user_auth_id = 6;
+    string title_id = 5;
+    string oauth_id = 6;
 }
