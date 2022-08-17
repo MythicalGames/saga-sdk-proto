@@ -75,3 +75,7 @@ message FreezeItemTypePayload {
 message StartMintRequest {
     string item_type_id = 1;
 }
+
+message EndMintRequest {
+    string item_type_id = 1;
+}
