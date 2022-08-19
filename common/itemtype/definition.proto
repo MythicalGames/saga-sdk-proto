@@ -12,4 +12,5 @@ enum ItemTypeState {
     SOLD_OUT = 3; // ItemType is Sold Out
     EXPIRED = 4; // ItemType has been expired
     MINTABLE = 5; // ItemType can be minted
+    MINT_ENDED = 6; // ItemType mint has permanently ended
 }
