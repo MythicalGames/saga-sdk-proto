@@ -1,14 +1,14 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "games.mythical.saga.sdk.proto.api.bridge";
+option java_package = "games.mythical.saga.sdk.proto.api.nftbridge";
 
-package saga.api.bridge;
+package saga.api.nftbridge;
 /**
  * @exclude
- * ----- Bridge Definitions -----
+ * ----- NftBridge Definitions -----
  */
-message BridgeProto {
+message NftBridgeProto {
     string trace_id = 1;
     // @exclude ???
     string mythical_address = 2;
@@ -18,8 +18,8 @@ message BridgeProto {
     string chain_name = 4;
 }
 
-/* Get Bridge Call */
-message GetBridgeRequest {
+/* Get NftBridge Call */
+message GetNftBridgeRequest {
 }
 
 /* Get Bridge Quote Call */
