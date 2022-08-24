@@ -1,14 +1,14 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "games.mythical.saga.sdk.proto.api.bridge";
+option java_package = "games.mythical.saga.sdk.proto.api.nftbridge";
 
-package saga.api.bridge;
+package saga.api.nftbridge;
 /**
  * @exclude
- * ----- Bridge Definitions -----
+ * ----- NftBridge Definitions -----
  */
-message BridgeProto {
+message NftBridgeProto {
     string trace_id = 1;
     // @exclude ???
     string mythical_address = 2;
@@ -18,16 +18,17 @@ message BridgeProto {
     string chain_name = 4;
 }
 
-/* Get Bridge Call */
-message GetBridgeRequest {
+/* Get NftBridge Call */
+message GetNftBridgeRequest {
 }
 
 /* Get Bridge Quote Call */
 message QuoteBridgeNFTRequest {
     int32 origin_chain_id = 1;
     int32 target_chain_id = 2;
-    string item_type_id = 3;
-    string origin_chain_wallet_address = 4;
+    string game_title_id = 3;
+    string inventory_id = 4;
+    string oauth_id = 5;
 }
 
 message QuoteBridgeNFTResponse {
@@ -48,6 +49,6 @@ message WithdrawItemRequest {
     string fee_in_originchain_native_token = 2;
     string expires_at = 3;
     string signature = 4;
-    string title_id = 5;
-    string oauth_id = 6;
+    string item_type_id = 5;
+    string targetchain_wallet_address = 6;
 }
