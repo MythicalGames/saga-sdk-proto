@@ -3,12 +3,12 @@ syntax = "proto3";
 import "common/common.proto";
 
 option java_multiple_files = true;
-option java_package = "games.mythical.saga.sdk.proto.streams.bridge";
+option java_package = "games.mythical.saga.sdk.proto.streams.nftbridge";
 
-package saga.rpc.streams.bridge;
+package saga.rpc.streams.nftbridge;
 
 /* Results from a Bridge status update gRPC stream call */
-message BridgeStatusUpdate {
+message NftBridgeStatusUpdate {
     string oauth_id = 1;
     string item_type_id = 2;
     string inventory_id = 3;
@@ -19,9 +19,9 @@ message BridgeStatusUpdate {
     string mainnet_transaction_id = 8;
 }
 
-message BridgeUpdate {
+message NftBridgeUpdate {
     oneof update {
         saga.common.ErrorData error = 1;
-        BridgeStatusUpdate status_update = 2;
+        NftBridgeStatusUpdate status_update = 2;
     }
 }
