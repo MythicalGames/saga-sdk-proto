@@ -59,7 +59,7 @@ message ConfirmBuyingMythTokenRequest {
 message QuoteMythTokenWithdrawalRequest {
     string oauth_id = 1;
     string quantity = 2;
-    int32 quote_id = 3;
+    int64 quote_id = 3;
     int64 ttl = 4;
 }
 
