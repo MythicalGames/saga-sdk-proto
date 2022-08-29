@@ -66,7 +66,7 @@ message QuoteMythTokenWithdrawalResponse {
     string total_amount = 1;
     /* Gas cost of withdrawal */
     string gas_fee = 2;
-    int64 quote_id = 3;
+    string quote_id = 3;
     int64 ttl = 4;
 }
 
