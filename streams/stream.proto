@@ -3,15 +3,10 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "streams/common.proto";
-import "streams/nftbridge/definition.proto";
 import "streams/currency/definition.proto";
 import "streams/item/definition.proto";
 import "streams/itemtype/definition.proto";
-import "streams/listing/definition.proto";
 import "streams/myth/definition.proto";
-import "streams/offer/definition.proto";
-import "streams/order/definition.proto";
-import "streams/payment/definition.proto";
 import "streams/playerwallet/definition.proto";
 import "streams/reservation/definition.proto";
 
@@ -24,19 +19,14 @@ package saga.rpc.streams;
 message StatusUpdate {
     string trace_id = 1;
     oneof status_update {
-        streams.nftbridge.NftBridgeUpdate nft_bridge_update = 2;
-        streams.currency.CurrencyUpdate currency_update = 3;
-        streams.item.ItemUpdate item_update = 4;
-        streams.itemtype.ItemTypeUpdate item_type_update = 5;
-        streams.listing.ListingUpdate listing_update = 6;
-        streams.myth.MythTokenUpdate myth_token_update = 7;
-        streams.offer.OfferUpdate offer_update = 8;
-        streams.order.OrderUpdate order_update = 9;
-        streams.payment.PaymentUpdate payment_update = 10;
-        streams.playerwallet.PlayerWalletUpdate player_wallet_update = 11;
-        streams.reservation.ReservationUpdate reservation_update = 12;
+        streams.currency.CurrencyUpdate currency_update = 2;
+        streams.item.ItemUpdate item_update = 3;
+        streams.itemtype.ItemTypeUpdate item_type_update = 4;
+        streams.myth.MythTokenUpdate myth_token_update = 5;
+        streams.playerwallet.PlayerWalletUpdate player_wallet_update = 6;
+        streams.reservation.ReservationUpdate reservation_update = 7;
     }
-    google.protobuf.Timestamp created_at = 15;
+    google.protobuf.Timestamp created_at = 8;
 }
 
 message StatusConfirmRequest {

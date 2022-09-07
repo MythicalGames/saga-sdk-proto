@@ -11,10 +11,3 @@ enum PaymentProviderId {
     UPHOLD = 1;
     MYTHICAL = 2;
 }
-
-/* Payment Update Status */
-enum PaymentMethodUpdateStatus {
-    UPDATED = 0;
-    CREATED = 1;
-    DELETED = 2;
-}
