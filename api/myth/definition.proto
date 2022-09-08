@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "api/order/definition.proto";
-
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.myth";
 
@@ -38,7 +36,7 @@ message QuoteBuyingMythTokenRequest {
     /* Amount of MYTH Tokens to buy */
     string quantity = 1;
     /* Payment provider data */
-    saga.api.order.PaymentProviderData payment_provider_data = 2;
+    PaymentProviderData payment_provider_data = 2;
     string denomination_currency = 3;
     string origin_sub_account = 4;
     /* User that is buying MYTH Tokens */
@@ -53,7 +51,7 @@ message QuoteBuyingMythTokenResponse {
 message ConfirmBuyingMythTokenRequest {
     string quote_id = 1;
     string oauth_id = 2;
-    saga.api.order.PaymentProviderData payment_provider_data = 3;
+    PaymentProviderData payment_provider_data = 3;
 }
 
 message QuoteMythTokenWithdrawalRequest {
@@ -79,4 +77,27 @@ message DepositNmythRequest {
     string oauth_id = 1;
     string quantity = 2;
     string source_wallet = 3;
+}
+
+message PaymentProviderData {
+    oneof payment_provider_data {
+        CreditCardData credit_card_data = 1;
+        string uphold_card_id = 2;
+    }
+}
+
+message CreditCardData {
+    string first_name = 1;
+    string last_name = 2;
+    string address_line_1 = 3;
+    string address_line_2 = 4;
+    string city = 5;
+    string state = 6;
+    string postal_code = 7;
+    string country_iso_alpha_2 = 8;
+    string expiration_month = 9;
+    string expiration_year = 10;
+    string card_type = 11;
+    string instrument_id = 12;
+    string payment_method_token_id = 13;
 }

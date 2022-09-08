@@ -69,10 +69,6 @@ message UpdateItemTypePayload {
     bool withdrawable = 2;
 }
 
-message FreezeItemTypePayload {
-    string item_type_id = 1;
-}
-
 message StartMintRequest {
     string item_type_id = 1;
 }
