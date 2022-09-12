@@ -14,9 +14,17 @@ message MythTokenStatusUpdate {
     saga.proto.common.myth.MythTokenState token_state = 1;
 }
 
+message WithdrawalCompletedProto {
+    string oauth_id = 1;
+    string quote_id = 2;
+    string amount = 3;
+    string gas_fee = 4;
+}
+
 message MythTokenUpdate {
     oneof update {
         saga.common.ErrorData error = 1;
         MythTokenStatusUpdate status_update = 2;
+        WithdrawalCompletedProto withdrawal_completed = 3;
     }
 }
