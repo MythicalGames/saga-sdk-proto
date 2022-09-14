@@ -17,8 +17,8 @@ message MythTokenStatusUpdate {
 message WithdrawalCompletedProto {
     string oauth_id = 1;
     string quote_id = 2;
-    string amount = 3;
-    string gas_fee = 4;
+    string amount_in_nmyth = 3;
+    string gas_fee_in_wei = 4;
 }
 
 message MythTokenUpdate {
