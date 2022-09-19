@@ -7,7 +7,7 @@ option java_package = "games.mythical.saga.sdk.proto.streams.metadata";
 
 package saga.rpc.streams.metadata;
 
-/* Results from an Item status update gRPC stream call */
+/* Results from an metadata status update gRPC stream call */
 message MetadataUpdateProto {
   /* Game's unique Id for the Item */
   string inventory_id = 1;
