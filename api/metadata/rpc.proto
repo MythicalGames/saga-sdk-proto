@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.metadata";
+
+import "api/metadata/definition.proto";
+import "common/common.proto";
+
+package saga.api.metadata;
+
+service MetadataService {
+  /* Update an Item's metadata */
+  rpc UpdateItemMetadata(saga.api.metadata.UpdateItemMetadataRequest) returns (saga.common.ReceivedResponse);
+}

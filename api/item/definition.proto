@@ -76,14 +76,6 @@ message GetItemsForPlayerRequest {
     string oauth_id = 1;
 }
 
-/* Update Metadata call */
-message UpdateItemMetadataRequest {
-    /* Update Metadata for the Item with this id */
-    string inventory_id = 1;
-    /* Metadata to update with */
-    saga.common.Metadata metadata = 2;
-}
-
 /* Transfer item call */
 message TransferItemRequest {
     /* Game's id for the Item to transfer */

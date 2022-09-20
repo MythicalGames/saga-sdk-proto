@@ -9,6 +9,7 @@ import "streams/itemtype/definition.proto";
 import "streams/myth/definition.proto";
 import "streams/playerwallet/definition.proto";
 import "streams/reservation/definition.proto";
+import "streams/metadata/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams";
@@ -25,6 +26,7 @@ message StatusUpdate {
         streams.myth.MythTokenUpdate myth_token_update = 5;
         streams.playerwallet.PlayerWalletUpdate player_wallet_update = 6;
         streams.reservation.ReservationUpdate reservation_update = 7;
+        streams.metadata.MetadataUpdate metadata_update = 9;
     }
     google.protobuf.Timestamp created_at = 8;
 }
