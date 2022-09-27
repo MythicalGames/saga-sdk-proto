@@ -27,6 +27,7 @@ message ItemTypeProto {
     google.protobuf.Int64Value available_supply = 17;
     bool mintable = 18;
     bool mint_ended = 19;
+    bool randomize = 20;
 }
 
 message ItemTypesProto {
