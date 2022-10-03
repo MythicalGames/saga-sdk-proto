@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams";
 
@@ -7,4 +9,6 @@ package saga.rpc.streams;
 
 message Subscribe {
     string title_id = 1;
+    string stream_id = 2;
+    optional google.protobuf.Timestamp replay_since = 3;
 }
