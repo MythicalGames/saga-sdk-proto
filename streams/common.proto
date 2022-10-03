@@ -10,7 +10,5 @@ package saga.rpc.streams;
 message Subscribe {
     string title_id = 1;
     string stream_id = 2;
-    oneof replay_since_oneof {
-        google.protobuf.Timestamp replay_since = 3;
-    }
+    optional google.protobuf.Timestamp replay_since = 3;
 }
