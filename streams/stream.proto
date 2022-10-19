@@ -6,7 +6,6 @@ import "streams/common.proto";
 import "streams/currency/definition.proto";
 import "streams/item/definition.proto";
 import "streams/itemtype/definition.proto";
-import "streams/myth/definition.proto";
 import "streams/playerwallet/definition.proto";
 import "streams/reservation/definition.proto";
 import "streams/metadata/definition.proto";
@@ -23,7 +22,6 @@ message StatusUpdate {
         streams.currency.CurrencyUpdate currency_update = 2;
         streams.item.ItemUpdate item_update = 3;
         streams.itemtype.ItemTypeUpdate item_type_update = 4;
-        streams.myth.MythTokenUpdate myth_token_update = 5;
         streams.playerwallet.PlayerWalletUpdate player_wallet_update = 6;
         streams.reservation.ReservationUpdate reservation_update = 7;
         streams.metadata.MetadataUpdate metadata_update = 9;
