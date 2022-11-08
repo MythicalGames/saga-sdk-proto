@@ -23,9 +23,14 @@ message ItemStatusUpdate {
     saga.proto.common.item.ItemState item_state = 8;
 }
 
+message ItemStatusUpdates {
+    repeated ItemStatusUpdate status_updates = 1;
+}
+
 message ItemUpdate {
     oneof update {
         saga.common.ErrorData error = 1;
         ItemStatusUpdate status_update = 2;
+        ItemStatusUpdates status_updates = 3;
     }
 }
