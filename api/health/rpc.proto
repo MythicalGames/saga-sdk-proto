@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.health";
+
+package saga.api.health;
+
+service HealthService {
+    rpc WarmUp(google.protobuf.Empty) returns (google.protobuf.Empty);
+}
