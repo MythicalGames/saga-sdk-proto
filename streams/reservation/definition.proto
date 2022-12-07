@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "common/common.proto";
 import "api/item/definition.proto";
+import "api/itemtype/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams.reservation";
@@ -15,6 +16,7 @@ message ReservationCreatedProto {
 message ReservationRedeemedProto {
   string reservation_id = 1;
   repeated api.item.ItemProto items = 2;
+  repeated api.itemtype.FailedItemTypeBatch failed_batches = 3;
 }
 
 message ReservationReleasedProto {
