@@ -77,3 +77,7 @@ message StartMintRequest {
 message EndMintRequest {
     string item_type_id = 1;
 }
+
+message FailedItemTypeBatch {
+    string item_type_id = 1;
+}
