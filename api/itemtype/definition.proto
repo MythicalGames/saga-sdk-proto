@@ -3,6 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 
+import "common/query.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
@@ -60,6 +61,7 @@ message GetItemTypeRequest {
 message GetItemTypesRequest {
     string game_title_id = 1;
     string publisher_address = 2;
+    saga.common.QueryOptionsProto query_options = 3;
 }
 
 /* Update ItemType call */
