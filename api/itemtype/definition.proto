@@ -29,6 +29,7 @@ message ItemTypeProto {
     bool mintable = 18;
     bool mint_ended = 19;
     bool randomize = 20;
+    int64 total_supply = 21;
 }
 
 message ItemTypesProto {
