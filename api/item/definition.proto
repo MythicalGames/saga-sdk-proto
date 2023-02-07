@@ -84,6 +84,17 @@ message TransferItemRequest {
     string inventory_id = 1;
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
+    string idempotency_id = 4;
+}
+
+/* Transfer bulk item call */
+message TransferBulkItemRequest {
+    string game_title_id = 1;
+    /* Game's ids for the Item to transfer */
+    repeated string inventory_ids = 2;
+    /* User of Item to transfer to */
+    string destination_oauth_id  = 3;
+    string idempotency_id = 4;
 }
 
 /* Burn item call */
