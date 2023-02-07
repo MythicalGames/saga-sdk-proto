@@ -20,7 +20,7 @@ service ItemService {
     /* Transfer Item between users */
     rpc TransferItem(saga.api.item.TransferItemRequest) returns (saga.common.ReceivedResponse);
     /* Transfer Items between users */
-    rpc TransferBulkItem(saga.api.item.TransferBulkItemRequest) returns (saga.common.ReceivedResponse);
+    rpc TransferItemBulk(saga.api.item.TransferItemBulkRequest) returns (saga.common.ReceivedResponse);
     /* Burn an Item */
     rpc BurnItem(saga.api.item.BurnItemRequest) returns (saga.common.ReceivedResponse);
     /* Deposit an Item */

@@ -88,7 +88,7 @@ message TransferItemRequest {
 }
 
 /* Transfer bulk item call */
-message TransferBulkItemRequest {
+message TransferItemBulkRequest {
     string game_title_id = 1;
     /* Game's ids for the Item to transfer */
     repeated string inventory_ids = 2;
