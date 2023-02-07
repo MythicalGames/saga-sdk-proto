@@ -84,6 +84,7 @@ message TransferItemRequest {
     string inventory_id = 1;
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
+    string idempotency_id = 4;
 }
 
 /* Transfer bulk item call */
@@ -93,8 +94,7 @@ message TransferBulkItemRequest {
     repeated string inventory_ids = 2;
     /* User of Item to transfer to */
     string destination_oauth_id  = 3;
-    string request_id = 4;
-    bool prefund_gas = 5;
+    string idempotency_id = 4;
 }
 
 /* Burn item call */
