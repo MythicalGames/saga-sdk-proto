@@ -24,6 +24,7 @@ message RedeemItemProto {
   string inventory_id = 1;
   string item_type_id = 2;
   saga.common.Metadata metadata = 3;
+  uint64 token_id = 4;
 }
 
 message RedeemReservationRequest {
