@@ -36,7 +36,7 @@ message ItemTypeProto {
     google.protobuf.Int64Value available_supply = 17;
     bool mintable = 18;
     bool mint_ended = 19;
-    bool randomize = 20;
+    bool randomize = 20 [deprecated = true];
     int64 total_supply = 21;
     MintMode mint_mode = 22;
 }
@@ -57,7 +57,7 @@ message CreateItemTypeRequest {
     string name = 2;
     string symbol = 3;
     int64 max_supply = 4;
-    bool randomize = 5;
+    bool randomize = 5 [deprecated = true];
     google.protobuf.Timestamp date_finished = 6;
     bool withdrawable = 7;
     MintMode mint_mode = 8;
