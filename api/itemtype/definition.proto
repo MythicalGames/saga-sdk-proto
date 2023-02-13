@@ -12,6 +12,14 @@ package saga.api.itemtype;
  * @exclude
  * ----- ItemType Definitions -----
  */
+
+enum MintMode {
+    MINT_MODE_UNSPECIFIED = 0;
+    MINT_MODE_SERIAL = 1;
+    MINT_MODE_RANDOM = 2;
+    MINT_MODE_SELECTED = 3;
+}
+
 message ItemTypeProto {
     string trace_id = 1;
     string item_type_id = 2;
@@ -28,8 +36,9 @@ message ItemTypeProto {
     google.protobuf.Int64Value available_supply = 17;
     bool mintable = 18;
     bool mint_ended = 19;
-    bool randomize = 20;
+    bool randomize = 20 [deprecated = true];
     int64 total_supply = 21;
+    MintMode mint_mode = 22;
 }
 
 message ItemTypesProto {
@@ -48,9 +57,10 @@ message CreateItemTypeRequest {
     string name = 2;
     string symbol = 3;
     int64 max_supply = 4;
-    bool randomize = 5;
+    bool randomize = 5 [deprecated = true];
     google.protobuf.Timestamp date_finished = 6;
     bool withdrawable = 7;
+    MintMode mint_mode = 8;
 }
 
 /* Get ItemType call */
