@@ -87,6 +87,7 @@ message TransferItemRequest {
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
     string idempotency_id = 4;
+    bool prefund_gas = 5;
 }
 
 /* Transfer bulk item call */
@@ -97,12 +98,14 @@ message TransferItemBulkRequest {
     /* User of Item to transfer to */
     string destination_oauth_id  = 3;
     string idempotency_id = 4;
+    bool prefund_gas = 5;
 }
 
 /* Burn item call */
 message BurnItemRequest {
     /* Game's id for the Item to burn */
     string inventory_id = 1;
+    bool prefund_gas = 2;
 }
 
 /* Deposit item call */
