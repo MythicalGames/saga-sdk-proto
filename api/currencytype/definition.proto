@@ -13,16 +13,21 @@ package saga.api.currencytype;
  */
 message CurrencyTypeProto {
     string trace_id = 1;
-    string currency_type_id = 3;
-    string game_title_id = 4;
-    string publisher_address = 5;
-    string name = 6;
-    string symbol = 7;
-    string contract_address = 9;
-    bool finalized = 10;
-    int64 max_supply = 11;
-    google.protobuf.Timestamp created_at = 13;
-    google.protobuf.Timestamp updated_at = 14;
+    string currency_type_id = 2;
+    string name = 4;
+    string symbol = 5;
+    string image_url = 6;
+    string contract_address = 7;
+    string transaction_id = 8;
+    bool finalized = 9;
+    PublisherBalanceProto publisher_balance = 13;
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
+}
+
+message PublisherBalanceProto {
+    string publisher_address = 1;
+    string balance_in_wei = 2;
 }
 
 message CurrencyTypesProto {
@@ -44,9 +49,12 @@ message GetCurrencyTypesRequest {
     saga.common.SortOrder sort_order = 2;
 }
 
+/* Create currencyType call */
 message CreateCurrencyTypeRequest {
+    /* The game's unique id for this CurrencyType */
     string currency_type_id = 1;
-    string name = 4;
-    string symbol = 5;
-    int64 max_supply = 7;
+    string name = 2;
+    /* Unique symbol across all of Saga */
+    string symbol = 3;
+    string image_url = 4;
 }
