@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currencytype";
 
-import "common/sort.proto";
+import "common/query.proto";
 import "google/protobuf/timestamp.proto";
 
 package saga.api.currencytype;
@@ -45,8 +45,9 @@ message GetCurrencyTypeRequest {
 }
 
 message GetCurrencyTypesRequest {
-    int32 page_size = 1;
-    saga.common.SortOrder sort_order = 2;
+    string game_title_id = 1;
+    string publisher_address = 2;
+    saga.common.QueryOptionsProto query_options = 3;
 }
 
 /* Create currencyType call */

@@ -4,6 +4,7 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "streams/common.proto";
 import "streams/currency/definition.proto";
+import "streams/currencytype/definition.proto";
 import "streams/item/definition.proto";
 import "streams/itemtype/definition.proto";
 import "streams/playerwallet/definition.proto";
@@ -25,6 +26,7 @@ message StatusUpdate {
         streams.playerwallet.PlayerWalletUpdate player_wallet_update = 6;
         streams.reservation.ReservationUpdate reservation_update = 7;
         streams.metadata.MetadataUpdate metadata_update = 9;
+        streams.currencytype.CurrencyTypeUpdate currency_type_update = 10;
     }
     google.protobuf.Timestamp created_at = 8;
 }
