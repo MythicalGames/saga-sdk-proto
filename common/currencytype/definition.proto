@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common.currencytype";
+
+package saga.proto.common.currencytype;
+
+enum CurrencyTypeState {
+  FAILED = 0; // CurrencyType failed to perform current action
+  CREATED = 1; // CurrencyType issued successfully
+}

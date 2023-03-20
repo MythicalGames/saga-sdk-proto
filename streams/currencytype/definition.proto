@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "common/common.proto";
+import "common/currencytype/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.currencytype";
+
+package saga.rpc.streams.currencytype;
+
+message CurrencyTypeStatusUpdate {
+  string currency_type_id = 1;
+  saga.proto.common.currencytype.CurrencyTypeState currency_type_state = 2;
+}
+
+message CurrencyTypeUpdate {
+  oneof update {
+    saga.common.ErrorData error = 1;
+    CurrencyTypeStatusUpdate status_update = 2;
+  }
+}
