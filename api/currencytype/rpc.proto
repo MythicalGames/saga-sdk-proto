@@ -11,5 +11,4 @@ package saga.api.currencytype;
 service CurrencyTypeService {
     rpc GetCurrencyType(saga.api.currencytype.GetCurrencyTypeRequest) returns (saga.api.currencytype.CurrencyTypeProto);
     rpc GetCurrencyTypes(saga.api.currencytype.GetCurrencyTypesRequest) returns (saga.api.currencytype.CurrencyTypesProto);
-    rpc CreateCurrencyType(saga.api.currencytype.CreateCurrencyTypeRequest) returns (saga.common.ReceivedResponse);
 }
