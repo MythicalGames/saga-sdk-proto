@@ -19,7 +19,6 @@ message CurrencyTypeProto {
     string image_url = 6;
     string contract_address = 7;
     string transaction_id = 8;
-    bool finalized = 9;
     PublisherBalanceProto publisher_balance = 13;
     google.protobuf.Timestamp created_at = 14;
     google.protobuf.Timestamp updated_at = 15;
@@ -45,19 +44,5 @@ message GetCurrencyTypeRequest {
 }
 
 message GetCurrencyTypesRequest {
-    string game_title_id = 1;
-    string publisher_address = 2;
     saga.common.QueryOptionsProto query_options = 3;
-}
-
-/* Create currencyType call */
-message CreateCurrencyTypeRequest {
-    /* The game's unique id for this CurrencyType */
-    string currency_type_id = 1;
-    string name = 2;
-    /* Unique symbol across all of Saga */
-    string symbol = 3;
-    string image_url = 4;
-    /* The game's unique string per request */
-    string idempotency_id = 5;
 }

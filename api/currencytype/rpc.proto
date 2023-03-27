@@ -4,12 +4,10 @@ option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currencytype";
 
 import "api/currencytype/definition.proto";
-import "common/common.proto";
 
 package saga.api.currencytype;
 
 service CurrencyTypeService {
     rpc GetCurrencyType(saga.api.currencytype.GetCurrencyTypeRequest) returns (saga.api.currencytype.CurrencyTypeProto);
     rpc GetCurrencyTypes(saga.api.currencytype.GetCurrencyTypesRequest) returns (saga.api.currencytype.CurrencyTypesProto);
-    rpc CreateCurrencyType(saga.api.currencytype.CreateCurrencyTypeRequest) returns (saga.common.ReceivedResponse);
 }
