@@ -24,12 +24,19 @@ message CurrencyProto {
 
 /* Issue currency call */
 message IssueCurrencyRequest {
-    /* amount to issue */
-    int64 amount = 1;
     /* Currency Type the currency to issue belongs to */
-    string currency_type_id = 3;
-    /* Wallet address to issue currency to */
-    string oauth_id = 4;
+    string currency_type_id = 1;
+    /* Users to issue currency to */
+    repeated UserAmountProto user_amounts = 2;
+    /* Unique id to ensure request is processed only once */
+    string idempotency_id = 3;
+}
+
+message UserAmountProto {
+    /* User to issue currency to */
+    string oauth_id = 1;
+    /* Amount to issue */
+    string amount_in_wei = 2;
 }
 
 /* Get Currency call */
