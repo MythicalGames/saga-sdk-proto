@@ -17,8 +17,8 @@ service CurrencyService {
     rpc TransferCurrency(saga.api.currency.TransferCurrencyRequest) returns (saga.common.ReceivedResponse);
     /* Burn currency for a user */
     rpc BurnCurrency(saga.api.currency.BurnCurrencyRequest) returns (saga.common.ReceivedResponse);
-    /* Get Balance for player */
-    rpc GetBalanceForPlayer(saga.api.currency.GetBalanceOfPlayerRequest) returns (saga.api.currency.BalanceOfPlayerProto);
-    /* Get Balances for player */
-    rpc GetBalancesForPlayer(saga.api.currency.GetBalancesOfPlayerRequest) returns (saga.api.currency.BalancesOfPlayerProto);
+    /* Get Balance of a player */
+    rpc GetBalanceOfPlayer(saga.api.currency.GetBalanceOfPlayerRequest) returns (saga.api.currency.BalanceOfPlayerProto);
+    /* Get Balances of a player */
+    rpc GetBalancesOfPlayer(saga.api.currency.GetBalancesOfPlayerRequest) returns (saga.api.currency.BalancesOfPlayerProto);
 }
