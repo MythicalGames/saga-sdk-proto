@@ -14,11 +14,13 @@ package saga.api.currency;
 message BalanceOfPlayerProto {
     string oauth_id = 1;
     BalanceProto balance = 2;
+    string trace_id = 3;
 }
 
 message BalancesOfPlayerProto {
     string oauth_id = 1;
     repeated BalanceProto balances = 2;
+    string trace_id = 3;
 }
 
 message BalanceProto {
