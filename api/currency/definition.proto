@@ -10,13 +10,20 @@ package saga.api.currency;
  * @exclude
  * ----- Currency Definitions -----
  */
-message CurrencyProto {
-    string trace_id = 1;
-    /* Amount of currency */
-    int64 amount = 2;
-    string currency_type_id = 3;
-    /* Wallet address the currency belongs to */
-    string oauth_id = 4;
+
+message BalanceOfPlayerProto {
+    string oauth_id = 1;
+    BalanceProto balance = 2;
+}
+
+message BalancesOfPlayerProto {
+    string oauth_id = 1;
+    repeated BalanceProto balances = 2;
+}
+
+message BalanceProto {
+    string currency_type_id = 1;
+    string balance_in_wei = 2;
 }
 
 /**
@@ -69,31 +76,13 @@ message BurnCurrencyRequest {
 }
 
 message GetBalanceOfPlayerRequest {
-    string game_title_id = 1;
-    string game_currency_type_id = 2;
-    string oauth_id = 3;
+    string currency_type_id = 1;
+    /* User to get balance for */
+    string oauth_id = 2;
 }
 
 message GetBalancesOfPlayerRequest {
-    string game_title_id = 1;
-    string oauth_id = 2;
-    saga.common.QueryOptionsProto query_options = 3;
-    string game_currency_type_id = 4;
-}
-
-message BalanceOfPlayerProto {
-    string game_title_id = 1;
-    string oauth_id = 2;
-    BalanceProto balance = 3;
-}
-
-message BalancesOfPlayerProto {
-    string game_title_id = 1;
-    string oauth_id = 2;
-    repeated BalanceProto balances = 3;
-}
-
-message BalanceProto {
-    string game_currency_type_id = 1;
-    string balance_in_wei = 2;
+    /* User to get balances for */
+    string oauth_id = 1;
+    saga.common.QueryOptionsProto query_options = 2;
 }
