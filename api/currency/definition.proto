@@ -3,18 +3,29 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
+import "common/query.proto";
+
 package saga.api.currency;
 /**
  * @exclude
  * ----- Currency Definitions -----
  */
-message CurrencyProto {
-    string trace_id = 1;
-    /* Amount of currency */
-    int64 amount = 2;
-    string currency_type_id = 3;
-    /* Wallet address the currency belongs to */
-    string oauth_id = 4;
+
+message BalanceOfPlayerProto {
+    string oauth_id = 1;
+    BalanceProto balance = 2;
+    string trace_id = 3;
+}
+
+message BalancesOfPlayerProto {
+    string oauth_id = 1;
+    repeated BalanceProto balances = 2;
+    string trace_id = 3;
+}
+
+message BalanceProto {
+    string currency_type_id = 1;
+    string balance_in_wei = 2;
 }
 
 /**
@@ -64,4 +75,16 @@ message BurnCurrencyRequest {
     string currency_id = 2;
     /* Amount of currency to burn */
     int64 amount = 3;
+}
+
+message GetBalanceOfPlayerRequest {
+    string currency_type_id = 1;
+    /* User to get balance for */
+    string oauth_id = 2;
+}
+
+message GetBalancesOfPlayerRequest {
+    /* User to get balances for */
+    string oauth_id = 1;
+    saga.common.QueryOptionsProto query_options = 2;
 }
