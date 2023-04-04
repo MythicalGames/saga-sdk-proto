@@ -10,13 +10,18 @@ package saga.rpc.streams.currency;
 
 /* Results from a Currency status update gRPC stream call */
 message CurrencyStatusUpdate {
-    /* Wallet address of Currency */
-    string oauth_id = 1;
-    string currency_type_id = 2;
-    /* Amount of coins */
-    int64 amount = 3;
+    /* Id given from chain */
+    string transaction_id = 1;
+    repeated BalanceProto balances = 2;
+    string idempotency_id = 3;
     /* State of the Currency, see CurrencyState */
     saga.proto.common.currency.CurrencyState currency_state = 8;
+}
+
+message BalanceProto {
+    string oauth_id = 1;
+    string currency_type_id = 2;
+    string balance_in_wei = 3;
 }
 
 message CurrencyUpdate {
@@ -24,12 +29,4 @@ message CurrencyUpdate {
         saga.common.ErrorData error = 1;
         CurrencyStatusUpdate status_update = 2;
     }
-}
-
-/* Currency information sent on a confirm request */
-message CurrencyStatusConfirmRequest {
-    string trace_id = 1;
-    string title_id = 2;
-    string currency_type_id = 3;
-    saga.proto.common.currency.CurrencyState currency_state = 8;
 }
