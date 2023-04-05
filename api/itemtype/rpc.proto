@@ -16,7 +16,6 @@ service ItemTypeService {
     /* Create an ItemType */
     rpc CreateItemType(saga.api.itemtype.CreateItemTypeRequest) returns (saga.common.ReceivedResponse);
     /* Update the ItemType */
-    rpc UpdateItemType(saga.api.itemtype.UpdateItemTypePayload) returns (saga.common.ReceivedResponse);
     rpc StartMint(saga.api.itemtype.StartMintRequest) returns (saga.common.ReceivedResponse);
     rpc EndMint(saga.api.itemtype.EndMintRequest) returns (saga.common.ReceivedResponse);
 }
