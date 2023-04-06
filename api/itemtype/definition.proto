@@ -29,7 +29,7 @@ message ItemTypeProto {
     string contract_address = 6;
     string block_explorer_url = 7;
     bool finalized = 8;
-    bool withdrawable = 9;
+    bool withdrawable = 9 [deprecated = true];
     google.protobuf.Timestamp created_at = 14;
     google.protobuf.Timestamp updated_at = 15;
     int64 issued_supply = 16;
@@ -59,7 +59,7 @@ message CreateItemTypeRequest {
     int64 max_supply = 4;
     bool randomize = 5 [deprecated = true];
     google.protobuf.Timestamp date_finished = 6;
-    bool withdrawable = 7;
+    bool withdrawable = 7 [deprecated = true];
     MintMode mint_mode = 8;
 }
 
@@ -73,14 +73,6 @@ message GetItemTypesRequest {
     string game_title_id = 1;
     string publisher_address = 2;
     saga.common.QueryOptionsProto query_options = 3;
-}
-
-/* Update ItemType call */
-message UpdateItemTypePayload {
-    /* Game's ItemTypeId for the ItemType to update */
-    string item_type_id = 1;
-    /* withdrawable state to update to */
-    bool withdrawable = 2;
 }
 
 message StartMintRequest {
