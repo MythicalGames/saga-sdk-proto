@@ -59,22 +59,19 @@ message GetCurrencyForPlayerRequest {
 
 /* Transfer currency call */
 message TransferCurrencyRequest {
-    /* User to transfer currency from */
-    string source_oauth_id = 1;
-    /* User to transfer currency to */
-    string destination_oauth_id = 2;
-    string currency_id = 3;
-    /* Amount of currency to transfer */
-    int64 amount = 4;
+    string currency_type_id = 1;
+    string source_oauth_id = 2;
+    string dest_oauth_id = 3;
+    string amount_in_wei = 4;
+    string idempotency_id = 5;
 }
 
 /* Burn currency call */
 message BurnCurrencyRequest {
-    /* User to burn currency from */
-    string oauth_id = 1;
-    string currency_id = 2;
-    /* Amount of currency to burn */
-    int64 amount = 3;
+    string currency_type_id = 1;
+    string oauth_id = 2;
+    string amount_in_wei = 3;
+    string idempotency_id = 4;
 }
 
 message GetBalanceOfPlayerRequest {
