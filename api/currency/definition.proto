@@ -64,7 +64,7 @@ message TransferCurrencyRequest {
     string dest_oauth_id = 3;
     string amount_in_wei = 4;
     string idempotency_id = 5;
-    bool publisher_pays = 6;
+    bool prefund_gas = 6;
 }
 
 /* Burn currency call */
@@ -73,7 +73,7 @@ message BurnCurrencyRequest {
     string oauth_id = 2;
     string amount_in_wei = 3;
     string idempotency_id = 4;
-    bool publisher_pays = 5;
+    bool prefund_gas = 5;
 }
 
 message GetBalanceOfPlayerRequest {
