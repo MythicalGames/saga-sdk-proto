@@ -11,6 +11,7 @@ package saga.rpc.streams.currencytype;
 message CurrencyTypeStatusUpdate {
   string currency_type_id = 1;
   saga.proto.common.currencytype.CurrencyTypeState currency_type_state = 2;
+  string idempotency_id = 3;
 }
 
 message CurrencyTypeUpdate {
