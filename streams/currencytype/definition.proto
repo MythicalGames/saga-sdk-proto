@@ -11,6 +11,8 @@ package saga.rpc.streams.currencytype;
 message CurrencyTypeStatusUpdate {
   string currency_type_id = 1;
   saga.proto.common.currencytype.CurrencyTypeState currency_type_state = 2;
+  string transaction_id = 3;
+  string contract_address = 4;
 }
 
 message CurrencyTypeUpdate {
