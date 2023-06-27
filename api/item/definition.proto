@@ -28,6 +28,7 @@ message ItemProto {
     google.protobuf.Timestamp created_at = 8;
     /* When was this Item last updated */
     google.protobuf.Timestamp updated_at = 9;
+    string state = 10;
 }
 
 message ItemsProto {
