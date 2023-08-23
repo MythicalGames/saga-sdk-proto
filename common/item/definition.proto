@@ -12,8 +12,10 @@ enum ItemState {
     TRANSFERRED = 3; // Item transferred successfully
     BURNED = 4; // item no longer exists on the blockchain so the API will have to keep track through transaction history
     LISTING_CLOSED = 5; // Listing for Item is closed
-    WITHDRAWN = 6; // Item withdrawn successfully
-    DEPOSITED = 7; // Item deposited successfully
+    WITHDRAWN = 6 [deprecated = true]; // Item withdrawn successfully
+    DEPOSITED = 7 [deprecated = true]; // Item deposited successfully
+    BRIDGED_FROM_MYTHICAL_CHAIN = 8;
+    BRIDGED_TO_MYTHICAL_CHAIN = 9;
 }
 
 enum BlockChains {
