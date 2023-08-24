@@ -23,4 +23,5 @@ message CreatePlayerWalletRequest {
 
 message GetPlayerWalletRequest {
   string oauth_id = 1;
+  string wallet_address = 2;
 }
