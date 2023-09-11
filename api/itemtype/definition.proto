@@ -39,6 +39,7 @@ message ItemTypeProto {
     bool randomize = 20 [deprecated = true];
     int64 total_supply = 21;
     MintMode mint_mode = 22;
+    bool bridgeable = 23;
 }
 
 message ItemTypesProto {
