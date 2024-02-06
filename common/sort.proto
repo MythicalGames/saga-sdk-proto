@@ -8,4 +8,5 @@ package saga.common;
 enum SortOrder {
     ASC = 0; // Sort ascending
     DESC = 1; // Sort descending
+
 }
