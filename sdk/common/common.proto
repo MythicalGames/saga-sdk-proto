@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.common";
 import "google/protobuf/struct.proto";
 import "google/protobuf/wrappers.proto";
 
-package saga.common;
+package sdk.saga.common;
 
 /* Metadata properties of Item */
 message Metadata {

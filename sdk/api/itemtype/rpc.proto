@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
 import "sdk/api/itemtype/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.itemtype;
+package sdk.saga.api.itemtype;
 
 service ItemTypeService {
     /* Get an ItemType by Id */

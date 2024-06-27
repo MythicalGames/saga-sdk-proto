@@ -7,7 +7,7 @@ import "sdk/common/query.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-package saga.api.itemtype;
+package sdk.saga.api.itemtype;
 /**
  * @exclude
  * ----- ItemType Definitions -----

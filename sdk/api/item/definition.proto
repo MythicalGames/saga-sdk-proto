@@ -9,7 +9,7 @@ import "sdk/common/finalization.proto";
 import "sdk/common/query.proto";
 import "google/protobuf/timestamp.proto";
 
-package saga.api.item;
+package sdk.saga.api.item;
 
 /**
  * @exclude

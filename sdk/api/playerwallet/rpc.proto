@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.playerwallet";
 import "sdk/api/playerwallet/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.playerwallet;
+package sdk.saga.api.playerwallet;
 
 service PlayerWalletService {
   /* Create a Player Wallet */

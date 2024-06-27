@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.reservation";
 import "sdk/common/common.proto";
 import "google/protobuf/wrappers.proto";
 
-package saga.api.reservation;
+package sdk.saga.api.reservation;
 
 message ItemReservationProto {
   string item_type_id = 1;

@@ -6,7 +6,7 @@ import "sdk/common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.offer";
 
-package saga.api.offer;
+package sdk.saga.api.offer;
 
 service OfferService {
     /* Create an Offer quote */

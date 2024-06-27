@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.metadata";
 import "sdk/api/metadata/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.metadata;
+package sdk.saga.api.metadata;
 
 service MetadataService {
   /* Update an Item's metadata */

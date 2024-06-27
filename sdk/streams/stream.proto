@@ -14,7 +14,7 @@ import "sdk/streams/metadata/definition.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams";
 
-package saga.rpc.streams;
+package sdk.saga.rpc.streams;
 
 /* Returned results on sending a Status stream call */
 message StatusUpdate {

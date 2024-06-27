@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.listing";
 import "sdk/common/query.proto";
 import "google/protobuf/timestamp.proto";
 
-package saga.api.listing;
+package sdk.saga.api.listing;
 /**
  * @exclude
  * ----- Listing Definitions -----

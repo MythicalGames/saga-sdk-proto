@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common.currency";
 
-package saga.proto.common.currency;
+package sdk.saga.proto.common.currency;
 
 enum CurrencyState {
     FAILED = 0; // Failed to issue/transfer/burn Currency

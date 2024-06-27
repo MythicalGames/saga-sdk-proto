@@ -6,7 +6,7 @@ import "sdk/common/common.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.nftbridge";
 
-package saga.api.nftbridge;
+package sdk.saga.api.nftbridge;
 
 service NftBridgeService {
     /* Withdraw an Item */

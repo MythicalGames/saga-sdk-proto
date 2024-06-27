@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.offer";
 import "sdk/common/query.proto";
 import "google/protobuf/timestamp.proto";
 
-package saga.api.offer;
+package sdk.saga.api.offer;
 /**
  * @exclude
  * ----- Offer Definitions -----

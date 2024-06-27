@@ -5,7 +5,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.currency";
 
 import "sdk/common/query.proto";
 
-package saga.api.currency;
+package sdk.saga.api.currency;
 /**
  * @exclude
  * ----- Currency Definitions -----

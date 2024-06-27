@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common.item";
 
-package saga.proto.common.item;
+package sdk.saga.proto.common.item;
 
 enum ItemState {
     FAILED = 0; // Failed to perform current Item action

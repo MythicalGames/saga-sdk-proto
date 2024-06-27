@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.currency";
 import "sdk/api/currency/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.currency;
+package sdk.saga.api.currency;
 
 service CurrencyService {
     /* Issue currency to a user */

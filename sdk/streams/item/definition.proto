@@ -6,7 +6,7 @@ import "sdk/common/item/definition.proto";
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams.item";
 
-package saga.rpc.streams.item;
+package sdk.saga.rpc.streams.item;
 
 /* Results from an Item status update gRPC stream call */
 message ItemStatusUpdate {

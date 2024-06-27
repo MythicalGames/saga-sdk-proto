@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.reservation";
 import "sdk/api/reservation/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.reservation;
+package sdk.saga.api.reservation;
 
 service ReservationService {
   rpc CreateReservation(saga.api.reservation.CreateReservationRequest) returns (saga.common.ReceivedResponse);

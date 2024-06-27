@@ -6,7 +6,7 @@ option java_package = "games.mythical.saga.sdk.proto.api.item";
 import "sdk/api/item/definition.proto";
 import "sdk/common/common.proto";
 
-package saga.api.item;
+package sdk.saga.api.item;
 
 service ItemService {
     /* Get an item */
