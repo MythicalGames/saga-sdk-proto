@@ -2,6 +2,7 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.api.item";
+option go_package = "sdk/api/item";
 
 import "common/item/definition.proto";
 import "common/common.proto";

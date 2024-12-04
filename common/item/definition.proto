@@ -2,6 +2,7 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.common.item";
+option go_package = "sdk/common/item";
 
 package saga.proto.common.item;
 

@@ -13,6 +13,7 @@ import "streams/metadata/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams";
+option go_package = "sdk/streams";
 
 package saga.rpc.streams;
 

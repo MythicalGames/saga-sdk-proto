@@ -5,6 +5,7 @@ import "common/currencytype/definition.proto";
 
 option java_multiple_files = true;
 option java_package = "games.mythical.saga.sdk.proto.streams.currencytype";
+option go_package = "sdk/streams/currencytype";
 
 package saga.rpc.streams.currencytype;
 
