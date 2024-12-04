@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.metadata";
+
+import "common/common.proto";
+
+package saga.api.metadata;
+
+/* Update Metadata call */
+message UpdateItemMetadataRequest {
+  /* Update Metadata for the Item with this id */
+  string inventory_id = 1;
+  /* Metadata to update with */
+  saga.common.Metadata metadata = 2;
+}

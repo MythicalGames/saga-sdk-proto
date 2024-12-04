@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.metadata";
+
+package saga.rpc.streams.metadata;
+
+/* Results from an metadata status update gRPC stream call */
+message MetadataUpdateProto {
+  /* Game's unique Id for the Item */
+  string inventory_id = 1;
+  /* Metadata address */
+  string metadata_url = 2;
+}
+
+message MetadataUpdate {
+  oneof update {
+    saga.common.ErrorData error = 1;
+    MetadataUpdateProto metadata_updated = 2;
+  }
+}

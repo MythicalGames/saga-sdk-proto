@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "api/nftbridge/definition.proto";
+import "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.nftbridge";
+
+package saga.api.nftbridge;
+
+service NftBridgeService {
+    /* Withdraw an Item */
+    rpc WithdrawItem(saga.api.nftbridge.WithdrawItemRequest) returns (saga.common.ReceivedResponse);
+    /* Get Bridge */
+    rpc GetBridge(saga.api.nftbridge.GetNftBridgeRequest) returns (saga.api.nftbridge.NftBridgeProto);
+    /* Get Bridge Quote */
+    rpc GetBridgeQuote(saga.api.nftbridge.QuoteBridgeNFTRequest) returns (saga.api.nftbridge.QuoteBridgeNFTResponse);
+}
