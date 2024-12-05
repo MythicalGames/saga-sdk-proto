@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.currency";
+option go_package = "sdk/api/currency";
+
+import "common/query.proto";
+
+package saga.api.currency;
+/**
+ * @exclude
+ * ----- Currency Definitions -----
+ */
+
+message BalanceOfPlayerProto {
+    string oauth_id = 1;
+    BalanceProto balance = 2;
+    string trace_id = 3;
+}
+
+message BalancesOfPlayerProto {
+    string oauth_id = 1;
+    repeated BalanceProto balances = 2;
+    string trace_id = 3;
+}
+
+message BalanceProto {
+    string currency_type_id = 1;
+    string balance_in_wei = 2;
+}
+
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+
+/* Issue currency call */
+message IssueCurrencyRequest {
+    /* Currency Type the currency to issue belongs to */
+    string currency_type_id = 1;
+    /* Users to issue currency to */
+    repeated UserAmountProto user_amounts = 2;
+    /* Unique id to ensure request is processed only once */
+    string idempotency_id = 3;
+}
+
+message UserAmountProto {
+    /* User to issue currency to */
+    string oauth_id = 1;
+    /* Amount to issue */
+    string amount_in_wei = 2;
+}
+
+/* Get Currency call */
+message GetCurrencyForPlayerRequest {
+    /* User to get currency for */
+    string oauth_id = 1;
+    string currency_type_id = 2;
+}
+
+/* Transfer currency call */
+message TransferCurrencyRequest {
+    string currency_type_id = 1;
+    string source_oauth_id = 2;
+    string dest_oauth_id = 3;
+    string amount_in_wei = 4;
+    string idempotency_id = 5;
+    bool prefund_gas = 6;
+}
+
+/* Burn currency call */
+message BurnCurrencyRequest {
+    string currency_type_id = 1;
+    string oauth_id = 2;
+    string amount_in_wei = 3;
+    string idempotency_id = 4;
+    bool prefund_gas = 5;
+}
+
+message GetBalanceOfPlayerRequest {
+    string currency_type_id = 1;
+    /* User to get balance for */
+    string oauth_id = 2;
+}
+
+message GetBalancesOfPlayerRequest {
+    /* User to get balances for */
+    string oauth_id = 1;
+    saga.common.QueryOptionsProto query_options = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
+option go_package = "sdk/api/itemtype";
+
+import "api/itemtype/definition.proto";
+import "common/common.proto";
+
+package saga.api.itemtype;
+
+service ItemTypeService {
+    /* Get an ItemType by Id */
+    rpc GetItemType(saga.api.itemtype.GetItemTypeRequest) returns (saga.api.itemtype.ItemTypeProto);
+    /* Get ItemTypes based on filters */
+    rpc GetItemTypes(saga.api.itemtype.GetItemTypesRequest) returns (saga.api.itemtype.ItemTypesProto);
+    /* Create an ItemType */
+    rpc CreateItemType(saga.api.itemtype.CreateItemTypeRequest) returns (saga.common.ReceivedResponse);
+    /* Update the ItemType */
+    rpc StartMint(saga.api.itemtype.StartMintRequest) returns (saga.common.ReceivedResponse);
+    rpc EndMint(saga.api.itemtype.EndMintRequest) returns (saga.common.ReceivedResponse);
+}

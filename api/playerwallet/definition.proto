@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.playerwallet";
+option go_package = "sdk/api/playerwallet";
+
+package saga.api.playerwallet;
+
+import "google/protobuf/timestamp.proto";
+
+message PlayerWalletProto {
+  string trace_id = 1;
+  string oauth_id = 2;
+  string address = 3;
+  string balance_in_wei = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  string withdrawable_limit_in_wei = 7;
+}
+
+message CreatePlayerWalletRequest {
+  string oauth_id = 1;
+}
+
+message GetPlayerWalletRequest {
+  string oauth_id = 1;
+  string wallet_address = 2;
+}

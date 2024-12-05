@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.offer";
+option go_package = "sdk/api/offer";
+
+import "common/query.proto";
+import "google/protobuf/timestamp.proto";
+
+package saga.api.offer;
+/**
+ * @exclude
+ * ----- Offer Definitions -----
+ */
+message OfferQuoteProto {
+    string trace_id = 1;
+    /* User of this Offer Quote */
+    string oauth_id = 2;
+    /* Id of this Offer Quote */
+    string quote_id = 3;
+    /* GameInventory Id for this Offer Quote */
+    string inventory_id = 4;
+    /* Amount of tax */
+    string tax = 5; // @exclude and fees?
+    /* Currency that Tax is in */
+    string tax_currency = 6;
+    /* Total cost of the offer */
+    string total = 7;
+    /* Currency the total is in */
+    string currency = 8;
+    /* When the Offer was created */
+    google.protobuf.Timestamp created_at = 63;
+}
+
+message OfferProto {
+    /* User of the Offer */
+    string oauth_id = 1;
+    /* GameInventory Id of the Offer */
+    string inventory_id = 2;
+    /* Currency of the total */
+    string currency = 3;
+    /* Total cost of the offer */
+    string total = 4;
+    /* When the offer was created */
+    google.protobuf.Timestamp created_at = 5;
+}
+
+message OffersProto {
+    repeated OfferProto offers = 1;
+}
+
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+/* Create Offer Quote call */
+message CreateOfferQuoteRequest {
+    string oauth_id = 1;
+    /* GameInventory Id of the Offer */
+    string inventory_id = 2;
+    /* Total quoted for the Offer */
+    string total = 3;
+    /* Currency the total is in */
+    string currency = 4;
+}
+
+/* Confirm Offer call */
+message ConfirmOfferRequest {
+    string oauth_id = 1;
+    /* Quote Id of the Offer */
+    string quote_id = 2;
+    // @exclude TODO: where's the payment data? Also are offers fronted payment or we somehow storing it (securely) then charging when needed
+}
+
+/* Cancel Offer call */
+message CancelOfferRequest {
+    /* User that the Offer belongs to */
+    string oauth_id = 1;
+    /* Id of the Offer to Cancel */
+    string offer_id = 2;
+}
+
+/* Get Offers call */
+message GetOffersRequest {
+    /* Filter/Sort options for the call */
+    saga.common.QueryOptionsProto query_options = 1;
+    /* Id of ItemType to get Offers for */
+    string item_type_id = 2;
+    /* Token to get Offers for */
+    string token = 3;
+    /* User to get Offers for */
+    string oauth_id = 4;
+}

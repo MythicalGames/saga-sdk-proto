@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common.item";
+option go_package = "sdk/common/item";
+
+package saga.proto.common.item;
+
+enum ItemState {
+    FAILED = 0; // Failed to perform current Item action
+    ISSUED = 1; // Item issued successfully
+    LISTED = 2; // Item listed successfully
+    TRANSFERRED = 3; // Item transferred successfully
+    BURNED = 4; // item no longer exists on the blockchain so the API will have to keep track through transaction history
+    LISTING_CLOSED = 5; // Listing for Item is closed
+    WITHDRAWN = 6 [deprecated = true]; // Item withdrawn successfully
+    DEPOSITED = 7 [deprecated = true]; // Item deposited successfully
+    BRIDGED_FROM_MYTHICAL_CHAIN = 8;
+    BRIDGED_TO_MYTHICAL_CHAIN = 9;
+}
+
+enum BlockChains {
+    ETH = 0;
+}

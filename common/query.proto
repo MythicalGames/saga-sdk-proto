@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "common/sort.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common";
+option go_package = "sdk/common";
+
+package saga.common;
+
+/* Options allowed when querying */
+message QueryOptionsProto {
+    /* Size of the page of results */
+    int32 page_size = 1;
+    /* Which order to sort */
+    common.SortOrder sort_order = 2;
+    /* Cursor-based pagination based on created_at */
+    optional google.protobuf.Timestamp created_at_cursor = 3;
+}

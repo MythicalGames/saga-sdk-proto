@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "streams/common.proto";
+import "streams/currency/definition.proto";
+import "streams/currencytype/definition.proto";
+import "streams/item/definition.proto";
+import "streams/itemtype/definition.proto";
+import "streams/playerwallet/definition.proto";
+import "streams/reservation/definition.proto";
+import "streams/metadata/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams";
+option go_package = "sdk/streams";
+
+package saga.rpc.streams;
+
+/* Returned results on sending a Status stream call */
+message StatusUpdate {
+    string trace_id = 1;
+    oneof status_update {
+        streams.currency.CurrencyUpdate currency_update = 2;
+        streams.item.ItemUpdate item_update = 3;
+        streams.itemtype.ItemTypeUpdate item_type_update = 4;
+        streams.playerwallet.PlayerWalletUpdate player_wallet_update = 6;
+        streams.reservation.ReservationUpdate reservation_update = 7;
+        streams.metadata.MetadataUpdate metadata_update = 9;
+        streams.currencytype.CurrencyTypeUpdate currency_type_update = 10;
+    }
+    google.protobuf.Timestamp created_at = 8;
+}
+
+message StatusConfirmRequest {
+    string trace_id = 1;
+}
+
+service StatusStream {
+    /* Send a call to update the status */
+    rpc StatusStream(saga.rpc.streams.Subscribe) returns (stream StatusUpdate);
+    /* Get verification of status */
+    rpc StatusConfirmation(StatusConfirmRequest) returns (google.protobuf.Empty);
+}

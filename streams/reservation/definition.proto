@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "common/common.proto";
+import "api/item/definition.proto";
+import "api/itemtype/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.reservation";
+option go_package = "sdk/streams/reservation";
+
+package saga.rpc.streams.reservation;
+
+message ReservationCreatedProto {
+  string reservation_id = 1;
+}
+
+message ReservationRedeemedProto {
+  string reservation_id = 1;
+  repeated api.item.ItemProto items = 2;
+  repeated api.itemtype.FailedItemTypeBatch failed_batches = 3;
+}
+
+message ReservationReleasedProto {
+  string reservation_id = 1;
+}
+
+message ReservationUpdate {
+  oneof update {
+    saga.common.ErrorData error = 1;
+    ReservationCreatedProto reservation_created = 2;
+    ReservationReleasedProto reservation_released = 3;
+    ReservationRedeemedProto reservation_redeemed = 4;
+  }
+}

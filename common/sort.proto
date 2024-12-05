@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common";
+option go_package = "sdk/common";
+
+package saga.common;
+
+enum SortOrder {
+    ASC = 0; // Sort ascending
+    DESC = 1; // Sort descending
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.currencytype";
+option go_package = "sdk/api/currencytype";
+
+import "common/query.proto";
+import "google/protobuf/timestamp.proto";
+
+package saga.api.currencytype;
+/**
+ * @exclude
+ * ----- Currency Type Definitions -----
+ */
+message CurrencyTypeProto {
+    string trace_id = 1;
+    string currency_type_id = 2;
+    string name = 4;
+    string symbol = 5;
+    string image_url = 6;
+    string contract_address = 7;
+    string transaction_id = 8;
+    PublisherBalanceProto publisher_balance = 13;
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
+}
+
+message PublisherBalanceProto {
+    string publisher_address = 1;
+    string balance_in_wei = 2;
+}
+
+message CurrencyTypesProto {
+    repeated CurrencyTypeProto currency_types = 1;
+}
+
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+
+/* Currency Type call */
+message GetCurrencyTypeRequest {
+    string currency_type_id = 1;
+}
+
+message GetCurrencyTypesRequest {
+    saga.common.QueryOptionsProto query_options = 3;
+}

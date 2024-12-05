@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "common/common.proto";
+import "common/itemtype/definition.proto";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.streams.itemtype";
+option go_package = "sdk/streams/itemtype";
+
+package saga.rpc.streams.itemtype;
+
+/* Results from a ItemType status update gRPC stream call */
+message ItemTypeStatusUpdate {
+    /* Game's unique id for this ItemType */
+    string item_type_id = 1;
+    /* State of the ItemType, see ItemTypeState */
+    saga.proto.common.itemtype.ItemTypeState item_type_state = 8;
+}
+
+message ItemTypeUpdate {
+    oneof update {
+        saga.common.ErrorData error = 1;
+        ItemTypeStatusUpdate status_update = 2;
+    }
+}

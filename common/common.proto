@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.common";
+option go_package = "sdk/common";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/wrappers.proto";
+
+package saga.common;
+
+/* Metadata properties of Item */
+message Metadata {
+    /* Name of item */
+    string name = 1;
+    /* Description of the item */
+    string description = 2;
+    /* URL to the image of the item */
+    string image = 3;
+    /* URL to the item */
+    string external_url = 5;
+    /* OpenSea background color */
+    string background_color = 6;
+    /* URL to a media/animation file */
+    string animation_url = 7;
+    /* URL to a YouTube video */
+    string youtube_url = 8;
+    /* Metadata attributes */
+    repeated MetadataAttribute attributes = 9;
+}
+
+message MetadataAttribute {
+    /* Name of the trait/attribute */
+    string trait_type = 1;
+    /* Display type (number, date, etc.). Not needed for string traits  */
+    string display_type = 2;
+    /* For numeric traits, a maximum allowed value */
+    google.protobuf.DoubleValue max_value = 3;
+    /* Trait value */
+    oneof value {
+        string str_value = 4;
+        int64 int_value = 5;
+        double double_value = 6;
+    }
+}
+
+message ReceivedResponse {
+    string trace_id = 1;
+}
+
+message ErrorData {
+    /* The error code for this type of error */
+    string error_code = 1;
+    /* Description of the error */
+    string message = 2;
+    /* Indicator of which service the error occurred in */
+    string source = 3;
+    /* Trace id for this operation, if any */
+    string trace = 4;
+    /* Error metadata */
+    google.protobuf.Struct metadata = 5;
+    /* Sub-errors assocated with this incident */
+    repeated SubError suberrors = 6;
+}
+
+message SubError {
+    /* The error code for this type of error */
+    string error_code = 1;
+    /* Description of the error */
+    string message = 2;
+    /* Indicator of which service the error occurred in */
+    string source = 3;
+    /* Error metadata */
+    google.protobuf.Struct metadata = 4;
+}

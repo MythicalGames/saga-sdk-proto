@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "games.mythical.saga.sdk.proto.api.itemtype";
+option go_package = "sdk/api/itemtype";
+
+import "common/query.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package saga.api.itemtype;
+/**
+ * @exclude
+ * ----- ItemType Definitions -----
+ */
+
+enum MintMode {
+    MINT_MODE_UNSPECIFIED = 0;
+    MINT_MODE_SERIAL = 1;
+    MINT_MODE_RANDOM = 2;
+    MINT_MODE_SELECTED = 3;
+}
+
+message ItemTypeProto {
+    string trace_id = 1;
+    string item_type_id = 2;
+    string name = 3;
+    string symbol = 4;
+    int64 max_supply = 5;
+    string contract_address = 6;
+    string block_explorer_url = 7;
+    bool finalized = 8;
+    bool withdrawable = 9 [deprecated = true];
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
+    int64 issued_supply = 16;
+    google.protobuf.Int64Value available_supply = 17;
+    bool mintable = 18;
+    bool mint_ended = 19;
+    bool randomize = 20 [deprecated = true];
+    int64 total_supply = 21;
+    MintMode mint_mode = 22;
+    bool bridgeable = 23;
+}
+
+message ItemTypesProto {
+    repeated ItemTypeProto item_types = 1;
+}
+
+/**
+ * @exclude
+ * ----- Request and Response Definitions -----
+ */
+
+/* Create item type call */
+message CreateItemTypeRequest {
+    /* The game's unique id for this ItemType */
+    string item_type_id = 1;
+    string name = 2;
+    string symbol = 3;
+    int64 max_supply = 4;
+    bool randomize = 5 [deprecated = true];
+    google.protobuf.Timestamp date_finished = 6;
+    bool withdrawable = 7 [deprecated = true];
+    MintMode mint_mode = 8;
+}
+
+/* Get ItemType call */
+message GetItemTypeRequest {
+    string item_type_id = 1;
+}
+
+/* Get ItemTypes call */
+message GetItemTypesRequest {
+    string game_title_id = 1;
+    string publisher_address = 2;
+    saga.common.QueryOptionsProto query_options = 3;
+}
+
+message StartMintRequest {
+    string item_type_id = 1;
+}
+
+message EndMintRequest {
+    string item_type_id = 1;
+}
+
+message FailedItemTypeBatch {
+    string item_type_id = 1;
+}
