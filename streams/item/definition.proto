@@ -22,6 +22,8 @@ message ItemStatusUpdate {
     string metadata_url = 5;
     /* State of the Item, see ItemState */
     saga.proto.common.item.ItemState item_state = 8;
+    /* Item version */
+    int64 version = 9;
 }
 
 message ItemStatusUpdates {
