@@ -30,6 +30,8 @@ message ItemProto {
     /* When was this Item last updated */
     google.protobuf.Timestamp updated_at = 9;
     string state = 10;
+    /* Item version */
+    int64 version = 11;
 }
 
 message ItemsProto {
