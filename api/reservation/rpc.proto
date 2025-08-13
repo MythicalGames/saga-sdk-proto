@@ -9,8 +9,8 @@ import "common/common.proto";
 
 package saga.api.reservation;
 
-service ReservationService {
-  rpc CreateReservation(saga.api.reservation.CreateReservationRequest) returns (saga.common.ReceivedResponse);
-  rpc RedeemReservation(saga.api.reservation.RedeemReservationRequest) returns (saga.common.ReceivedResponse);
-  rpc ReleaseReservation(saga.api.reservation.ReleaseReservationRequest) returns (saga.common.ReceivedResponse);
+service ReservationService { // deprecated
+  rpc CreateReservation(saga.api.reservation.CreateReservationRequest) returns (saga.common.ReceivedResponse); // deprecated
+  rpc RedeemReservation(saga.api.reservation.RedeemReservationRequest) returns (saga.common.ReceivedResponse); // deprecated
+  rpc ReleaseReservation(saga.api.reservation.ReleaseReservationRequest) returns (saga.common.ReceivedResponse); // deprecated
 }

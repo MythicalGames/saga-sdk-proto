@@ -71,7 +71,7 @@ message GetItemRequest {
 /* Get Items call */
 message GetItemsRequest {
     /* Sort/filter options */
-    saga.common.QueryOptionsProto query_options = 1;
+    saga.common.QueryOptionsProto query_options = 1; // deprecated
     saga.common.Finalized finalized = 2;
     string token_name = 3;
 }
@@ -91,7 +91,7 @@ message TransferItemRequest {
     /* User of Item to transfer to */
     string destination_oauth_id = 3;
     string idempotency_id = 4;
-    bool prefund_gas = 5;
+    bool prefund_gas = 5; // deprecated
 }
 
 /* Transfer bulk item call */
@@ -108,7 +108,7 @@ message TransferItemBulkRequest {
 message BurnItemRequest {
     /* Game's id for the Item to burn */
     string inventory_id = 1;
-    bool prefund_gas = 2;
+    bool prefund_gas = 2; // deprecated
 }
 
 /* Deposit item call */
