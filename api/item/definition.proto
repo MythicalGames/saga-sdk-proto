@@ -69,11 +69,11 @@ message GetItemRequest {
 }
 
 /* Get Items call */
-message GetItemsRequest {
+message GetItemsRequest { // for now - only getting all by gate_title in headers
     /* Sort/filter options */
     saga.common.QueryOptionsProto query_options = 1; // deprecated
-    saga.common.Finalized finalized = 2;
-    string token_name = 3;
+    saga.common.Finalized finalized = 2; // deprecated
+    string token_name = 3; // deprecated
 }
 
 /* Get Items for Player call */
