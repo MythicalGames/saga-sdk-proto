@@ -81,7 +81,7 @@ message GetItemsForPlayerRequest {
     /* Player to get Items for */
     string oauth_id = 1;
     /* Sort/filter options */
-    saga.common.QueryOptionsProto query_options = 2;
+    saga.common.QueryOptionsProto query_options = 2; // deprecated
 }
 
 /* Transfer item call */
